@@ -1,0 +1,393 @@
+In archive liblifting.a:
+
+lifting.c.obj:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <singlelift>:
+   0:	b5f0      	push	{r4, r5, r6, r7, lr}
+   2:	4657      	mov	r7, sl
+   4:	464e      	mov	r6, r9
+   6:	4645      	mov	r5, r8
+   8:	46de      	mov	lr, fp
+   a:	b5e0      	push	{r5, r6, r7, lr}
+   c:	0006      	movs	r6, r0
+   e:	b087      	sub	sp, #28
+  10:	483a      	ldr	r0, [pc, #232]	; (fc <singlelift+0xfc>)
+  12:	000c      	movs	r4, r1
+  14:	0015      	movs	r5, r2
+  16:	001f      	movs	r7, r3
+  18:	f7ff fffe 	bl	0 <puts>
+  1c:	2c00      	cmp	r4, #0
+  1e:	dd63      	ble.n	e8 <singlelift+0xe8>
+  20:	0032      	movs	r2, r6
+  22:	46bc      	mov	ip, r7
+  24:	46ba      	mov	sl, r7
+  26:	46a8      	mov	r8, r5
+  28:	46b9      	mov	r9, r7
+  2a:	4362      	muls	r2, r4
+  2c:	0fd3      	lsrs	r3, r2, #31
+  2e:	189b      	adds	r3, r3, r2
+  30:	105b      	asrs	r3, r3, #1
+  32:	1062      	asrs	r2, r4, #1
+  34:	009b      	lsls	r3, r3, #2
+  36:	9302      	str	r3, [sp, #8]
+  38:	00b6      	lsls	r6, r6, #2
+  3a:	1e93      	subs	r3, r2, #2
+  3c:	4373      	muls	r3, r6
+  3e:	00a4      	lsls	r4, r4, #2
+  40:	9204      	str	r2, [sp, #16]
+  42:	4464      	add	r4, ip
+  44:	3a01      	subs	r2, #1
+  46:	449a      	add	sl, r3
+  48:	9403      	str	r4, [sp, #12]
+  4a:	9205      	str	r2, [sp, #20]
+  4c:	9b02      	ldr	r3, [sp, #8]
+  4e:	464a      	mov	r2, r9
+  50:	001c      	movs	r4, r3
+  52:	444c      	add	r4, r9
+  54:	0023      	movs	r3, r4
+  56:	4641      	mov	r1, r8
+  58:	4829      	ldr	r0, [pc, #164]	; (100 <singlelift+0x100>)
+  5a:	f7ff fffe 	bl	0 <printf>
+  5e:	4641      	mov	r1, r8
+  60:	4642      	mov	r2, r8
+  62:	3110      	adds	r1, #16
+  64:	468c      	mov	ip, r1
+  66:	4641      	mov	r1, r8
+  68:	464d      	mov	r5, r9
+  6a:	6857      	ldr	r7, [r2, #4]
+  6c:	68d0      	ldr	r0, [r2, #12]
+  6e:	6889      	ldr	r1, [r1, #8]
+  70:	6812      	ldr	r2, [r2, #0]
+  72:	183b      	adds	r3, r7, r0
+  74:	105b      	asrs	r3, r3, #1
+  76:	1bd2      	subs	r2, r2, r7
+  78:	1acb      	subs	r3, r1, r3
+  7a:	602a      	str	r2, [r5, #0]
+  7c:	18d2      	adds	r2, r2, r3
+  7e:	3202      	adds	r2, #2
+  80:	1092      	asrs	r2, r2, #2
+  82:	19d2      	adds	r2, r2, r7
+  84:	9f02      	ldr	r7, [sp, #8]
+  86:	51ea      	str	r2, [r5, r7]
+  88:	9a04      	ldr	r2, [sp, #16]
+  8a:	2a02      	cmp	r2, #2
+  8c:	dd33      	ble.n	f6 <singlelift+0xf6>
+  8e:	2201      	movs	r2, #1
+  90:	9201      	str	r2, [sp, #4]
+  92:	9a05      	ldr	r2, [sp, #20]
+  94:	4661      	mov	r1, ip
+  96:	4683      	mov	fp, r0
+  98:	4694      	mov	ip, r2
+  9a:	465a      	mov	r2, fp
+  9c:	684f      	ldr	r7, [r1, #4]
+  9e:	6808      	ldr	r0, [r1, #0]
+  a0:	18ba      	adds	r2, r7, r2
+  a2:	1052      	asrs	r2, r2, #1
+  a4:	1a82      	subs	r2, r0, r2
+  a6:	19ad      	adds	r5, r5, r6
+  a8:	602b      	str	r3, [r5, #0]
+  aa:	18d3      	adds	r3, r2, r3
+  ac:	9801      	ldr	r0, [sp, #4]
+  ae:	3302      	adds	r3, #2
+  b0:	109b      	asrs	r3, r3, #2
+  b2:	445b      	add	r3, fp
+  b4:	19a4      	adds	r4, r4, r6
+  b6:	3001      	adds	r0, #1
+  b8:	6023      	str	r3, [r4, #0]
+  ba:	3108      	adds	r1, #8
+  bc:	9001      	str	r0, [sp, #4]
+  be:	0013      	movs	r3, r2
+  c0:	46bb      	mov	fp, r7
+  c2:	4560      	cmp	r0, ip
+  c4:	d1e9      	bne.n	9a <singlelift+0x9a>
+  c6:	9b02      	ldr	r3, [sp, #8]
+  c8:	4655      	mov	r5, sl
+  ca:	4453      	add	r3, sl
+  cc:	001c      	movs	r4, r3
+  ce:	2304      	movs	r3, #4
+  d0:	469c      	mov	ip, r3
+  d2:	51aa      	str	r2, [r5, r6]
+  d4:	3201      	adds	r2, #1
+  d6:	10d2      	asrs	r2, r2, #3
+  d8:	9b03      	ldr	r3, [sp, #12]
+  da:	19d2      	adds	r2, r2, r7
+  dc:	44e1      	add	r9, ip
+  de:	51a2      	str	r2, [r4, r6]
+  e0:	44b0      	add	r8, r6
+  e2:	44e2      	add	sl, ip
+  e4:	454b      	cmp	r3, r9
+  e6:	d1b1      	bne.n	4c <singlelift+0x4c>
+  e8:	b007      	add	sp, #28
+  ea:	bc3c      	pop	{r2, r3, r4, r5}
+  ec:	4690      	mov	r8, r2
+  ee:	4699      	mov	r9, r3
+  f0:	46a2      	mov	sl, r4
+  f2:	46ab      	mov	fp, r5
+  f4:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  f6:	0007      	movs	r7, r0
+  f8:	001a      	movs	r2, r3
+  fa:	e7e8      	b.n	ce <singlelift+0xce>
+  fc:	00000000 	.word	0x00000000
+ 100:	00000010 	.word	0x00000010
+
+00000104 <ilift>:
+ 104:	b5f0      	push	{r4, r5, r6, r7, lr}
+ 106:	464e      	mov	r6, r9
+ 108:	46de      	mov	lr, fp
+ 10a:	4657      	mov	r7, sl
+ 10c:	4645      	mov	r5, r8
+ 10e:	b5e0      	push	{r5, r6, r7, lr}
+ 110:	0016      	movs	r6, r2
+ 112:	b089      	sub	sp, #36	; 0x24
+ 114:	2900      	cmp	r1, #0
+ 116:	dd65      	ble.n	1e4 <ilift+0xe0>
+ 118:	0005      	movs	r5, r0
+ 11a:	434d      	muls	r5, r1
+ 11c:	0082      	lsls	r2, r0, #2
+ 11e:	1048      	asrs	r0, r1, #1
+ 120:	0089      	lsls	r1, r1, #2
+ 122:	46b0      	mov	r8, r6
+ 124:	469a      	mov	sl, r3
+ 126:	000b      	movs	r3, r1
+ 128:	0fec      	lsrs	r4, r5, #31
+ 12a:	1964      	adds	r4, r4, r5
+ 12c:	1064      	asrs	r4, r4, #1
+ 12e:	00a4      	lsls	r4, r4, #2
+ 130:	46a1      	mov	r9, r4
+ 132:	4443      	add	r3, r8
+ 134:	9304      	str	r3, [sp, #16]
+ 136:	1e83      	subs	r3, r0, #2
+ 138:	4353      	muls	r3, r2
+ 13a:	444b      	add	r3, r9
+ 13c:	4681      	mov	r9, r0
+ 13e:	9306      	str	r3, [sp, #24]
+ 140:	4b2d      	ldr	r3, [pc, #180]	; (1f8 <ilift+0xf4>)
+ 142:	9403      	str	r4, [sp, #12]
+ 144:	444b      	add	r3, r9
+ 146:	00db      	lsls	r3, r3, #3
+ 148:	9307      	str	r3, [sp, #28]
+ 14a:	1e43      	subs	r3, r0, #1
+ 14c:	4699      	mov	r9, r3
+ 14e:	9005      	str	r0, [sp, #20]
+ 150:	9e03      	ldr	r6, [sp, #12]
+ 152:	4647      	mov	r7, r8
+ 154:	0033      	movs	r3, r6
+ 156:	4443      	add	r3, r8
+ 158:	001d      	movs	r5, r3
+ 15a:	4643      	mov	r3, r8
+ 15c:	6819      	ldr	r1, [r3, #0]
+ 15e:	18d3      	adds	r3, r2, r3
+ 160:	9302      	str	r3, [sp, #8]
+ 162:	4643      	mov	r3, r8
+ 164:	4654      	mov	r4, sl
+ 166:	589b      	ldr	r3, [r3, r2]
+ 168:	59be      	ldr	r6, [r7, r6]
+ 16a:	18c8      	adds	r0, r1, r3
+ 16c:	3002      	adds	r0, #2
+ 16e:	1080      	asrs	r0, r0, #2
+ 170:	1a30      	subs	r0, r6, r0
+ 172:	1809      	adds	r1, r1, r0
+ 174:	6021      	str	r1, [r4, #0]
+ 176:	9905      	ldr	r1, [sp, #20]
+ 178:	9601      	str	r6, [sp, #4]
+ 17a:	6060      	str	r0, [r4, #4]
+ 17c:	2902      	cmp	r1, #2
+ 17e:	dd38      	ble.n	1f2 <ilift+0xee>
+ 180:	2101      	movs	r1, #1
+ 182:	4684      	mov	ip, r0
+ 184:	9f02      	ldr	r7, [sp, #8]
+ 186:	0008      	movs	r0, r1
+ 188:	469b      	mov	fp, r3
+ 18a:	e000      	b.n	18e <ilift+0x8a>
+ 18c:	468c      	mov	ip, r1
+ 18e:	465b      	mov	r3, fp
+ 190:	18bf      	adds	r7, r7, r2
+ 192:	683e      	ldr	r6, [r7, #0]
+ 194:	18ad      	adds	r5, r5, r2
+ 196:	18f1      	adds	r1, r6, r3
+ 198:	3102      	adds	r1, #2
+ 19a:	682b      	ldr	r3, [r5, #0]
+ 19c:	1089      	asrs	r1, r1, #2
+ 19e:	1a59      	subs	r1, r3, r1
+ 1a0:	4663      	mov	r3, ip
+ 1a2:	18cb      	adds	r3, r1, r3
+ 1a4:	105b      	asrs	r3, r3, #1
+ 1a6:	3408      	adds	r4, #8
+ 1a8:	445b      	add	r3, fp
+ 1aa:	3001      	adds	r0, #1
+ 1ac:	6023      	str	r3, [r4, #0]
+ 1ae:	6061      	str	r1, [r4, #4]
+ 1b0:	46b3      	mov	fp, r6
+ 1b2:	4548      	cmp	r0, r9
+ 1b4:	d1ea      	bne.n	18c <ilift+0x88>
+ 1b6:	9b06      	ldr	r3, [sp, #24]
+ 1b8:	4443      	add	r3, r8
+ 1ba:	001d      	movs	r5, r3
+ 1bc:	9b07      	ldr	r3, [sp, #28]
+ 1be:	4453      	add	r3, sl
+ 1c0:	001c      	movs	r4, r3
+ 1c2:	58ab      	ldr	r3, [r5, r2]
+ 1c4:	1c71      	adds	r1, r6, #1
+ 1c6:	10c9      	asrs	r1, r1, #3
+ 1c8:	1a59      	subs	r1, r3, r1
+ 1ca:	4663      	mov	r3, ip
+ 1cc:	18cb      	adds	r3, r1, r3
+ 1ce:	105b      	asrs	r3, r3, #1
+ 1d0:	199e      	adds	r6, r3, r6
+ 1d2:	2304      	movs	r3, #4
+ 1d4:	469b      	mov	fp, r3
+ 1d6:	9b04      	ldr	r3, [sp, #16]
+ 1d8:	44d8      	add	r8, fp
+ 1da:	60a6      	str	r6, [r4, #8]
+ 1dc:	60e1      	str	r1, [r4, #12]
+ 1de:	4492      	add	sl, r2
+ 1e0:	4543      	cmp	r3, r8
+ 1e2:	d1b5      	bne.n	150 <ilift+0x4c>
+ 1e4:	b009      	add	sp, #36	; 0x24
+ 1e6:	bc3c      	pop	{r2, r3, r4, r5}
+ 1e8:	4690      	mov	r8, r2
+ 1ea:	4699      	mov	r9, r3
+ 1ec:	46a2      	mov	sl, r4
+ 1ee:	46ab      	mov	fp, r5
+ 1f0:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 1f2:	001e      	movs	r6, r3
+ 1f4:	e7e5      	b.n	1c2 <ilift+0xbe>
+ 1f6:	46c0      	nop			; (mov r8, r8)
+ 1f8:	1ffffffe 	.word	0x1ffffffe
+
+000001fc <lifting>:
+ 1fc:	b5f0      	push	{r4, r5, r6, r7, lr}
+ 1fe:	46de      	mov	lr, fp
+ 200:	4657      	mov	r7, sl
+ 202:	464e      	mov	r6, r9
+ 204:	4645      	mov	r5, r8
+ 206:	469b      	mov	fp, r3
+ 208:	b5e0      	push	{r5, r6, r7, lr}
+ 20a:	0005      	movs	r5, r0
+ 20c:	b087      	sub	sp, #28
+ 20e:	4841      	ldr	r0, [pc, #260]	; (314 <lifting+0x118>)
+ 210:	4692      	mov	sl, r2
+ 212:	000e      	movs	r6, r1
+ 214:	9101      	str	r1, [sp, #4]
+ 216:	f7ff fffe 	bl	0 <printf>
+ 21a:	465b      	mov	r3, fp
+ 21c:	4659      	mov	r1, fp
+ 21e:	681a      	ldr	r2, [r3, #0]
+ 220:	483d      	ldr	r0, [pc, #244]	; (318 <lifting+0x11c>)
+ 222:	f7ff fffe 	bl	0 <printf>
+ 226:	ab02      	add	r3, sp, #8
+ 228:	4699      	mov	r9, r3
+ 22a:	002c      	movs	r4, r5
+ 22c:	2300      	movs	r3, #0
+ 22e:	464d      	mov	r5, r9
+ 230:	4657      	mov	r7, sl
+ 232:	4698      	mov	r8, r3
+ 234:	46a1      	mov	r9, r4
+ 236:	003b      	movs	r3, r7
+ 238:	0032      	movs	r2, r6
+ 23a:	0021      	movs	r1, r4
+ 23c:	4648      	mov	r0, r9
+ 23e:	f7ff fffe 	bl	0 <singlelift>
+ 242:	0033      	movs	r3, r6
+ 244:	003a      	movs	r2, r7
+ 246:	0021      	movs	r1, r4
+ 248:	4648      	mov	r0, r9
+ 24a:	f7ff fffe 	bl	0 <singlelift>
+ 24e:	464a      	mov	r2, r9
+ 250:	4641      	mov	r1, r8
+ 252:	4362      	muls	r2, r4
+ 254:	0fd3      	lsrs	r3, r2, #31
+ 256:	189b      	adds	r3, r3, r2
+ 258:	0fe2      	lsrs	r2, r4, #31
+ 25a:	1912      	adds	r2, r2, r4
+ 25c:	1052      	asrs	r2, r2, #1
+ 25e:	105b      	asrs	r3, r3, #1
+ 260:	189b      	adds	r3, r3, r2
+ 262:	009a      	lsls	r2, r3, #2
+ 264:	18b6      	adds	r6, r6, r2
+ 266:	18bf      	adds	r7, r7, r2
+ 268:	1062      	asrs	r2, r4, #1
+ 26a:	2900      	cmp	r1, #0
+ 26c:	d00c      	beq.n	288 <lifting+0x8c>
+ 26e:	6829      	ldr	r1, [r5, #0]
+ 270:	468c      	mov	ip, r1
+ 272:	4463      	add	r3, ip
+ 274:	606b      	str	r3, [r5, #4]
+ 276:	4643      	mov	r3, r8
+ 278:	2b03      	cmp	r3, #3
+ 27a:	d007      	beq.n	28c <lifting+0x90>
+ 27c:	2301      	movs	r3, #1
+ 27e:	469c      	mov	ip, r3
+ 280:	3504      	adds	r5, #4
+ 282:	44e0      	add	r8, ip
+ 284:	0014      	movs	r4, r2
+ 286:	e7d6      	b.n	236 <lifting+0x3a>
+ 288:	606b      	str	r3, [r5, #4]
+ 28a:	e7f7      	b.n	27c <lifting+0x80>
+ 28c:	4823      	ldr	r0, [pc, #140]	; (31c <lifting+0x120>)
+ 28e:	f7ff fffe 	bl	0 <puts>
+ 292:	465b      	mov	r3, fp
+ 294:	681b      	ldr	r3, [r3, #0]
+ 296:	464d      	mov	r5, r9
+ 298:	2b00      	cmp	r3, #0
+ 29a:	d134      	bne.n	306 <lifting+0x10a>
+ 29c:	2301      	movs	r3, #1
+ 29e:	aa02      	add	r2, sp, #8
+ 2a0:	4694      	mov	ip, r2
+ 2a2:	439c      	bics	r4, r3
+ 2a4:	3b09      	subs	r3, #9
+ 2a6:	4463      	add	r3, ip
+ 2a8:	4699      	mov	r9, r3
+ 2aa:	46a8      	mov	r8, r5
+ 2ac:	af03      	add	r7, sp, #12
+ 2ae:	68bb      	ldr	r3, [r7, #8]
+ 2b0:	4818      	ldr	r0, [pc, #96]	; (314 <lifting+0x118>)
+ 2b2:	009e      	lsls	r6, r3, #2
+ 2b4:	9b01      	ldr	r3, [sp, #4]
+ 2b6:	3f04      	subs	r7, #4
+ 2b8:	199d      	adds	r5, r3, r6
+ 2ba:	4456      	add	r6, sl
+ 2bc:	0032      	movs	r2, r6
+ 2be:	0029      	movs	r1, r5
+ 2c0:	f7ff fffe 	bl	0 <printf>
+ 2c4:	0021      	movs	r1, r4
+ 2c6:	0033      	movs	r3, r6
+ 2c8:	002a      	movs	r2, r5
+ 2ca:	4640      	mov	r0, r8
+ 2cc:	f7ff fffe 	bl	104 <ilift>
+ 2d0:	0021      	movs	r1, r4
+ 2d2:	002b      	movs	r3, r5
+ 2d4:	0032      	movs	r2, r6
+ 2d6:	4640      	mov	r0, r8
+ 2d8:	f7ff fffe 	bl	104 <ilift>
+ 2dc:	0064      	lsls	r4, r4, #1
+ 2de:	45b9      	cmp	r9, r7
+ 2e0:	d1e5      	bne.n	2ae <lifting+0xb2>
+ 2e2:	9e01      	ldr	r6, [sp, #4]
+ 2e4:	4652      	mov	r2, sl
+ 2e6:	0031      	movs	r1, r6
+ 2e8:	480a      	ldr	r0, [pc, #40]	; (314 <lifting+0x118>)
+ 2ea:	f7ff fffe 	bl	0 <printf>
+ 2ee:	4653      	mov	r3, sl
+ 2f0:	0032      	movs	r2, r6
+ 2f2:	0021      	movs	r1, r4
+ 2f4:	4640      	mov	r0, r8
+ 2f6:	f7ff fffe 	bl	104 <ilift>
+ 2fa:	0033      	movs	r3, r6
+ 2fc:	4652      	mov	r2, sl
+ 2fe:	0021      	movs	r1, r4
+ 300:	4640      	mov	r0, r8
+ 302:	f7ff fffe 	bl	104 <ilift>
+ 306:	b007      	add	sp, #28
+ 308:	bc3c      	pop	{r2, r3, r4, r5}
+ 30a:	4690      	mov	r8, r2
+ 30c:	4699      	mov	r9, r3
+ 30e:	46a2      	mov	sl, r4
+ 310:	46ab      	mov	fp, r5
+ 312:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 314:	00000030 	.word	0x00000030
+ 318:	00000048 	.word	0x00000048
+ 31c:	00000054 	.word	0x00000054
