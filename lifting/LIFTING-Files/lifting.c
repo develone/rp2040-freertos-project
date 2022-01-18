@@ -45,7 +45,7 @@
 #include <stdio.h>
 void	singlelift(int rb, int w, int * const ibuf, int * const obuf) {
 	int	col, row;
-	printf("in singlelift \n");
+	printf("in singlelift using liblifting.a \n");
 	for(row=0; row<w; row++) {
 		register int	*ip, *op, *opb;
 		register int	ap,b,cp,d;
@@ -177,7 +177,7 @@ void	lifting(int w, int *ibuf, int *tmpbuf, int *fwd) {
 	int	lvl;
 
 	int	*ip = ibuf, *tp = tmpbuf, *test_fwd = fwd;
-	printf("ip = 0x%x tp = 0x%x \n",ip,tp);
+	printf("ip = 0x%x tp = 0x%x using liblifting.a \n",ip,tp);
   printf("0x%x %d\n",test_fwd,*test_fwd);
 	int	ov[3];
 
