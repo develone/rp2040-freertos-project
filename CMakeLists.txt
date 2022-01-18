@@ -6,6 +6,7 @@ project(Pico-FreeRTOS)
 
 pico_sdk_init()
 
+add_subdirectory(pico-lifting)
 add_subdirectory(lifting)
 add_subdirectory(freertos)
 add_subdirectory(ProjectFiles)
