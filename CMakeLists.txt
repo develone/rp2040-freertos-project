@@ -6,6 +6,7 @@ project(Pico-FreeRTOS)
 
 pico_sdk_init()
 
+add_subdirectory(2tasks)
 add_subdirectory(ultibo_blink)
 add_subdirectory(pico-lifting-sf)
 add_subdirectory(pico-lifting)
