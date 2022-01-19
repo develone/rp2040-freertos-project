@@ -5,3 +5,5 @@ export PATH=~/local/openocd/bin:$PATH
 cd rp2040-freertos-project/build
 
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-lifting/pico-lifting.elf verify reset exit"
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-lifting-sf/hello_usb.elf verify reset exit"
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program ultibo_blink/ultibo_blink.elf verify reset exit"
