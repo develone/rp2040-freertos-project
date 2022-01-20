@@ -1,10 +1,17 @@
-01/17/22
+01/20/22
 
 export PATH=~/local/openocd/bin:$PATH
 
 cd rp2040-freertos-project/build
 
+https://www.youtube.com/watch?app=desktop&v=-fwJZzDpBIg
+https://learnembeddedsystems.co.uk/freertos-part-2-tasks-and-queues-tutorial
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2tasks/2tasks.elf verify reset exit"
+
+This now uses the liblifting.a which is created from 2 C files lifting.c & crc.c
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-lifting/pico-lifting.elf verify reset exit"
+
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-lifting-sf/hello_usb.elf verify reset exit"
+head 0x2000505c tsil 0x2000505c end 0x200050dc top 0x2000505c
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program ultibo_blink/ultibo_blink.elf verify reset exit"
+

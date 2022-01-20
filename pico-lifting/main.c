@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "lifting.h"
+#include "crc.h"
 
 #define DBUG 0
 #define DBUG1 0
@@ -41,43 +42,11 @@ struct PTRs {
 
 unsigned char tt[128];
 const char src[] = "Hello, world! ";
+const short int a[]; 
 
-const unsigned char CRC7_POLY = 0x91;
+//const unsigned char CRC7_POLY = 0x91;
 unsigned char CRCTable[256];
  
-unsigned char getCRCForByte(unsigned char val)
-{
-  unsigned char j;
- 
-  for (j = 0; j < 8; j++)
-  {
-    if (val & 1)
-      val ^= CRC7_POLY;
-    val >>= 1;
-  }
- 
-  return val;
-}
- 
-void buildCRCTable()
-{
-  int i;
- 
-  // fill an array with CRC values of all 256 possible bytes
-  for (i = 0; i < 256; i++)
-  {
-    CRCTable[i] = getCRCForByte(i);
-  }
-}
- 
-unsigned char getCRC(unsigned char message[], unsigned char length)
-{
-  unsigned char i, crc = 0;
- 
-  for (i = 0; i < length; i++)
-    crc = CRCTable[crc ^ message[i]];
-  return crc;
-}
 
 char * bump_head(char * head, char * endofbuf,char * topofbuf) {
  
@@ -315,7 +284,7 @@ int main() {
 				printf("0x%x 0x%x 0x%x 0x%x 0x%x \n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf,ptrs.inp_buf);
 			}
 			ptrs.inp_buf = ptrs.inpbuf;
-/*
+			/*
 			for(i = 0; i < imgsize;i++) {
 				if (ptrs.inp_buf[i] == a[i]) {
 					//printf("matched %d \n",i);
@@ -325,16 +294,16 @@ int main() {
 					error = 1;
 				}
 				
-			} */
+			}
 			printf("errors %d \n",error); 
-			printf("Command (1 = proceed to lifting or 0 = Wait):\n");
-			userInput = getchar();
+			*/
 			 
 			lifting(ptrs.w,ptrs.inp_buf,ptrs.out_buf,ptrs.fwd_inv);
-			for(i=0;i<10;i++) printf("%d ",ptrs.inp_buf[i]);
+			//for(i=0;i<10;i++) printf("%d ",ptrs.inp_buf[i]);
 			printf("Back from lifting\n");
  			
-			userInput = '1';
+			printf("Command (1 = Send or 0 = Wait):\n");
+			userInput = getchar();
 			if(userInput == '1'){
 				
 				//for(i=0;i<imgsize;i++) printf("%d ",ptrs.inp_buf[i]);

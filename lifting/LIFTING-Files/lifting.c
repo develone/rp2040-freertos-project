@@ -45,7 +45,7 @@
 #include <stdio.h>
 void	singlelift(int rb, int w, int * const ibuf, int * const obuf) {
 	int	col, row;
-	printf("in singlelift using liblifting.a \n");
+	//printf("in singlelift using liblifting.a \n");
 	for(row=0; row<w; row++) {
 		register int	*ip, *op, *opb;
 		register int	ap,b,cp,d;
@@ -68,7 +68,7 @@ void	singlelift(int rb, int w, int * const ibuf, int * const obuf) {
 		//
 		op = obuf+row;
 		opb = op + w*rb/2;
-		printf("ip = 0x%x op = 0x%x opb = 0x%x\n",ip,op,opb);
+		//printf("ip = 0x%x op = 0x%x opb = 0x%x\n",ip,op,opb);
 		//
 		// Pre-charge our pipeline
 		//
@@ -177,8 +177,8 @@ void	lifting(int w, int *ibuf, int *tmpbuf, int *fwd) {
 	int	lvl;
 
 	int	*ip = ibuf, *tp = tmpbuf, *test_fwd = fwd;
-	printf("ip = 0x%x tp = 0x%x using liblifting.a \n",ip,tp);
-  printf("0x%x %d\n",test_fwd,*test_fwd);
+	//printf("ip = 0x%x tp = 0x%x using liblifting.a \n",ip,tp);
+  //printf("0x%x %d\n",test_fwd,*test_fwd);
 	int	ov[3];
 
 	const int	LVLS = 4;
@@ -232,7 +232,7 @@ void	lifting(int w, int *ibuf, int *tmpbuf, int *fwd) {
 		// Move to the corner, and repeat
 		w>>=1;
 	}
-	printf("testing test_fwd \n");
+	//printf("testing test_fwd \n");
 	if (test_fwd[0]==0) {
 	for(lvl=(LVLS-1); lvl>=0; lvl--) {
 		int	offset;
