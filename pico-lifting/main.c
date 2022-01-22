@@ -297,13 +297,11 @@ int main() {
 			}
 			printf("errors %d \n",error); 
 			*/
-			 
-			lifting(ptrs.w,ptrs.inp_buf,ptrs.out_buf,ptrs.fwd_inv);
-			//for(i=0;i<10;i++) printf("%d ",ptrs.inp_buf[i]);
-			printf("Back from lifting\n");
- 			
 			printf("Command (1 = Send or 0 = Wait):\n");
 			userInput = getchar();
+			 
+			lifting(ptrs.w,ptrs.inp_buf,ptrs.out_buf,ptrs.fwd_inv);
+			
 			if(userInput == '1'){
 				
 				//for(i=0;i<imgsize;i++) printf("%d ",ptrs.inp_buf[i]);
