@@ -1,5 +1,11 @@
 https://www.youtube.com/watch?app=desktop&v=0i2gLeBal9Y
 
+Goal: To debug a program using 2 libraries liblifting.a & libcrc.a which works when the code is in a single file.
+ 
+Requirements: minicom, openocd, the file https://github.com/develone/pico-lifting/blob/master/crc/a64.bin
+in the root folder of Raspberry Pi 4B.  This file is an image of 64 x 64 used for testing.
+
+
 export PATH=~/local/openocd/bin:$PATH
 
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program ultibo_blink/ultibo_blink.elf verify reset exit"
@@ -107,7 +113,10 @@ warning: multi-threaded target stopped without sending a thread-id, using first 
 continue
 minicom-7.png minicom-12.png
 
+minicom shell
 
+ptrs.inp_buf = 0x20001030 ptrs.out_buf = 0x20003030                             
+head 0x2000505c tail 0x2000505c end 0x200050dc top 0x2000505c
 Continuing.
 target halted due to debug-request, current mode: Thread 
 xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00

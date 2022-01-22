@@ -153,7 +153,7 @@ int main() {
 	printf("setting pointers\n");
 	printf("ptrs.inp_buf = 0x%x ptrs.out_buf = 0x%x\n",ptrs.inpbuf, ptrs.out_buf);
 	
-	printf("head 0x%x tsil 0x%x end 0x%x top 0x%x\n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf);
+	printf("head 0x%x tail 0x%x end 0x%x top 0x%x\n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf);
 	
 	ptrs.fwd_inv =  &ptrs.fwd;
     *ptrs.fwd_inv = 1;
@@ -300,9 +300,10 @@ int main() {
 			printf("Command (1 = Send or 0 = Wait):\n");
 			userInput = getchar();
 			 
-			lifting(ptrs.w,ptrs.inp_buf,ptrs.out_buf,ptrs.fwd_inv);
 			
 			if(userInput == '1'){
+				lifting(ptrs.w,ptrs.inp_buf,ptrs.out_buf,ptrs.fwd_inv);
+				printf("liftting done \n");
 				
 				//for(i=0;i<imgsize;i++) printf("%d ",ptrs.inp_buf[i]);
 				index = 0;

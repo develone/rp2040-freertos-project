@@ -232,7 +232,7 @@ void	lifting(int w, int *ibuf, int *tmpbuf, int *fwd) {
 		// Move to the corner, and repeat
 		w>>=1;
 	}
-	//printf("testing test_fwd \n");
+	printf("testing test_fwd \n");
 	if (test_fwd[0]==0) {
 	for(lvl=(LVLS-1); lvl>=0; lvl--) {
 		int	offset;
