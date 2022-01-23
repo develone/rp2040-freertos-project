@@ -1,54 +1,9 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-// Filename: 	lifting.c
-//
-// Project:	XuLA2-LX25 SoC based upon the ZipCPU
-//
-// Purpose:	This goal of this file is to perform, on either the ZipCPU or
-//		a more traditional architecture, the lifting/WVT step of the
-//	JPEG-2000 compression (and decompression) scheme.
-//
-//	Currently, the lifting scheme performs both forward and inverse 
-//	transforms, and so (if done properly) it constitutes an identity
-//	transformation.
-//
-// Creator:	Dan Gisselquist, Ph.D.
-//		Gisselquist Technology, LLC
-//
-////////////////////////////////////////////////////////////////////////////////
-//
-// Copyright (C) 2015-2016, Gisselquist Technology, LLC
-//
-// This program is free software (firmware): you can redistribute it and/or
-// modify it under the terms of  the GNU General Public License as published
-// by the Free Software Foundation, either version 3 of the License, or (at
-// your option) any later version.
-//
-// This program is distributed in the hope that it will be useful, but WITHOUT
-// ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY or
-// FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-// for more details.
-//
-// You should have received a copy of the GNU General Public License along
-// with this program.  (It's in the $(ROOT)/doc directory, run make with no
-// target there if the PDF file isn't present.)  If not, see
-// <http://www.gnu.org/licenses/> for a copy.
-//
-// License:	GPL, v3, as defined and found on www.gnu.org,
-//		http://www.gnu.org/licenses/gpl.html
-//
-//
-////////////////////////////////////////////////////////////////////////////////
-//
-//
-#include "lifting.h"
-#include <stdio.h>
-void	singlelift(int rb, int w, int * const ibuf, int * const obuf) {
-	int	col, row;
-	//printf("in singlelift using liblifting.a \n");
+void	singlelift(short int rb, short int w, short int * const ibuf, short int * const obuf) {
+	short int	col, row;
+	//printf("in singlelift \n");
 	for(row=0; row<w; row++) {
-		register int	*ip, *op, *opb;
-		register int	ap,b,cp,d;
+		register short int	*ip, *op, *opb;
+		register short int	ap,b,cp,d;
 
 		//
 		// Ibuf walks down rows (here), but reads across columns (below)
@@ -110,12 +65,12 @@ void	singlelift(int rb, int w, int * const ibuf, int * const obuf) {
 	}
 }
 
-void	ilift(int rb, int w,  int * const ibuf,  int * const obuf) {
-	int	col, row;
+void	ilift(short int rb, short int w,  short int * const ibuf,  short int * const obuf) {
+	short int	col, row;
 
 	for(row=0; row<w; row++) {
-		register int	*ip, *ipb, *op;
-		register int	b,c,d,e;
+		register short int	*ip, *ipb, *op;
+		register short int	b,c,d,e;
 
 		//
 		// Ibuf walks down rows (here), but reads across columns (below)
@@ -172,16 +127,15 @@ void	ilift(int rb, int w,  int * const ibuf,  int * const obuf) {
 	}
 }
 
-void	lifting(int w, int *ibuf, int *tmpbuf, int *fwd) {
-	const	int	rb = w;
-	int	lvl;
+void	lifting(short int w, short int *ibuf, short int *tmpbuf, short int *fwd) {
+	const	short int	rb = w;
+	short int	lvl;
 
-	int	*ip = ibuf, *tp = tmpbuf, *test_fwd = fwd;
-	//printf("ip = 0x%x tp = 0x%x using liblifting.a \n",ip,tp);
-  //printf("0x%x %d\n",test_fwd,*test_fwd);
-	int	ov[3];
+	short int	*ip = ibuf, *tp = tmpbuf, *test_fwd = fwd;
+	//printf("ip = 0x%x tp = 0x%x \n",ip,tp);
+	short int	ov[3];
 
-	const int	LVLS = 4;
+	const short int	LVLS = 4;
 
 /*
 	for(lvl=0; lvl<w*w; lvl++)
@@ -224,7 +178,7 @@ void	lifting(int w, int *ibuf, int *tmpbuf, int *fwd) {
 		//
 		// Still, this makes a subimage, within our image, containing
 		// the low order results of our processing.
-		int	offset = w*rb/2+w/2;
+		short int	offset = w*rb/2+w/2;
 		ip = &ip[offset];
 		tp = &tp[offset];
 		ov[lvl] = offset + ((lvl)?(ov[lvl-1]):0);
@@ -232,10 +186,10 @@ void	lifting(int w, int *ibuf, int *tmpbuf, int *fwd) {
 		// Move to the corner, and repeat
 		w>>=1;
 	}
-	printf("testing test_fwd \n");
+	//printf("testing test_fwd \n");
 	if (test_fwd[0]==0) {
 	for(lvl=(LVLS-1); lvl>=0; lvl--) {
-		int	offset;
+		short int	offset;
 
 		w <<= 1;
 
@@ -245,7 +199,7 @@ void	lifting(int w, int *ibuf, int *tmpbuf, int *fwd) {
 			offset = 0;
 		ip = &ibuf[offset];
 		tp = &tmpbuf[offset];
-		printf("ip = 0x%x tp = 0x%x \n",ip,tp);
+		//printf("ip = 0x%x tp = 0x%x \n",ip,tp);
 
 		ilift(rb, w, ip, tp);
 		//printf("back from ilift\n");
@@ -254,4 +208,3 @@ void	lifting(int w, int *ibuf, int *tmpbuf, int *fwd) {
 	}
 	}
 }
-
