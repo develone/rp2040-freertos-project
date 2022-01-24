@@ -1,0 +1,11 @@
+https://www.youtube.com/watch?v=Au-oc4hxj-c
+
+Given a period of 20ms  Amplitude is 3.3Volts
+
+D = 10ms/20ms = 50%
+V=3.3 * D = 1.65Volts
+
+PWM Clock 125 MHz period is 8nsec counter 0 to 65535 
+
+
+4us/8ns = 500 Cyc = wrap point
