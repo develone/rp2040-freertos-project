@@ -1,11 +1,17 @@
 https://www.youtube.com/watch?app=desktop&v=0i2gLeBal9Y
+(gdb) b main.c:306
+No source file named main.c.
+Make breakpoint pending on future shared library load? (y or [n]) y
+Breakpoint 1 (main.c:306) pending.
 
 Goal: To debug a program using 2 libraries liblifting.a & libcrc.a which works when the code is in a single file.
  
 Requirements: minicom, openocd, the file https://github.com/develone/pico-lifting/blob/master/crc/a64.bin
 in the root folder of Raspberry Pi 4B.  This file is an image of 64 x 64 used for testing.
 
-
+Thread 1 received signal SIGTRAP, Trace/breakpoint trap.
+0x100001c4 in isr_hardfault ()
+(gdb) 
 export PATH=~/local/openocd/bin:$PATH
 
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program ultibo_blink/ultibo_blink.elf verify reset exit"

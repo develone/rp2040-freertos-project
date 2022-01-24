@@ -8,7 +8,7 @@ https://www.youtube.com/watch?app=desktop&v=-fwJZzDpBIg
 https://learnembeddedsystems.co.uk/freertos-part-2-tasks-and-queues-tutorial
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2tasks/2tasks.elf verify reset exit"
 
-This now uses the liblifting.a & libcrc.a which are created from 1 C file each lifting.c & crc.c
+This now uses the liblifting.a & libcrc.a which are created from 3 C files lifting.c & (crc.c head-tail.c)
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-lifting/pico-lifting.elf verify reset exit"
 
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-lifting-sf/hello_usb.elf verify reset exit"
