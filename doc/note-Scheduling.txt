@@ -1,0 +1,24 @@
+https://www.youtube.com/watch?v=S7c0B9Y1x-M
+https://learnembeddedsystems.co.uk/freertos-on-the-rp2040-part-3-source-code
+ 
+export PATH=~/local/openocd/bin:$PATH
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program Scheduling/Scheduling.elf verify reset exit"
+when task1 & task2 use same code task2 only runs since it is a higher priority.
+
+When task1 uses for loop and task2 vTaskDelay(100);
+wc ~/minicom.cap 
+ 25 128 709 /home/devel/minicom.cap
+grep 1 ~/minicom.cap | wc
+    16      78     430
+grep 2 ~/minicom.cap | wc
+     10      50     280
+Even with task2 at higher priority
+
+When task1 and task2 use vTaskDelay(100);
+grep 1 ~/minicom.cap | wc
+      7      35     196
+grep 2 ~/minicom.cap | wc
+      7      35     196
+wc ~/minicom.cap 
+ 14  70 392 /home/devel/minicom.cap
