@@ -6,6 +6,7 @@ project(Pico-FreeRTOS)
 
 pico_sdk_init()
 
+add_subdirectory(Scheduling)
 add_subdirectory(first_pwm)
 add_subdirectory(2tasks)
 add_subdirectory(ultibo_blink)
