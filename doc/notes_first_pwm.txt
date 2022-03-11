@@ -9,3 +9,8 @@ PWM Clock 125 MHz period is 8nsec counter 0 to 65535
 
 
 4us/8ns = 500 Cyc = wrap point
+
+GP0 1.64 Volts
+export PATH=~/local/openocd/bin:$PATH
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program first_pwm/50_pwm.elf verify reset exit"
