@@ -1,6 +1,7 @@
 set(PICO_SDK_KLT_SOURCE KLT-Kernel)
 
 add_library(klt
+    ${PICO_SDK_KLT_SOURCE}/pyramid.c
     ${PICO_SDK_KLT_SOURCE}/convolve.c
     ${PICO_SDK_KLT_SOURCE}/error.c
     ${PICO_SDK_KLT_SOURCE}/klt.c
