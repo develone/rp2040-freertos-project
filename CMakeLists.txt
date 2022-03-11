@@ -5,7 +5,7 @@ include(pico_sdk_import.cmake)
 project(Pico-FreeRTOS)
 
 pico_sdk_init()
-
+add_subdirectory(klt)
 add_subdirectory(Semaphore)
 add_subdirectory(Mutex)
 add_subdirectory(Scheduling)

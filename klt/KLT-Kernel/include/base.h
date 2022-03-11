@@ -13,17 +13,11 @@
 #define schar signed char
 #endif
 
-#ifndef uint
-#define uint unsigned int
-#endif
+ 
 
-#ifndef ushort
-#define ushort unsigned short
-#endif
+ 
 
-#ifndef ulong
-#define ulong unsigned long
-#endif
+ 
 
 #ifndef max
 #define max(a,b)	((a) > (b) ? (a) : (b))
