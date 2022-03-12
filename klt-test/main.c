@@ -90,7 +90,7 @@ int main() {
     int nFeatures = 100;
     
     int ncols, nrows;
-     
+    unsigned char inpbuf[imgsize*2]; 
     unsigned char *img1, *img2;
     
     KLT_TrackingContext tc;
@@ -111,8 +111,8 @@ int main() {
 	sleep_ms(2000);
 	printf("setting pointers\n");
 	printf("ptrs.inp_buf = 0x%x ptrs.out_buf = 0x%x\n",ptrs.inpbuf, ptrs.out_buf);
-	img1 = ptrs.inp_buf;
-        img2 = ptrs.out_buf;
+	img1 = &inpbuf[0];
+        img2 = &inpbuf[4096];
 	printf("ncols & nrows and img1 were set by pgmReadHeaderFile\n"); 
         printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
 	printf("head 0x%x tail 0x%x end 0x%x top 0x%x\n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf);
@@ -266,13 +266,21 @@ int main() {
 				}
 				
 			}
-			printf("errors %d \n",error); 
+			printf("errors %d \n",error);
+ 
 			*/
 			printf("Command (1 = Send or 0 = Wait):\n");
 			userInput = getchar();
 			 
 			
 			if(userInput == '1'){
+			printf("need to copy the data received from host to img2\n");
+			for(i = 0; i < ncols*nrows;i++) {
+			      img1[i] = ptrs.inp_buf[i];
+			      img2[i] = img1[i];	
+			      if (i < 7) printf("%d %d %d %d\n",i, img1[i],img2[i],ptrs.inp_buf[i]); 
+			      if (i > 4088) printf("%d %d %d %d\n",i, img1[i],img2[i],ptrs.inp_buf[i]);	
+			} 
 				lifting(ptrs.w,ptrs.inp_buf,ptrs.out_buf,ptrs.fwd_inv);
 				printf("liftting done \n");
 				
