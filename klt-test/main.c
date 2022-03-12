@@ -277,9 +277,9 @@ int main() {
 			printf("need to copy the data received from host to img2\n");
 			for(i = 0; i < ncols*nrows;i++) {
 			      img1[i] = ptrs.inp_buf[i];
-			      img2[i] = img1[i];	
-			      if (i < 7) printf("%d %d %d %d\n",i, img1[i],img2[i],ptrs.inp_buf[i]); 
-			      if (i > 4088) printf("%d %d %d %d\n",i, img1[i],img2[i],ptrs.inp_buf[i]);	
+			      //img2[i+4095] = img1[i];	
+			      if (i < 5) printf("%d %d %d \n",i, img1[i],ptrs.inp_buf[i]); 
+			      if (i > 4090) printf("%d %d %d \n",i,img1[i],ptrs.inp_buf[i]);	
 			} 
 				lifting(ptrs.w,ptrs.inp_buf,ptrs.out_buf,ptrs.fwd_inv);
 				printf("liftting done \n");
