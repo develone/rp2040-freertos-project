@@ -123,7 +123,7 @@ void _KLTWriteFloatImageToPGM(
   }
 
   /* Write uchar image to PGM */
-  pgmWriteFile(filename, byteimg, img->ncols, img->nrows);
+  //pgmWriteFile(filename, byteimg, img->ncols, img->nrows);
 
   /* Free memory */
   free(byteimg);
@@ -158,7 +158,7 @@ void _KLTWriteAbsFloatImageToPGM(
   }
 
   /* Write uchar image to PGM */
-  pgmWriteFile(filename, byteimg, img->ncols, img->nrows);
+  //pgmWriteFile(filename, byteimg, img->ncols, img->nrows);
 
   /* Free memory */
   free(byteimg);

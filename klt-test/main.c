@@ -88,15 +88,19 @@ int main() {
     ptrs.h = 64;
     KLT_FeatureList fl;
     int nFeatures = 100;
+    
     int ncols, nrows;
+     
     unsigned char *img1, *img2;
     
     KLT_TrackingContext tc;
-    //tc = KLTCreateTrackingContext();
-    //fl = KLTCreateFeatureList(nFeatures);
+    tc = KLTCreateTrackingContext();
+    printf("tc 0x%x\n",tc);
+    fl = KLTCreateFeatureList(nFeatures);
     //KLTPrintTrackingContext(tc);
-    
-    
+    ncols = 64;
+    nrows = 64;
+     
     ptrs.inp_buf = ptrs.inpbuf;   
     ptrs.head = &tt[0];
 	ptrs.tail = &tt[0];
@@ -107,7 +111,10 @@ int main() {
 	sleep_ms(2000);
 	printf("setting pointers\n");
 	printf("ptrs.inp_buf = 0x%x ptrs.out_buf = 0x%x\n",ptrs.inpbuf, ptrs.out_buf);
-	
+	img1 = ptrs.inp_buf;
+        img2 = ptrs.out_buf;
+	printf("ncols & nrows and img1 were set by pgmReadHeaderFile\n"); 
+        printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
 	printf("head 0x%x tail 0x%x end 0x%x top 0x%x\n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf);
 	
 	ptrs.fwd_inv =  &ptrs.fwd;
@@ -122,6 +129,9 @@ int main() {
     printf("this is testing floating point needed for the KLT %5.5f %5.5f %5.5f \n",a,b,c);
     c = a * b;
     printf("this is testing floating point needed for the KLT %5.5f %5.5f %5.5f \n",a,b,c);
+    printf("ncols %d nrows %d\n",ncols,nrows);
+
+    printf("tc 0x%x fl 0x%x\n",tc,fl);
     while (true) {
         if (DBUG == 1 ) {
             printf("Hello, world!\n");

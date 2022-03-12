@@ -43,7 +43,7 @@ static const KLT_BOOL writeInternalImages = FALSE;
 static const int search_range = 15;
 static const int nSkippedPixels = 0;
 
-extern int KLT_verbose;
+//extern int KLT_verbose;
 
 
 /*********************************************************************
@@ -243,6 +243,12 @@ KLT_FeatureTable KLTCreateFeatureTable(
 void KLTPrintTrackingContext(
   KLT_TrackingContext tc)
 {
+printf("\n\nTracking context:\n\n");
+printf("\tmindist = %d\n", tc->mindist);
+//printf("\twindow_width = %d\n", tc->window_width);
+//printf("\twindow_height = %d\n", tc->window_height)
+
+/*
   fprintf(stderr, "\n\nTracking context:\n\n");
   fprintf(stderr, "\tmindist = %d\n", tc->mindist);
   fprintf(stderr, "\twindow_width = %d\n", tc->window_width);
@@ -277,6 +283,7 @@ void KLTPrintTrackingContext(
           (tc->pyramid_last_grady!=NULL) ?
           "points to old image" : "NULL");
   fprintf(stderr, "\n\n");
+*/
 }
 
 
@@ -524,7 +531,7 @@ int KLTCountRemainingFeatures(
 void KLTSetVerbosity(
   int verbosity)
 {
-  KLT_verbose = verbosity;
+  //KLT_verbose = verbosity;
 }
 
 

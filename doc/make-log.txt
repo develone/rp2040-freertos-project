@@ -589,7 +589,6 @@
 [ 82%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/opt/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
 [ 83%] Linking CXX executable hello_usb.elf
 [ 83%] Built target hello_usb
-Scanning dependencies of target pico-lifting
 [ 83%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/main.c.obj
 [ 84%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/opt/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 [ 84%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/opt/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
