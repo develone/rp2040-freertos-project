@@ -293,6 +293,15 @@ int main() {
 			img1 = &inpbuf[0];
         		img2 = &inpbuf[4096];
 			printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
+
+	KLTSelectGoodFeatures(tc, img1, ncols, nrows, fl);
+
+  	printf("\nIn first image:\n");
+  	for (i = 0 ; i < fl->nFeatures ; i++)  {
+    		printf("Feature #%d:  (%f,%f) with value of %d\n",
+           	i, fl->feature[i]->x, fl->feature[i]->y,
+           	fl->feature[i]->val);
+        }
 				lifting(ptrs.w,ptrs.inp_buf,ptrs.out_buf,ptrs.fwd_inv);
 				printf("liftting done \n");
 				
