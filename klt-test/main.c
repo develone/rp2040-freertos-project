@@ -274,13 +274,25 @@ int main() {
 			 
 			
 			if(userInput == '1'){
-			printf("need to copy the data received from host to img2\n");
+			printf("need to copy the data received from host to img1\n");
+			printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
 			for(i = 0; i < ncols*nrows;i++) {
 			      img1[i] = ptrs.inp_buf[i];
 			      //img2[i+4095] = img1[i];	
-			      if (i < 5) printf("%d %d %d \n",i, img1[i],ptrs.inp_buf[i]); 
-			      if (i > 4090) printf("%d %d %d \n",i,img1[i],ptrs.inp_buf[i]);	
+			      if (i < 5) printf("%d img1 %d ptrs.buf %d \n",i, img1[i],ptrs.inp_buf[i]); 
+			      if (i > 4090) printf("%d img1 %d ptrs.buf %d \n",i,img1[i],ptrs.inp_buf[i]);	
+			}
+			printf("need to copy the data from img1 to img2\n");
+			for(i = 0; i < ncols*nrows;i++) {
+				*img2 = *img1;
+				if (i < 5) printf("%d img2 %d img1 %d \n",i,*img2,*img1);
+                                if (i > 4090) printf("%d img2 %d img1 %d \n",i,*img2,*img1);
+                                img2++;
+                                img1++; 
 			} 
+			img1 = &inpbuf[0];
+        		img2 = &inpbuf[4096];
+			printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
 				lifting(ptrs.w,ptrs.inp_buf,ptrs.out_buf,ptrs.fwd_inv);
 				printf("liftting done \n");
 				
