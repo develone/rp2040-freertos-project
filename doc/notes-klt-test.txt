@@ -1,0 +1,229 @@
+need to copy the data received from host to img1
+img1 = 0x2003ffd8 img2 = 0x20040fd8
+0 img1 161 ptrs.buf 161 
+1 img1 157 ptrs.buf 157 
+2 img1 156 ptrs.buf 156 
+3 img1 157 ptrs.buf 157 
+4 img1 159 ptrs.buf 159 
+4091 img1 62 ptrs.buf 62 
+4092 img1 67 ptrs.buf 67 
+4093 img1 63 ptrs.buf 63 
+4094 img1 59 ptrs.buf 59 
+4095 img1 91 ptrs.buf 91 
+need to copy the data from img1 to img2
+0 img2 161 img1 161 
+1 img2 157 img1 157 
+2 img2 156 img1 156 
+3 img2 157 img1 157 
+4 img2 159 img1 159 
+4091 img2 62 img1 62 
+4092 img2 67 img1 67 
+4093 img2 63 img1 63 
+4094 img2 59 img1 59 
+4095 img2 91 img1 91 
+img1 = 0x2003ffd8 img2 = 0x20040fd8
+
+This was run on the pico following the transfer of the img1 & img2
+In first image:
+Feature #0:  (24.000000,32.000000) with value of 4472
+Feature #1:  (34.000000,39.000000) with value of 3461
+Feature #2:  (36.000000,29.000000) with value of 3100
+Feature #3:  (-1.000000,-1.000000) with value of -1
+Feature #4:  (-1.000000,-1.000000) with value of -1
+Feature #5:  (-1.000000,-1.000000) with value of -1
+Feature #6:  (-1.000000,-1.000000) with value of -1
+Feature #7:  (-1.000000,-1.000000) with value of -1
+Feature #8:  (-1.000000,-1.000000) with value of -1
+Feature #9:  (-1.000000,-1.000000) with value of -1
+Feature #10:  (-1.000000,-1.000000) with value of -1
+Feature #11:  (-1.000000,-1.000000) with value of -1
+Feature #12:  (-1.000000,-1.000000) with value of -1
+Feature #13:  (-1.000000,-1.000000) with value of -1
+Feature #14:  (-1.000000,-1.000000) with value of -1
+Feature #15:  (-1.000000,-1.000000) with value of -1
+Feature #16:  (-1.000000,-1.000000) with value of -1
+Feature #17:  (-1.000000,-1.000000) with value of -1
+Feature #18:  (-1.000000,-1.000000) with value of -1
+Feature #19:  (-1.000000,-1.000000) with value of -1
+Feature #20:  (-1.000000,-1.000000) with value of -1
+Feature #21:  (-1.000000,-1.000000) with value of -1
+Feature #22:  (-1.000000,-1.000000) with value of -1
+Feature #23:  (-1.000000,-1.000000) with value of -1
+Feature #24:  (-1.000000,-1.000000) with value of -1
+Feature #25:  (-1.000000,-1.000000) with value of -1
+Feature #26:  (-1.000000,-1.000000) with value of -1
+Feature #27:  (-1.000000,-1.000000) with value of -1
+Feature #28:  (-1.000000,-1.000000) with value of -1
+Feature #29:  (-1.000000,-1.000000) with value of -1
+Feature #30:  (-1.000000,-1.000000) with value of -1
+Feature #31:  (-1.000000,-1.000000) with value of -1
+Feature #32:  (-1.000000,-1.000000) with value of -1
+Feature #33:  (-1.000000,-1.000000) with value of -1
+Feature #34:  (-1.000000,-1.000000) with value of -1
+Feature #35:  (-1.000000,-1.000000) with value of -1
+Feature #36:  (-1.000000,-1.000000) with value of -1
+Feature #37:  (-1.000000,-1.000000) with value of -1
+Feature #38:  (-1.000000,-1.000000) with value of -1
+Feature #39:  (-1.000000,-1.000000) with value of -1
+Feature #40:  (-1.000000,-1.000000) with value of -1
+Feature #41:  (-1.000000,-1.000000) with value of -1
+Feature #42:  (-1.000000,-1.000000) with value of -1
+Feature #43:  (-1.000000,-1.000000) with value of -1
+Feature #44:  (-1.000000,-1.000000) with value of -1
+Feature #45:  (-1.000000,-1.000000) with value of -1
+Feature #46:  (-1.000000,-1.000000) with value of -1
+Feature #47:  (-1.000000,-1.000000) with value of -1
+Feature #48:  (-1.000000,-1.000000) with value of -1
+Feature #49:  (-1.000000,-1.000000) with value of -1
+Feature #50:  (-1.000000,-1.000000) with value of -1
+Feature #51:  (-1.000000,-1.000000) with value of -1
+Feature #52:  (-1.000000,-1.000000) with value of -1
+Feature #53:  (-1.000000,-1.000000) with value of -1
+Feature #54:  (-1.000000,-1.000000) with value of -1
+Feature #55:  (-1.000000,-1.000000) with value of -1
+Feature #56:  (-1.000000,-1.000000) with value of -1
+Feature #57:  (-1.000000,-1.000000) with value of -1
+Feature #58:  (-1.000000,-1.000000) with value of -1
+Feature #59:  (-1.000000,-1.000000) with value of -1
+Feature #60:  (-1.000000,-1.000000) with value of -1
+Feature #61:  (-1.000000,-1.000000) with value of -1
+Feature #62:  (-1.000000,-1.000000) with value of -1
+Feature #63:  (-1.000000,-1.000000) with value of -1
+Feature #64:  (-1.000000,-1.000000) with value of -1
+Feature #65:  (-1.000000,-1.000000) with value of -1
+Feature #66:  (-1.000000,-1.000000) with value of -1
+Feature #67:  (-1.000000,-1.000000) with value of -1
+Feature #68:  (-1.000000,-1.000000) with value of -1
+Feature #69:  (-1.000000,-1.000000) with value of -1
+Feature #70:  (-1.000000,-1.000000) with value of -1
+Feature #71:  (-1.000000,-1.000000) with value of -1
+Feature #72:  (-1.000000,-1.000000) with value of -1
+Feature #73:  (-1.000000,-1.000000) with value of -1
+Feature #74:  (-1.000000,-1.000000) with value of -1
+Feature #75:  (-1.000000,-1.000000) with value of -1
+Feature #76:  (-1.000000,-1.000000) with value of -1
+Feature #77:  (-1.000000,-1.000000) with value of -1
+Feature #78:  (-1.000000,-1.000000) with value of -1
+Feature #79:  (-1.000000,-1.000000) with value of -1
+Feature #80:  (-1.000000,-1.000000) with value of -1
+Feature #81:  (-1.000000,-1.000000) with value of -1
+Feature #82:  (-1.000000,-1.000000) with value of -1
+Feature #83:  (-1.000000,-1.000000) with value of -1
+Feature #84:  (-1.000000,-1.000000) with value of -1
+Feature #85:  (-1.000000,-1.000000) with value of -1
+Feature #86:  (-1.000000,-1.000000) with value of -1
+Feature #87:  (-1.000000,-1.000000) with value of -1
+Feature #88:  (-1.000000,-1.000000) with value of -1
+Feature #89:  (-1.000000,-1.000000) with value of -1
+Feature #90:  (-1.000000,-1.000000) with value of -1
+Feature #91:  (-1.000000,-1.000000) with value of -1
+Feature #92:  (-1.000000,-1.000000) with value of -1
+Feature #93:  (-1.000000,-1.000000) with value of -1
+Feature #94:  (-1.000000,-1.000000) with value of -1
+Feature #95:  (-1.000000,-1.000000) with value of -1
+Feature #96:  (-1.000000,-1.000000) with value of -1
+Feature #97:  (-1.000000,-1.000000) with value of -1
+Feature #98:  (-1.000000,-1.000000) with value of -1
+Feature #99:  (-1.000000,-1.000000) with value of -1
+
+The goal of klt-test 
+When img0.pgm and img1.pgm both have the 64 x 64 image lena_rgb_64.pgm from 
+/pico-lifting/testfiles/ and the program
+./example1 is executed in klt-feature-detect/klt. The image feat2.ppm is created.
+The Principal component analysis (PCA) are in feat1.txt
+In first image:
+Feature #0:  (32.000000,24.000000) with value of 4472
+Feature #1:  (39.000000,34.000000) with value of 3461
+Feature #2:  (29.000000,36.000000) with value of 3100
+
+In first image:
+Feature #0:  (32.000000,24.000000) with value of 4472
+Feature #1:  (39.000000,34.000000) with value of 3461
+Feature #2:  (29.000000,36.000000) with value of 3100
+
+03/10/22 added the steps to compile and build libklt.a from the following C files
+../klt/KLT-Kernel/convolve.c  ../klt/KLT-Kernel/klt_util.c
+../klt/KLT-Kernel/error.c     ../klt/KLT-Kernel/pyramid.c
+../klt/KLT-Kernel/klt.c
+
+03/11/22
+
+ . Ultibo_Projects/picoultibo.sh
+/home/devel/ultibo/core:/home/devel/qemu-6.2.0-rpios/bin:/home/devel/local/openocd/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+
+
+cd rp2040-freertos-project/build
+
+https://www.youtube.com/watch?app=desktop&v=-fwJZzDpBIg
+https://learnembeddedsystems.co.uk/freertos-part-2-tasks-and-queues-tutorial
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2tasks/2tasks.elf verify reset exit"
+
+This now uses the libklt.a, liblifting.a and libcrc.a 
+
+this is testing floating point needed for the KLT 100.00000 0.33333 300.00299      
+this is testing floating point needed for the KLT 100.00000 0.33333 33.33300 
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program klt-test/klt-test.elf verify reset exit"
+~/rp2040-freertos-project/build $ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program klt-test/klt-test.elf verify reset exit"
+Open On-Chip Debugger 0.10.0+dev-g71510a7-dirty (2021-08-15-17:08)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+adapter speed: 1000 kHz
+
+Info : Hardware thread awareness created
+Info : Hardware thread awareness created
+Info : RP2040 Flash Bank Command
+Info : BCM2835 GPIO JTAG/SWD bitbang driver
+Info : clock speed 1001 kHz
+Info : SWD DPIDR 0x0bc12477
+Info : SWD DLPIDR 0x00000001
+Info : SWD DPIDR 0x0bc12477
+Info : SWD DLPIDR 0x10000001
+Info : rp2040.core0: hardware has 4 breakpoints, 2 watchpoints
+Info : rp2040.core1: hardware has 4 breakpoints, 2 watchpoints
+Info : starting gdb server for rp2040.core0 on 3333
+Info : Listening on port 3333 for gdb connections
+target halted due to debug-request, current mode: Thread 
+xPSR: 0xf1000000 pc: 0x000000ee msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0xf1000000 pc: 0x000000ee msp: 0x20041f00
+** Programming Started **
+Info : RP2040 B0 Flash Probe: 2097152 bytes @10000000, in 512 sectors
+
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+Info : Writing 36864 bytes starting at 0x0
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+** Programming Finished **
+** Verify Started **
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000178 msp: 0x20041f00
+** Verified OK **
+** Resetting Target **
+shutdown command invoked
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-lifting-sf/hello_usb.elf verify reset exit"
+head 0x2000505c tsil 0x2000505c end 0x200050dc top 0x2000505c
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program ultibo_blink/ultibo_blink.elf verify reset exit"
+
