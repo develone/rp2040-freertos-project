@@ -36,7 +36,8 @@ void core1_entry() {
 // Core 0 Main Code
 int main(void){
     stdio_init_all();
-
+    printf("in main calling core1_entry\n");
+    sleep_ms(1000);
     multicore_launch_core1(core1_entry); // Start core 1 - Do this before any interrupt configuration
 
     // Configure the ADC

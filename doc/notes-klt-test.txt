@@ -227,3 +227,8 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-l
 head 0x2000505c tsil 0x2000505c end 0x200050dc top 0x2000505c
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program ultibo_blink/ultibo_blink.elf verify reset exit"
 
+https://iksinc.online/2020/03/09/convolution-and-deconvolution-revisited/
+https://iksinc.online/2020/06/02/understanding-compression-of-convolutional-neural-nets-part-1/
+https://iksinc.online/tag/singular-value-decomposition/
+https://iksinc.online/2020/06/02/understanding-compression-of-convolutional-neural-nets-part-1/
+

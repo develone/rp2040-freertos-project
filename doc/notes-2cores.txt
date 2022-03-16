@@ -1,0 +1,110 @@
+https://www.youtube.com/watch?v=aIFElaK14V4&t=232s
+https://learnembeddedsystems.co.uk/basic-multicore-pico-example
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2cores/multicore.elf verify reset exit"
+Needed to remove the folowing lines in the 2cores/CMakeLists.txt
+
+-cmake_minimum_required(VERSION 3.12)
+-
+-include(pico_sdk_import.cmake)
+-
+-project(pico-multicore)
+-
+-pico_sdk_init()
+
+devel@pi4-27:~/rp2040-freertos-project/build $ cmake ../
+PICO_SDK_PATH is /opt/pico-sdk
+PICO platform is rp2040.
+PICO target board is pico.
+Using board configuration from /opt/pico-sdk/src/boards/include/boards/pico.h
+TinyUSB available at /opt/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/rp2040-freertos-project/build
+devel@pi4-27:~/rp2040-freertos-project/build $ make
+[  0%] Built target bs2_default
+[  0%] Performing build step for 'ELF2UF2Build'
+[100%] Built target elf2uf2
+[  0%] No install step for 'ELF2UF2Build'
+[  0%] Completed 'ELF2UF2Build'
+[  1%] Built target ELF2UF2Build
+[  1%] Built target bs2_default_padded_checksummed_asm
+[ 10%] Built target multicore
+[ 11%] Built target klt
+[ 12%] Built target lifting
+[ 13%] Built target crc
+[ 22%] Built target klt-test
+[ 23%] Built target freertos
+[ 32%] Built target Semaphore
+[ 41%] Built target Mutex
+[ 50%] Built target Scheduling
+[ 56%] Built target 50_pwm
+[ 65%] Built target 2tasks
+[ 75%] Built target ultibo_blink
+[ 84%] Built target hello_usb
+[ 93%] Built target pico-lifting
+[100%] Built target blink
+
+devel@pi4-27:~/rp2040-freertos-project/build $ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2cores/multicore.elf verify reset exit"
+Open On-Chip Debugger 0.10.0+dev-g71510a7-dirty (2021-08-15-17:08)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+adapter speed: 1000 kHz
+
+Info : Hardware thread awareness created
+Info : Hardware thread awareness created
+Info : RP2040 Flash Bank Command
+Info : BCM2835 GPIO JTAG/SWD bitbang driver
+Info : clock speed 1001 kHz
+Info : SWD DPIDR 0x0bc12477
+Info : SWD DLPIDR 0x00000001
+Info : SWD DPIDR 0x0bc12477
+Info : SWD DLPIDR 0x10000001
+Info : rp2040.core0: hardware has 4 breakpoints, 2 watchpoints
+Info : rp2040.core1: hardware has 4 breakpoints, 2 watchpoints
+Info : starting gdb server for rp2040.core0 on 3333
+Info : Listening on port 3333 for gdb connections
+target halted due to debug-request, current mode: Thread 
+xPSR: 0xf1000000 pc: 0x000000ee msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0xf1000000 pc: 0x000000ee msp: 0x20041f00
+** Programming Started **
+Info : RP2040 B0 Flash Probe: 2097152 bytes @10000000, in 512 sectors
+
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00
+Info : Writing 32768 bytes starting at 0x0
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00
+** Programming Finished **
+** Verify Started **
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x0000012a msp: 0x20041f00
+** Verified OK **
+Needed to add the following 2 lines for the program to work
+** Resetting Target **
+
+     stdio_init_all();
+-
++    printf("in main calling core1_entry\n");
++    sleep_ms(1000);
+     multicore_launch_core1(core1_entry); // Start core 1 - Do this before any interrupt configuration
+shutdown command invoked
