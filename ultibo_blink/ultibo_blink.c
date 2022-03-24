@@ -4,7 +4,7 @@
 int main(){
     //Initialise I/O
     stdio_init_all(); 
-
+    sleep_ms(1000);
     // Initialise GPIO (Green LED connected to pin 25)
     gpio_init(25);
     gpio_set_dir(25, GPIO_OUT);
