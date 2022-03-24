@@ -1,0 +1,42 @@
+03/23/22 Rebuild repo with the pico-sdk at same level.
+required modification of .bashrc
+export PICO_SDK_PATH=/opt/pico-sdk --> export PICO_SDK_PATH=/home/devel/rp2040-freertos-project/pico-sdk
+ 
+git clone  --recurse-submodules git@github.com:develone/rp2040-freertos-project
+
+cd rp2040-freertos-project
+
+git clone https://github.com/raspberrypi/pico-sdk
+
+cd pico-sdk
+
+git submodule update --init
+
+cd ../
+
+mkdir build
+
+cd build
+
+cmake ..
+
+ke ..
+Using PICO_SDK_PATH from environment ('/home/devel/rp2040-freertos-project/pico-sdk')
+PICO_SDK_PATH is /home/devel/rp2040-freertos-project/pico-sdk
+Defaulting PICO_PLATFORM to rp2040 since not specified.
+Defaulting PICO platform compiler to pico_arm_gcc since not specified.
+-- Defaulting build type to 'Release' since not specified.
+PICO compiler is pico_arm_gcc
+-- The C compiler identification is GNU 8.3.1
+-- The CXX compiler identification is GNU 8.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/arm-none-eabi-gcc
+Defaulting PICO target board to pico since not specified.
+Using board configuration from /home/devel/rp2040-freertos-project/pico-sdk/src/boards/include/boards/pico.h
+-- Found Python3: /usr/bin/python3.9 (found version "3.9.2") found components: Interpreter 
+TinyUSB available at /home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/rp2040-freertos-project/build
+make
+
