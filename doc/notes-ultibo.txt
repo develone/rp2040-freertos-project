@@ -1,0 +1,10 @@
+03/27/22
+
+Unread post by Gavinmc42 » Sat Mar 26, 2022 6:43 pm
+Feedback on the Pi forums, chip shortages are causing issues.
+RP2040 is less affected than many others.
+Seems like a very good reason to learn Ultibo - Pico comms.
+
+Now that we have one IDE to rule them all, time to revisit this?
+https://wiki.freepascal.org/ARM_Embedde ... ry_Pi_Pico
+https://wiki.freepascal.org/ARM_Embedded_Tutorial_-_FPC_and_the_Raspberry_Pi_Pico
