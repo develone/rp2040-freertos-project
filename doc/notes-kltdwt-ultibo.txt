@@ -1,3 +1,14 @@
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2tasks/2tasks.elf verify reset exit"
 
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program kltdwt-ultibo/kltdwt-ultibo.elf verify reset exit"
+
+03/27/22 
+Merged Ultibo_Projects/picotransfer/RPi3/FileHandling.lpr with Ultibo_Projects/picoledonoff/RPI3/picoledonoff.lpr.
+into  Ultibo_Projects/picotransfer/RPi3/picokltdwtultibo.lpr.  Now the hw version can read & parse one of 
+2 64 x 64 image found in a64.bin or bb.bin.  Starting with rp2040-freertos-project/klt-test/main.c. Made modifications in rp2040-freertos-project/kltdwt-ultibo/main.c
+whiich now sends Sync until a '4'  is sent from the host. Then it sends Ready and expects 4160 characters of data
+which make up a 64 x 64 image with a CRC added added to each row.  The pico processes the image
+and sends "Command (1 = Send or 0 = Wait):" When the '1' is received the pico sends the results of the  
+"klt-feature-detect" and then with the "dwt lifting step". 
+ 
+

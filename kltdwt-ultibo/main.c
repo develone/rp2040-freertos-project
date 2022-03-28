@@ -234,8 +234,9 @@ int main() {
 			/* Reads 4096 values*/
 			while (startflag) {
 					printf("Sync\n");
-          sleep_ms(1000);
-          userInput = getchar();
+          sleep_ms(2000);
+          /*
+					userInput = getchar();
 					if(userInput=='4') {
 						printf("Ready\n");
 						startflag=0;
@@ -243,6 +244,7 @@ int main() {
  					else {
 						startflag=1;
 					}
+          */
         }
 				//userInput = getchar();
 			while (ptrs.inp_buf < ptrs.out_buf) {
