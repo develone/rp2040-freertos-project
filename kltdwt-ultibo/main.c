@@ -62,7 +62,7 @@ int read_tt(char * head, char * endofbuf,char * topofbuf) {
 	}
 	
 	CRC = getCRC(tt,numtoread);
-	printf("0x%x\n",CRC);
+	//printf("0x%x\n",CRC);
 	//for(i=0;i<numtoread;i++) bump_tail(ptrs.head,ptrs.endofbuf,ptrs.topofbuf);
 	//for(i=0;i<numtoread;i++) printf("%c",tt[i]);
 	
@@ -80,7 +80,7 @@ unsigned char userInput;
 int main() {
 	unsigned char recCRC;
 	unsigned char message[3] = {0xd3, 0x01, 0x00};
-	int flag = 0,numofchars,error=0,startflag=1;
+	int flag = 0,numofchars,error=0,syncflag=1,rdyflag=1,testsx=10;
     float a,b,c;
     stdio_init_all();
     int i,j,l,index;
@@ -232,19 +232,17 @@ int main() {
 		
 		if (DBUG4 == 1) {
 			/* Reads 4096 values*/
-			while (startflag) {
+			while (testsx) {
 					printf("Sync\n");
-          sleep_ms(2000);
-          /*
-					userInput = getchar();
-					if(userInput=='4') {
-						printf("Ready\n");
-						startflag=0;
-					}
- 					else {
-						startflag=1;
-					}
-          */
+          sleep_ms(1400);
+					testsx--;
+        }
+				testsx=10;
+				while (testsx) {
+					printf("Ready\n");
+          sleep_ms(100);
+					testsx--;
+
         }
 				//userInput = getchar();
 			while (ptrs.inp_buf < ptrs.out_buf) {
@@ -255,10 +253,10 @@ int main() {
 				//printf("head = 0x%x tail = 0x%x 0x%x 0x%x\n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf); 
 				read_tt(ptrs.head,ptrs.endofbuf,ptrs.topofbuf);	
 				//printf("head = 0x%x tail = 0x%x 0x%x 0x%x\n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf);
-				for(i=0;i<32;i++) printf("%d ",tt[i]);
-				printf("\n");
-				for(i=32;i<64;i++) printf("%d ",tt[i]);
-				printf("\n");
+				//for(i=0;i<32;i++) printf("%d ",tt[i]);
+				//printf("\n");
+				//for(i=32;i<64;i++) printf("%d ",tt[i]);
+				//printf("\n");
 			
 				//numofchars = ptrs.head -ptrs.tail;
 				//printf("%d ", numofchars);
@@ -269,9 +267,9 @@ int main() {
 					ptrs.tail = (char *)bump_tail(ptrs.tail,ptrs.endofbuf,ptrs.topofbuf);
 				}
 				recCRC = getchar();
-				printf("recCRC 0x%x ",recCRC);
+				//printf("recCRC 0x%x ",recCRC);
 			
-				printf("0x%x 0x%x 0x%x 0x%x 0x%x \n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf,ptrs.inp_buf);
+				//printf("0x%x 0x%x 0x%x 0x%x 0x%x \n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf,ptrs.inp_buf);
 			}
 			ptrs.inp_buf = ptrs.inpbuf;
 			/*
@@ -285,7 +283,7 @@ int main() {
 				}
 				
 			}
-			printf("errors %d \n",error);
+			//printf("errors %d \n",error);
  
 			*/
 			printf("Command (1 = Send or 0 = Wait):\n");
@@ -311,18 +309,18 @@ int main() {
 			} 
 			img1 = &inpbuf[0];
         		img2 = &inpbuf[4096];
-			printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
+			//printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
 
 	KLTSelectGoodFeatures(tc, img1, ncols, nrows, fl);
 
-  	printf("\nIn first image:\n");
+  	//printf("\nIn first image:\n");
   	for (i = 0 ; i < fl->nFeatures ; i++)  {
     		printf("Feature #%d:  (%f,%f) with value of %d\n",
            	i, fl->feature[i]->x, fl->feature[i]->y,
            	fl->feature[i]->val);
         }
 				lifting(ptrs.w,ptrs.inp_buf,ptrs.out_buf,ptrs.fwd_inv);
-				printf("liftting done \n");
+				//printf("liftting done \n");
 				
 				//for(i=0;i<imgsize;i++) printf("%d ",ptrs.inp_buf[i]);
 				index = 0;
@@ -340,7 +338,7 @@ int main() {
 				}
 			} 
 		}
-        startflag=1;
+        syncflag=1;
 				//sleep_ms(8000);
         sleep_ms(50);
     }
