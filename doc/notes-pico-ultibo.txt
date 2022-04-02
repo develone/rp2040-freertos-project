@@ -1,0 +1,13 @@
+Starting with 2task from the freeRTOS example.
+Adding functions 
+void vAFunction(void)
+
+void vASendStream(StreamBufferHandle_t DynxStreamBuffer)
+
+doc/xStreamBuffer.png shows LED is OFF! streamFlag 1 DynxStreamBuffer 0x20001c90
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2tasks/2tasks.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program ultibo_blink/ultibo_blink.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-ultibo/pico-ultibo.elf verify reset exit"

@@ -8,3 +8,5 @@ Seems like a very good reason to learn Ultibo - Pico comms.
 Now that we have one IDE to rule them all, time to revisit this?
 https://wiki.freepascal.org/ARM_Embedde ... ry_Pi_Pico
 https://wiki.freepascal.org/ARM_Embedded_Tutorial_-_FPC_and_the_Raspberry_Pi_Pico
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program kltdwt-ultibo/kltdwt-ultibo.elf verify reset exit"
