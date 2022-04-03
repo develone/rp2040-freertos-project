@@ -16,11 +16,16 @@ StaticStreamBuffer_t xStreamBufferStruct;
 
 //StreamBufferHandle_t xStreamBuffer;
 StreamBufferHandle_t DynxStreamBuffer;
+
 //const size_t xStreamBufferSizeBytes = 100,xTriggerLevel = 10;
 //xStreamBuffer = xStreamBufferCreate(xStreamBufferSizeBytes,xTriggerLevel);
 static QueueHandle_t xQueue = NULL;
 
 int streamFlag;
+size_t numbytes1;
+size_t numbytes2;
+
+size_t rdnumbytes1;
 
 void led_task(void *pvParameters)
 {   
@@ -33,13 +38,13 @@ void led_task(void *pvParameters)
         gpio_put(LED_PIN, 1);
         uIValueToSend = 1;
         xQueueSend(xQueue, &uIValueToSend, 0U);
-        vTaskDelay(5000);
+        vTaskDelay(50000);
 
 
         gpio_put(LED_PIN, 0);
         uIValueToSend = 0;
         xQueueSend(xQueue, &uIValueToSend, 0U);
-        vTaskDelay(5000);
+        vTaskDelay(50000);
     }
 }
 
@@ -73,7 +78,9 @@ void usb_task(void *pvParameters){
             printf("LED is ON! \n");
         }
         if(uIReceivedValue == 0){
-            printf("LED is OFF! %d 0x%x \n",streamFlag, DynxStreamBuffer);
+            printf("LED is OFF! streamFlag=%d DynStreamBuffer=0x%x \n",streamFlag, DynxStreamBuffer);
+						printf("numbytes1=%d numbytes2=%d\n",numbytes1,numbytes2);
+						printf("rdnumbytes1=%d\n",rdnumbytes1);
         }
     }
 
@@ -110,11 +117,20 @@ void MyFunction(void) {
 void vASendStream(StreamBufferHandle_t DynxStreamBuffer) {
 	size_t xByteSent;
 	uint8_t ucArrayToSend = (0,1,2,3);
-	char *pcStringToSend ="String To Send";
+	
+	/*numbytes2 29 rdnumbytes1 30
+	if the string is uncommneted*/
+	char *pcStringToSend ="String To Send String To Send";
+	
+	/*numbytes2 14 rdnumbytes1 15
+	if the string is uncommneted*/
+	//char *pcStringToSend ="String To Send";
+
 	const TickType_t x100ms = pdMS_TO_TICKS(100);
 
 	xByteSent = xStreamBufferSend( DynxStreamBuffer,(void *) ucArrayToSend,
 	sizeof(ucArrayToSend),x100ms);
+	numbytes1=xByteSent;
 
 	if(xByteSent != sizeof(ucArrayToSend)) 
 	{
@@ -122,10 +138,31 @@ void vASendStream(StreamBufferHandle_t DynxStreamBuffer) {
 	}
 	xByteSent = xStreamBufferSend( DynxStreamBuffer,(void *) pcStringToSend ,
 	strlen(pcStringToSend ),0);
+  numbytes2=strlen(pcStringToSend);
 
 	if(xByteSent != strlen(pcStringToSend ))
 	{
 
+	}
+}
+
+
+void vAReadStream(StreamBufferHandle_t xStreamBuffer) 
+{
+	int i;	
+	uint8_t ucRXData[40];
+	size_t xRecivedBytes;
+	const TickType_t xBlockTime = pdMS_TO_TICKS(20);
+
+	xRecivedBytes = xStreamBufferReceive(DynxStreamBuffer,
+	(void *) ucRXData,sizeof(ucRXData),
+xBlockTime);
+	rdnumbytes1=xRecivedBytes;
+	i=0;
+	if (xRecivedBytes > 0)
+	{
+	printf("%d ",ucRXData[i]);
+	i++;
 	}
 }
 
@@ -141,6 +178,7 @@ int main()
 		streamFlag=0;
 		vAFunction();
 		vASendStream(DynxStreamBuffer);
+    vAReadStream(DynxStreamBuffer); 
  		//MyFunction();
 
     
