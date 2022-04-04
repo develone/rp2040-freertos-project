@@ -3,7 +3,10 @@
 #include <stream_buffer.h>
 #include <stdio.h>
 #include <queue.h>
+#include <string.h>
 #include "pico/stdlib.h"
+#include "semphr.h"
+#include "event_groups.h"
 
 #define STORAGE_SIZE_BYTES 100
 
@@ -26,7 +29,21 @@ size_t numbytes1;
 size_t numbytes2;
 uint8_t * pucRXData;
 size_t rdnumbytes1;
+size_t Events=0;
 
+static SemaphoreHandle_t mutex;
+
+EventGroupHandle_t xEventGroupCreate( void);
+		/*Declare a variables to hold the created event groups
+		#define configUSE_16_BIT_TICKS                  0
+		This means the the number of bits(or flags) implemented
+		within an event group is 24			
+		*/
+
+		EventGroupHandle_t xCreateEventGrouptask1;
+		EventGroupHandle_t xCreateEventGrouptask2;
+		EventGroupHandle_t xCreateEventGrouptask3;
+		EventGroupHandle_t xCreateEventGrouptask4;
 void led_task(void *pvParameters)
 {   
     const uint LED_PIN = PICO_DEFAULT_LED_PIN;
@@ -38,13 +55,13 @@ void led_task(void *pvParameters)
         gpio_put(LED_PIN, 1);
         uIValueToSend = 1;
         xQueueSend(xQueue, &uIValueToSend, 0U);
-        vTaskDelay(50000);
+        vTaskDelay(100);
 
 
         gpio_put(LED_PIN, 0);
         uIValueToSend = 0;
         xQueueSend(xQueue, &uIValueToSend, 0U);
-        vTaskDelay(50000);
+        vTaskDelay(100);
     }
 }
 
@@ -65,7 +82,7 @@ void scanline_task(void *pvParameters)
         gpio_put(LED_PIN, 0);
         uIValueToSend = 0;
         xQueueSend(xQueue, &uIValueToSend, 0U);
-        //vTaskDelay(100);
+        vTaskDelay(100);
     }
 }
 void usb_task(void *pvParameters){
@@ -80,7 +97,9 @@ void usb_task(void *pvParameters){
         if(uIReceivedValue == 0){
             printf("LED is OFF! streamFlag=%d DynStreamBuffer=0x%x \n",streamFlag, DynxStreamBuffer);
 						printf("numbytes1=%d numbytes2=%d\n",numbytes1,numbytes2);
-						printf("rdnumbytes1=%d\n",rdnumbytes1);
+						printf("rdnumbytes1=%d Events=%d\n",rdnumbytes1,Events);
+						printf("EGroup1=0x%x EGroup2=0x%x \n",xCreateEventGrouptask1,xCreateEventGrouptask2);
+						printf("EGroup3=0x%x EGroup4=0x%x \n",xCreateEventGrouptask3,xCreateEventGrouptask4);
 						if(rdnumbytes1> 0)
 							for(ii=0;ii<rdnumbytes1;ii++) printf("%c ",pucRXData[ii]); 
         }
@@ -88,6 +107,36 @@ void usb_task(void *pvParameters){
 
 }
 
+
+void task1(void *pvParameters)
+{   
+    char ch = '1';
+    while (true) {
+        if(xSemaphoreTake(mutex, 0) == pdTRUE){
+            for(int i = 1; i < 10; i++){
+                putchar(ch);
+            }
+            puts("");
+            xSemaphoreGive(mutex);
+        }
+        
+    }
+}
+
+void task2(void *pvParameters)
+{   
+    char ch = '2';
+    while (true) {
+        if(xSemaphoreTake(mutex, 0) == pdTRUE){
+            for(int i = 1; i < 10; i++){
+                putchar(ch);
+            }
+            puts("");
+            xSemaphoreGive(mutex);
+        }
+        
+    }
+}
 /*Tries to create a StreamBuffer of 100 bytes and blocks after 10*/
 void vAFunction(void){
 	StreamBufferHandle_t xStreamBuffer;
@@ -174,6 +223,58 @@ int main()
 		stdio_init_all();
 		
     xQueue = xQueueCreate(1, sizeof(uint));
+		mutex = xSemaphoreCreateMutex();
+
+
+
+		/*Attempt to create the event groups*/
+		xCreateEventGrouptask1 = xEventGroupCreate();
+		xCreateEventGrouptask2 = xEventGroupCreate();
+		xCreateEventGrouptask3 = xEventGroupCreate();
+		xCreateEventGrouptask4 = xEventGroupCreate();
+
+		/*Need to test if the Event Groups were created*/
+    /**************************/
+
+		if(xCreateEventGrouptask1==NULL) 
+		{
+			/*The event group was not created*/
+		}
+		else
+		{
+			/*The event group was created*/
+			Events=1;
+		}
+		if(xCreateEventGrouptask2==NULL) 
+		{
+			/*The event group was not created*/
+			Events=2;
+		}
+		else
+		{
+			/*The event group was created*/
+		}
+		if(xCreateEventGrouptask3==NULL) 
+		{
+			/*The event group was not created*/
+			Events=3;
+		}
+		else
+		{
+			/*The event group was created*/
+		}
+		if(xCreateEventGrouptask4==NULL) 
+		{
+			/*The event group was not created*/
+			Events=4;
+		}
+		else
+		{
+			/*The event group was created*/
+		}
+		/*Need to test if the Event Groups were created*/
+    /**************************/
+		const uint SERIAL_BAUD = 1000000;
 		/*Setting the streamFlag to 0 before the call of vAFunction
 		if the stream was successful the streamFlag will be set to 1		
 		*/
@@ -184,8 +285,10 @@ int main()
  		//MyFunction();
 
     
-		xTaskCreate(led_task, "LED_Task", 256, NULL, 1, NULL);
-    xTaskCreate(usb_task, "USB_Task", 256, NULL, 1, NULL);
+		xTaskCreate(led_task, "LED_Task", 256, NULL, 4, NULL);
+    xTaskCreate(usb_task, "USB_Task", 256, NULL, 4, NULL);
+		xTaskCreate(task1, "Task 1", 256, NULL, 1, NULL);
+    xTaskCreate(task2, "Task 2", 256, NULL, 1, NULL);
     vTaskStartScheduler();
 		
 
