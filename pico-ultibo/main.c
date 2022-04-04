@@ -122,11 +122,11 @@ void vASendStream(StreamBufferHandle_t DynxStreamBuffer) {
 	
 	/*numbytes2 29 rdnumbytes1 30
 	if the string is uncommneted*/
-	char *pcStringToSend ="String To Send String To Send";
+	//char *pcStringToSend ="String To Send String To Send";
 	
 	/*numbytes2 14 rdnumbytes1 15
 	if the string is uncommneted*/
-	//char *pcStringToSend ="String To Send";
+	char *pcStringToSend ="String To Send";
 
 	const TickType_t x100ms = pdMS_TO_TICKS(100);
 
@@ -155,7 +155,7 @@ void vAReadStream(StreamBufferHandle_t xStreamBuffer)
 	uint8_t ucRXData[40];
 	size_t xRecivedBytes;
 	const TickType_t xBlockTime = pdMS_TO_TICKS(20);
-
+	pucRXData = &ucRXData;
 	xRecivedBytes = xStreamBufferReceive(DynxStreamBuffer,
 	(void *) ucRXData,sizeof(ucRXData),
 xBlockTime);
