@@ -21,10 +21,10 @@ StreamBufferHandle_t DynxStreamBuffer;
 //xStreamBuffer = xStreamBufferCreate(xStreamBufferSizeBytes,xTriggerLevel);
 static QueueHandle_t xQueue = NULL;
 
-int streamFlag;
+int streamFlag,ii;
 size_t numbytes1;
 size_t numbytes2;
-
+uint8_t * pucRXData;
 size_t rdnumbytes1;
 
 void led_task(void *pvParameters)
@@ -70,7 +70,7 @@ void scanline_task(void *pvParameters)
 }
 void usb_task(void *pvParameters){
     uint uIReceivedValue;
-
+		
     while(1){
         xQueueReceive(xQueue, &uIReceivedValue, portMAX_DELAY);
 				
@@ -81,6 +81,8 @@ void usb_task(void *pvParameters){
             printf("LED is OFF! streamFlag=%d DynStreamBuffer=0x%x \n",streamFlag, DynxStreamBuffer);
 						printf("numbytes1=%d numbytes2=%d\n",numbytes1,numbytes2);
 						printf("rdnumbytes1=%d\n",rdnumbytes1);
+						if(rdnumbytes1> 0)
+							for(ii=0;ii<rdnumbytes1;ii++) printf("%d ",pucRXData[ii]); 
         }
     }
 
