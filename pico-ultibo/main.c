@@ -82,7 +82,7 @@ void usb_task(void *pvParameters){
 						printf("numbytes1=%d numbytes2=%d\n",numbytes1,numbytes2);
 						printf("rdnumbytes1=%d\n",rdnumbytes1);
 						if(rdnumbytes1> 0)
-							for(ii=0;ii<rdnumbytes1;ii++) printf("%d ",pucRXData[ii]); 
+							for(ii=0;ii<rdnumbytes1;ii++) printf("%c ",pucRXData[ii]); 
         }
     }
 
@@ -122,11 +122,11 @@ void vASendStream(StreamBufferHandle_t DynxStreamBuffer) {
 	
 	/*numbytes2 29 rdnumbytes1 30
 	if the string is uncommneted*/
-	//char *pcStringToSend ="String To Send String To Send";
+	char *pcStringToSend ="String To Send String To Send";
 	
 	/*numbytes2 14 rdnumbytes1 15
 	if the string is uncommneted*/
-	char *pcStringToSend ="String To Send";
+	//char *pcStringToSend ="String To Send";
 
 	const TickType_t x100ms = pdMS_TO_TICKS(100);
 
