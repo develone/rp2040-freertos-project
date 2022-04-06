@@ -49,6 +49,10 @@ static SemaphoreHandle_t mutex;
 
 		EventGroupHandle_t xCreatedEventGroup;
 
+// define a variable which holds the state of events 
+  const EventBits_t xBitsToWaitFor  = (TASK1_BIT | TASK2_BIT | TASK3_BIT | TASK4_BIT );
+  EventBits_t xEventGroupValue;
+
  void led_task(void *pvParameters)
 {   
     const uint LED_PIN = PICO_DEFAULT_LED_PIN;
@@ -111,7 +115,32 @@ void usb_task(void *pvParameters){
 						if(rdnumbytes1> 0)
 							for(ii=0;ii<rdnumbytes1;ii++) printf("%c ",pucRXData[ii]);
 						printf("\n"); 
+				xEventGroupValue  = xEventGroupWaitBits(xCreatedEventGroup,
+                                            xBitsToWaitFor,
+                                            pdTRUE,
+                                            pdTRUE,
+                                            portMAX_DELAY
+                                            );
+				if((xEventGroupValue & TASK1_BIT !=0))
+  		  {
+   				printf("Task1 event occured\n");
         }
+				if((xEventGroupValue & TASK2_BIT !=0))
+  		  {
+   				printf("Task2 event occured\n");
+        }
+
+				if((xEventGroupValue & TASK3_BIT !=0))
+  		  {
+   				printf("Task3 event occured\n");
+        }
+				if((xEventGroupValue & TASK4_BIT !=0))
+  		  {
+   				printf("Task4 event occured\n");
+        }
+
+        }
+
     }
 
 }
@@ -125,9 +154,9 @@ void task1(void *pvParameters)
 				xEventGroupSetBits(xCreatedEventGroup, TASK3_BIT);
         if(xSemaphoreTake(mutex, 0) == pdTRUE){
             for(int i = 1; i < 10; i++){
-                putchar(ch);
+                //putchar(ch);
             }
-            puts("");
+            //puts("");
             xSemaphoreGive(mutex);
 						vTaskDelay(5000);
         }
@@ -143,9 +172,9 @@ void task2(void *pvParameters)
 				xEventGroupSetBits(xCreatedEventGroup, TASK4_BIT);
         if(xSemaphoreTake(mutex, 0) == pdTRUE){
             for(int i = 1; i < 10; i++){
-                putchar(ch);
+                //putchar(ch);
             }
-            puts("");
+            //puts("");
             xSemaphoreGive(mutex);
 						vTaskDelay(5000);
         }
