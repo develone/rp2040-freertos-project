@@ -13,7 +13,7 @@
 #define TASK1_BIT  (1UL << 0UL) //zero
 #define TASK2_BIT  (1UL << 1UL) //1
 #define TASK3_BIT  (1UL << 2UL) //2
-#define TASK4_BIT  (1UL << 3UL) //2
+#define TASK4_BIT  (1UL << 3UL) //3
 #define TASK5_BIT  (1UL << 4UL) //4
 #define TASK6_BIT  (1UL << 5UL) //5
 
@@ -40,14 +40,14 @@ size_t Event=0;
 
 static SemaphoreHandle_t mutex;
 
-EventGroupHandle_t xEventGroupCreate( void);
+//EventGroupHandle_t xEventGroupCreate( void);
 		/*Declare a variables to hold the created event groups
 		#define configUSE_16_BIT_TICKS                  0
 		This means the the number of bits(or flags) implemented
 		within an event group is 24			
 		*/
 
-		EventGroupHandle_t xCreateEventGrouptask;
+		EventGroupHandle_t xCreatedEventGroup;
 
  void led_task(void *pvParameters)
 {   
@@ -57,6 +57,8 @@ EventGroupHandle_t xEventGroupCreate( void);
     gpio_set_dir(LED_PIN, GPIO_OUT);
 
     while (true) {
+				// set flag bit TASK1_BIT
+				xEventGroupSetBits(xCreatedEventGroup, TASK1_BIT);    
         gpio_put(LED_PIN, 1);
         uIValueToSend = 1;
         xQueueSend(xQueue, &uIValueToSend, 0U);
@@ -95,7 +97,8 @@ void usb_task(void *pvParameters){
 		
     while(1){
         xQueueReceive(xQueue, &uIReceivedValue, portMAX_DELAY);
-				
+				// set flag bit TASK2_BIT
+				xEventGroupSetBits(xCreatedEventGroup, TASK2_BIT);			
         if(uIReceivedValue == 1){
             printf("LED is ON! \n");
         }
@@ -103,10 +106,11 @@ void usb_task(void *pvParameters){
             printf("LED is OFF! streamFlag=%d DynStreamBuffer=0x%x \n",streamFlag, DynxStreamBuffer);
 						printf("numbytes1=%d numbytes2=%d\n",numbytes1,numbytes2);
 						printf("rdnumbytes1=%d Event=%d\n",rdnumbytes1,Event);
-						printf("EGroup=0x%x \n",xCreateEventGrouptask);
+						printf("EGroup=0x%x \n",xCreatedEventGroup);
 						
 						if(rdnumbytes1> 0)
-							for(ii=0;ii<rdnumbytes1;ii++) printf("%c ",pucRXData[ii]); 
+							for(ii=0;ii<rdnumbytes1;ii++) printf("%c ",pucRXData[ii]);
+						printf("\n"); 
         }
     }
 
@@ -117,6 +121,8 @@ void task1(void *pvParameters)
 {   
     char ch = '1';
     while (true) {
+				// set flag bit TASK3_BIT
+				xEventGroupSetBits(xCreatedEventGroup, TASK3_BIT);
         if(xSemaphoreTake(mutex, 0) == pdTRUE){
             for(int i = 1; i < 10; i++){
                 putchar(ch);
@@ -133,6 +139,8 @@ void task2(void *pvParameters)
 {   
     char ch = '2';
     while (true) {
+				// set flag bit TASK4_BIT
+				xEventGroupSetBits(xCreatedEventGroup, TASK4_BIT);
         if(xSemaphoreTake(mutex, 0) == pdTRUE){
             for(int i = 1; i < 10; i++){
                 putchar(ch);
@@ -235,13 +243,13 @@ int main()
 
 
 		/*Attempt to create the event groups*/
-		xCreateEventGrouptask = xEventGroupCreate();
+		xCreatedEventGroup = xEventGroupCreate();
  
 
 		/*Need to test if the Event Group was created*/
     /**************************/
 
-		if(xCreateEventGrouptask==NULL) 
+		if(xCreatedEventGroup==NULL) 
 		{
 			/*The event group was not created*/
 		}
@@ -263,8 +271,8 @@ int main()
  		//MyFunction();
 
     
-		xTaskCreate(led_task, "LED_Task", 256, NULL, 2, NULL);
-    xTaskCreate(usb_task, "USB_Task", 256, NULL, 2, NULL);
+		xTaskCreate(led_task, "LED_Task", 256, NULL, 1, NULL);
+    xTaskCreate(usb_task, "USB_Task", 256, NULL, 1, NULL);
 		xTaskCreate(task1, "Task 1", 256, NULL, 1, NULL);
     xTaskCreate(task2, "Task 2", 256, NULL, 1, NULL);
     vTaskStartScheduler();

@@ -11,3 +11,10 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2tasks
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program ultibo_blink/ultibo_blink.elf verify reset exit"
 
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-ultibo/pico-ultibo.elf verify reset exit"
+
+https://microcontrollerslab.com/freertos-event-groups-tasks-synchronization-example-arduino/
+Event groups have mainly two important terms such as event flag and event bits. The event group is basically 
+a set of event flags. The event flag is a boolean value which is either ‘0’ or ‘1’. These boolean values 
+show the occurrence or not-occurrence of an event. In FreeRTOS, EventBits_t. Variable is used to store the 
+state of the event flag. If the value of EventBits_t is 1 that means an event related to this specific bit 
+has occurred. Otherwise, if EventBits_t = 0, the event has not occurred.
