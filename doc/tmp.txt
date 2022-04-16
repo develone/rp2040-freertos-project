@@ -1,0 +1,57 @@
+./first_pwm/50_pwm.elf
+./klt-test/klt-test.elf
+./Mutex/Mutex.elf
+./Semaphore/Semaphore.elf
+./pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf
+./ultibo_blink/ultibo_blink.elf
+./pico-lifting-sf/hello_usb.elf
+./pico-lifting/pico-lifting.elf
+./ProjectFiles/blink.elf
+./Scheduling/Scheduling.elf
+./kltdwt-ultibo/kltdwt-ultibo.elf
+./2cores/multicore.elf
+./pico-ultibo/pico-ultibo.elf
+./2tasks/2tasks.elf
+commit 2062372d203b372849d573f252cf7c6dc2800c0a (HEAD -> master, tag: 1.3.0, origin/master, origin/HEAD)
+Author: Graham Sanderson <graham.sanderson@raspberrypi.com>
+Date:   Mon Nov 1 14:20:54 2021 -0500
+
+    SDK 1.3.0 release
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2tasks/2tasks.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-ultibo/pico-ultibo.elf verify reset exit"
+freeRTOS tasks in development
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2cores/multicore.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program kltdwt-ultibo/kltdwt-ultibo.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program Scheduling/Scheduling.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-lifting/pico-lifting.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program Semaphore/Semaphore.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2tasks/2tasks.elf verify reset exit"
+
+************************************pico-sdk-test************************************ 
+commit 2062372d203b372849d573f252cf7c6dc2800c0a (HEAD -> master, tag: 1.3.0, origin/master, origin/HEAD)
+Author: Graham Sanderson <graham.sanderson@raspberrypi.com>
+Date:   Mon Nov 1 14:20:54 2021 -0500
+
+    SDK 1.3.0 release
+
+export PICO_SDK_PATH=/home/devel/pico-sdk-test/pico-sdk
+
+cd pico-sdk-test/pico-examples/build
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program hello_world/usb/hello_usb.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program rtc/hello_rtc/hello_rtc.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program adc/hello_adc/hello_adc.elf verify reset exit"
+
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program blink/blink.elf verify reset exit"
+
+
