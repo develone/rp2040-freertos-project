@@ -34,6 +34,8 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program Semaph
 
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2tasks/2tasks.elf verify reset exit"
 
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program ultibo_blink/ultibo_blink.elf verify reset exit"
+
 ************************************pico-sdk-test************************************ 
 commit 2062372d203b372849d573f252cf7c6dc2800c0a (HEAD -> master, tag: 1.3.0, origin/master, origin/HEAD)
 Author: Graham Sanderson <graham.sanderson@raspberrypi.com>
