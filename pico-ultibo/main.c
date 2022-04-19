@@ -7,7 +7,7 @@
 #include "pico/stdlib.h"
 #include "semphr.h"
 #include "event_groups.h"
-
+/***********************needs to be in a header***********************/
 #define STORAGE_SIZE_BYTES 100
 
 #define TASK1_BIT  (1UL << 0UL) //zero
@@ -52,6 +52,73 @@ static SemaphoreHandle_t mutex;
 // define a variable which holds the state of events 
   const EventBits_t xBitsToWaitFor  = (TASK1_BIT | TASK2_BIT | TASK3_BIT | TASK4_BIT );
   EventBits_t xEventGroupValue;
+
+
+#define imgsize 4096
+//#define imgsize 512
+struct PTRs {
+	/*This is the buffer for inp & output
+	2048 x 2048 = 4194304
+	256 x 256 = 65536
+	64 x 64 = 4096
+	*/
+	short int inpbuf[imgsize*2];
+	short int *inp_buf;
+	short int *out_buf;
+	short int flag;
+	short int w;
+	short int h;
+	short int *fwd_inv;
+	short int fwd;
+	short int *red;
+	char *head;
+	char *tail;
+	char *topofbuf;
+	char *endofbuf;
+} ptrs;
+
+
+
+unsigned char tt[128];
+const char src[] = "Hello, world! ";
+const short int a[]; 
+
+//const unsigned char CRC7_POLY = 0x91;
+unsigned char CRCTable[256];
+ 
+
+int read_tt(char * head, char * endofbuf,char * topofbuf) {
+
+	int i,numtoread = 64;
+	unsigned char CRC;
+	 
+	//printf("0x%x 0x%x 0x%x \n",ptrs.head,ptrs.endofbuf,ptrs.topofbuf);
+	for(i=0;i<numtoread;i++) {
+		
+		*ptrs.head = getchar();
+	 	ptrs.head = (char *)bump_head(ptrs.head,ptrs.endofbuf,ptrs.topofbuf);
+	}
+	
+	CRC = getCRC(tt,numtoread);
+	//printf("0x%x\n",CRC);
+	//for(i=0;i<numtoread;i++) bump_tail(ptrs.head,ptrs.endofbuf,ptrs.topofbuf);
+	//for(i=0;i<numtoread;i++) printf("%c",tt[i]);
+	
+	
+	//printf("\n");
+
+	 
+	//printf("0x%x 0x%x 0x%x \n",ptrs.head,ptrs.endofbuf,ptrs.topofbuf);
+	//printf("CRC = 0x%x\n",CRC);
+	
+	return(1);
+}
+unsigned char userInput;
+
+	unsigned char recCRC;
+	unsigned char message[3] = {0xd3, 0x01, 0x00};
+	int flag = 0,numofchars,error=0,syncflag=1,rdyflag=1,testsx=10,testsx1=10;
+/***********************needs to be in a header***********************/
 
  void led_task(void *pvParameters)
 {   
@@ -123,11 +190,11 @@ void usb_task(void *pvParameters){
                                             );
 				if((xEventGroupValue & TASK1_BIT !=0))
   		  {
-   				printf("Task1 event occured\n");
+   				printf("sync event occured\n");
         }
 				if((xEventGroupValue & TASK2_BIT !=0))
   		  {
-   				printf("Task2 event occured\n");
+   				printf("ready event occured\n");
         }
 
 				if((xEventGroupValue & TASK3_BIT !=0))
@@ -146,17 +213,18 @@ void usb_task(void *pvParameters){
 }
 
 
-void task1(void *pvParameters)
+void sync(void *pvParameters)
 {   
-    char ch = '1';
+     
     while (true) {
 				// set flag bit TASK3_BIT
 				xEventGroupSetBits(xCreatedEventGroup, TASK3_BIT);
         if(xSemaphoreTake(mutex, 0) == pdTRUE){
-            for(int i = 1; i < 10; i++){
-                //putchar(ch);
-            }
-            //puts("");
+            while (testsx) {          
+							printf("Sync\n");
+							sleep_ms(1400);
+							testsx--;
+						}             
             xSemaphoreGive(mutex);
 						vTaskDelay(5000);
         }
@@ -164,17 +232,17 @@ void task1(void *pvParameters)
     }
 }
 
-void task2(void *pvParameters)
+void ready(void *pvParameters)
 {   
-    char ch = '2';
     while (true) {
 				// set flag bit TASK4_BIT
 				xEventGroupSetBits(xCreatedEventGroup, TASK4_BIT);
         if(xSemaphoreTake(mutex, 0) == pdTRUE){
-            for(int i = 1; i < 10; i++){
-                //putchar(ch);
-            }
-            //puts("");
+            while (testsx1) {            
+							printf("Ready\n");
+							sleep_ms(100);
+							testsx1--;
+						}
             xSemaphoreGive(mutex);
 						vTaskDelay(5000);
         }
@@ -302,8 +370,8 @@ int main()
     
 		xTaskCreate(led_task, "LED_Task", 256, NULL, 1, NULL);
     xTaskCreate(usb_task, "USB_Task", 256, NULL, 1, NULL);
-		xTaskCreate(task1, "Task 1", 256, NULL, 1, NULL);
-    xTaskCreate(task2, "Task 2", 256, NULL, 1, NULL);
+		xTaskCreate(sync, "Task 1", 256, NULL, 1, NULL);
+    xTaskCreate(ready, "Task 2", 256, NULL, 1, NULL);
     vTaskStartScheduler();
 		
 
