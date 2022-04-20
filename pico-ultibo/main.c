@@ -7,6 +7,10 @@
 #include "pico/stdlib.h"
 #include "semphr.h"
 #include "event_groups.h"
+#include "lifting.h"
+#include "crc.h"
+#include "head-tail.h"
+#include "klt.h"
 /***********************needs to be in a header***********************/
 #define STORAGE_SIZE_BYTES 100
 
@@ -31,7 +35,7 @@ StreamBufferHandle_t DynxStreamBuffer;
 //xStreamBuffer = xStreamBufferCreate(xStreamBufferSizeBytes,xTriggerLevel);
 static QueueHandle_t xQueue = NULL;
 
-int streamFlag,ii;
+int streamFlag,ii,received,processed;
 size_t numbytes1;
 size_t numbytes2;
 uint8_t * pucRXData;
@@ -39,6 +43,8 @@ size_t rdnumbytes1;
 size_t Event=0;
 
 static SemaphoreHandle_t mutex;
+//static SemaphoreHandle_t mutex1;
+//static SemaphoreHandle_t mutex2;
 
 //EventGroupHandle_t xEventGroupCreate( void);
 		/*Declare a variables to hold the created event groups
@@ -82,7 +88,9 @@ struct PTRs {
 unsigned char tt[128];
 const char src[] = "Hello, world! ";
 const short int a[]; 
-
+int nFeatures = 100;
+KLT_TrackingContext tc;
+KLT_FeatureList fl;
 //const unsigned char CRC7_POLY = 0x91;
 unsigned char CRCTable[256];
  
@@ -113,11 +121,14 @@ int read_tt(char * head, char * endofbuf,char * topofbuf) {
 	
 	return(1);
 }
-unsigned char userInput;
+	unsigned char userInput;
 
 	unsigned char recCRC;
 	unsigned char message[3] = {0xd3, 0x01, 0x00};
-	int flag = 0,numofchars,error=0,syncflag=1,rdyflag=1,testsx=10,testsx1=10;
+	int flag = 0,numofchars,error=0,syncflag=1,rdyflag=1,testsx=10,testsx1=10,syncdone=0;
+	int ncols, nrows,i;
+    unsigned char inpbuf[imgsize*2]; 
+    unsigned char *img1, *img2;
 /***********************needs to be in a header***********************/
 
  void led_task(void *pvParameters)
@@ -171,17 +182,21 @@ void usb_task(void *pvParameters){
 				// set flag bit TASK2_BIT
 				xEventGroupSetBits(xCreatedEventGroup, TASK2_BIT);			
         if(uIReceivedValue == 1){
-            printf("LED is ON! \n");
+            //printf("LED is ON! \n");
         }
         if(uIReceivedValue == 0){
-            printf("LED is OFF! streamFlag=%d DynStreamBuffer=0x%x \n",streamFlag, DynxStreamBuffer);
+				//printf("Sync%d\n",testsx);
+				//if(syncdone==1) printf("Ready%d\n",testsx1);
+				/*            
+				printf("LED is OFF! streamFlag=%d DynStreamBuffer=0x%x \n",streamFlag, DynxStreamBuffer);
 						printf("numbytes1=%d numbytes2=%d\n",numbytes1,numbytes2);
 						printf("rdnumbytes1=%d Event=%d\n",rdnumbytes1,Event);
 						printf("EGroup=0x%x \n",xCreatedEventGroup);
 						
 						if(rdnumbytes1> 0)
 							for(ii=0;ii<rdnumbytes1;ii++) printf("%c ",pucRXData[ii]);
-						printf("\n"); 
+						printf("\n");
+				*/ 
 				xEventGroupValue  = xEventGroupWaitBits(xCreatedEventGroup,
                                             xBitsToWaitFor,
                                             pdTRUE,
@@ -190,23 +205,33 @@ void usb_task(void *pvParameters){
                                             );
 				if((xEventGroupValue & TASK1_BIT !=0))
   		  {
-   				printf("sync event occured\n");
+   				//printf("sync event occured\n");
         }
 				if((xEventGroupValue & TASK2_BIT !=0))
   		  {
-   				printf("ready event occured\n");
+   				//printf("ready event occured\n");
         }
 
 				if((xEventGroupValue & TASK3_BIT !=0))
   		  {
-   				printf("Task3 event occured\n");
+   				//printf("Task3 event occured\n");
         }
 				if((xEventGroupValue & TASK4_BIT !=0))
   		  {
-   				printf("Task4 event occured\n");
+   				//printf("Task4 event occured\n");
+        }
+				if((xEventGroupValue & TASK5_BIT !=0))
+  		  {
+   				//printf("Task5 event occured received = %d\n",received);
+        }
+				if((xEventGroupValue & TASK6_BIT !=0))
+  		  {
+   				//printf("Task6 event occured processed = %d\n",processed);
+		
         }
 
         }
+		vTaskDelay(35000);
 
     }
 
@@ -217,17 +242,29 @@ void sync(void *pvParameters)
 {   
      
     while (true) {
-				// set flag bit TASK3_BIT
-				xEventGroupSetBits(xCreatedEventGroup, TASK3_BIT);
-        if(xSemaphoreTake(mutex, 0) == pdTRUE){
+		// set flag bit TASK3_BIT
+		xEventGroupSetBits(xCreatedEventGroup, TASK3_BIT);
+        //if(xSemaphoreTake(mutex1, 0) == pdTRUE){
             while (testsx) {          
-							printf("Sync\n");
-							sleep_ms(1400);
-							testsx--;
-						}             
-            xSemaphoreGive(mutex);
-						vTaskDelay(5000);
-        }
+				printf("Sync\n");
+				sleep_ms(1400);
+				//vTaskDelay(1400);
+				testsx--;
+				if(testsx==0) syncdone=1;
+				/*
+				if(syncdone==1) {
+					while (testsx1) {            
+						//printf("Ready\n");
+						sleep_ms(1400);
+						testsx1--;
+					}
+				}
+				*/
+			} 
+		            
+		//xSemaphoreGive(mutex1);
+		vTaskDelay(5000);
+        //}
         
     }
 }
@@ -235,19 +272,114 @@ void sync(void *pvParameters)
 void ready(void *pvParameters)
 {   
     while (true) {
-				// set flag bit TASK4_BIT
-				xEventGroupSetBits(xCreatedEventGroup, TASK4_BIT);
-        if(xSemaphoreTake(mutex, 0) == pdTRUE){
+		//if(syncdone == 1) {
+		// set flag bit TASK4_BIT
+		xEventGroupSetBits(xCreatedEventGroup, TASK4_BIT);
+        //if(xSemaphoreTake(mutex2, 0) == pdTRUE){
             while (testsx1) {            
-							printf("Ready\n");
-							sleep_ms(100);
-							testsx1--;
-						}
-            xSemaphoreGive(mutex);
-						vTaskDelay(5000);
-        }
+				printf("Ready\n");
+				sleep_ms(1400);
+				testsx1--;
+			}
+            //xSemaphoreGive(mutex2);
+			vTaskDelay(5000);
+        //}
         
-    }
+    //}
+	}
+}
+
+void read(void *pvParameters)
+{   
+	while (true) {
+		// set flag bit TASK5_BIT 
+		xEventGroupSetBits(xCreatedEventGroup, TASK5_BIT);
+		//if(xSemaphoreTake(mutex1, 0) == pdTRUE){   
+		while (ptrs.inp_buf < ptrs.out_buf) {
+        	
+			
+			
+				
+				//printf("head = 0x%x tail = 0x%x 0x%x 0x%x\n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf); 
+				read_tt(ptrs.head,ptrs.endofbuf,ptrs.topofbuf);	
+				//printf("head = 0x%x tail = 0x%x 0x%x 0x%x\n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf);
+				//for(i=0;i<32;i++) printf("%d ",tt[i]);
+				//printf("\n");
+				//for(i=32;i<64;i++) printf("%d ",tt[i]);
+				//printf("\n");
+			
+				//numofchars = ptrs.head -ptrs.tail;
+				//printf("%d ", numofchars);
+				//printf("0x%x 0x%x 0x%x 0x%x 0x%x \n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf,ptrs.inp_buf);
+				for(i=0;i<64;i++) {
+					*ptrs.inp_buf = (unsigned short int)*ptrs.tail;
+					ptrs.inp_buf++;
+					ptrs.tail = (char *)bump_tail(ptrs.tail,ptrs.endofbuf,ptrs.topofbuf);
+				}
+				recCRC = getchar();
+				//printf("recCRC 0x%x ",recCRC);
+				received=1;
+			
+				
+		
+			
+		//}
+		//printf("0x%x 0x%x 0x%x 0x%x 0x%x \n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf,ptrs.inp_buf);
+		//xSemaphoreGive(mutex1);
+		vTaskDelay(5000);
+		
+		
+		}
+	}
+}
+
+void processliftklt(void *pvParameters)
+{   
+	while (true) {
+		//if(xSemaphoreTake(mutex2, 0) == pdTRUE){  
+		// set flag bit TASK6_BIT 
+		xEventGroupSetBits(xCreatedEventGroup, TASK6_BIT);
+		
+			ptrs.inp_buf = ptrs.inpbuf;
+ 
+			
+			printf("Command (1 = Send or 0 = Wait):\n");
+			userInput = getchar();
+			processed=1;
+			if(userInput == '1'){
+				printf("need to copy the data received from host to img1\n");
+				printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
+			for(i = 0; i < ncols*nrows;i++) {
+			      img1[i] = ptrs.inp_buf[i];
+			      //img2[i+4095] = img1[i];	
+			      if (i < 5) printf("%d img1 %d ptrs.buf %d \n",i, img1[i],ptrs.inp_buf[i]); 
+			      if (i > 4090) printf("%d img1 %d ptrs.buf %d \n",i,img1[i],ptrs.inp_buf[i]);	
+			}
+			printf("need to copy the data from img1 to img2\n");
+			for(i = 0; i < ncols*nrows;i++) {
+				*img2 = *img1;
+				if (i < 5) printf("%d img2 %d img1 %d \n",i,*img2,*img1);
+                                if (i > 4090) printf("%d img2 %d img1 %d \n",i,*img2,*img1);
+                                img2++;
+                                img1++; 
+			} 
+			img1 = &inpbuf[0];
+        	img2 = &inpbuf[4096];
+			//printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
+
+			KLTSelectGoodFeatures(tc, img1, ncols, nrows, fl);
+
+  			//printf("\nIn first image:\n");
+  			for (i = 0 ; i < fl->nFeatures ; i++)  {
+    			printf("Feature #%d:  (%f,%f) with value of %d\n",
+           		i, fl->feature[i]->x, fl->feature[i]->y,
+           		fl->feature[i]->val);
+        	}
+}
+		//}
+		//xSemaphoreGive(mutex2);
+		vTaskDelay(5000);
+	}
 }
 /*Tries to create a StreamBuffer of 100 bytes and blocks after 10*/
 void vAFunction(void){
@@ -337,7 +469,9 @@ int main()
     xQueue = xQueueCreate(1, sizeof(uint));
 		mutex = xSemaphoreCreateMutex();
 
-
+		//mutex1 = xSemaphoreCreateMutex();
+	
+		//mutex2 = xSemaphoreCreateMutex();
 
 		/*Attempt to create the event groups*/
 		xCreatedEventGroup = xEventGroupCreate();
@@ -355,6 +489,37 @@ int main()
 			/*The event group was created*/
 			Event=1;
 		}
+	ptrs.w = 64;
+    ptrs.h = 64;
+    
+	ncols = 64;
+    nrows = 64;
+    
+    tc = KLTCreateTrackingContext();
+    //printf("tc 0x%x\n",tc);
+    fl = KLTCreateFeatureList(nFeatures);
+    //KLTPrintTrackingContext(tc);     
+    ptrs.inp_buf = ptrs.inpbuf;   
+    ptrs.head = &tt[0];
+	ptrs.tail = &tt[0];
+	ptrs.topofbuf = &tt[0];
+	
+	ptrs.out_buf = ptrs.inpbuf + imgsize;
+	ptrs.endofbuf = &tt[128];
+	img1 = &inpbuf[0];
+	img2 = &inpbuf[4096];
+	ptrs.fwd_inv =  &ptrs.fwd;
+    *ptrs.fwd_inv = 1;
+    
+    buildCRCTable();
+	message[2] = getCRC(message, 2);
+	ptrs.fwd_inv =  &ptrs.fwd;
+    *ptrs.fwd_inv = 1;
+    
+    buildCRCTable();
+	message[2] = getCRC(message, 2);
+	received=0;
+	processed=0;
  		/*Need to test if the Event Group was created*/
     /**************************/
 		const uint SERIAL_BAUD = 1000000;
@@ -368,10 +533,12 @@ int main()
  		//MyFunction();
 
     
-		xTaskCreate(led_task, "LED_Task", 256, NULL, 1, NULL);
+	xTaskCreate(led_task, "LED_Task", 256, NULL, 1, NULL);
     xTaskCreate(usb_task, "USB_Task", 256, NULL, 1, NULL);
-		xTaskCreate(sync, "Task 1", 256, NULL, 1, NULL);
-    xTaskCreate(ready, "Task 2", 256, NULL, 1, NULL);
+	xTaskCreate(sync, "Task 1", 256, NULL, 5, NULL);
+    xTaskCreate(ready, "Task 2", 256, NULL, 3, NULL);
+	xTaskCreate(read, "Task 3", 256, NULL, 1, NULL);
+	xTaskCreate(processliftklt, "Task 4", 256, NULL, 1, NULL);
     vTaskStartScheduler();
 		
 
