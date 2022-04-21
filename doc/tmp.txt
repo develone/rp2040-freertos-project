@@ -38,6 +38,8 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program ultibo
 
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program Mutex/Mutex.elf verify reset exit"
 
+cp pico-ultibo/pico-ultibo.uf2 /media/devel/RPI-RP2/
+
 ************************************pico-sdk-test************************************ 
 commit 2062372d203b372849d573f252cf7c6dc2800c0a (HEAD -> master, tag: 1.3.0, origin/master, origin/HEAD)
 Author: Graham Sanderson <graham.sanderson@raspberrypi.com>

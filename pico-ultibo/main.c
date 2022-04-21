@@ -294,7 +294,7 @@ void read(void *pvParameters)
 	while (true) {
 		// set flag bit TASK5_BIT 
 		xEventGroupSetBits(xCreatedEventGroup, TASK5_BIT);
-		//if(xSemaphoreTake(mutex1, 0) == pdTRUE){   
+		if(xSemaphoreTake(mutex, 0) == pdTRUE){   
 		while (ptrs.inp_buf < ptrs.out_buf) {
         	
 			
@@ -323,9 +323,9 @@ void read(void *pvParameters)
 				
 		
 			
-		//}
+		}
 		//printf("0x%x 0x%x 0x%x 0x%x 0x%x \n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf,ptrs.inp_buf);
-		//xSemaphoreGive(mutex1);
+		xSemaphoreGive(mutex);
 		vTaskDelay(5000);
 		
 		
@@ -336,7 +336,8 @@ void read(void *pvParameters)
 void processliftklt(void *pvParameters)
 {   
 	while (true) {
-		//if(xSemaphoreTake(mutex2, 0) == pdTRUE){  
+		if(received==1){
+		if(xSemaphoreTake(mutex, 0) == pdTRUE){  
 		// set flag bit TASK6_BIT 
 		xEventGroupSetBits(xCreatedEventGroup, TASK6_BIT);
 		
@@ -376,9 +377,11 @@ void processliftklt(void *pvParameters)
            		fl->feature[i]->val);
         	}
 }
-		//}
-		//xSemaphoreGive(mutex2);
+		}
+		}
+		xSemaphoreGive(mutex);
 		vTaskDelay(5000);
+		
 	}
 }
 /*Tries to create a StreamBuffer of 100 bytes and blocks after 10*/
