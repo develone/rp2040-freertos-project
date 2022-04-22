@@ -5,6 +5,7 @@ include(pico_sdk_import.cmake)
 project(Pico-FreeRTOS)
 
 pico_sdk_init()
+add_subdirectory(test-read)
 add_subdirectory(pico-ultibo)
 add_subdirectory(kltdwt-ultibo)
 add_subdirectory(2cores)
