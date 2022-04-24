@@ -35,7 +35,7 @@ StreamBufferHandle_t DynxStreamBuffer;
 //xStreamBuffer = xStreamBufferCreate(xStreamBufferSizeBytes,xTriggerLevel);
 static QueueHandle_t xQueue = NULL;
 
-int streamFlag, ii, received, processed;
+int streamFlag, ii, received, processed, j, m;
 size_t numbytes1;
 size_t numbytes2;
 uint8_t *pucRXData;
@@ -369,66 +369,135 @@ processliftklt (void *pvParameters)
 {
   while (true)
     {
-      if (received == 1)
+      while (testsx)
 	{
-	  if (xSemaphoreTake (mutex, 0) == pdTRUE)
+	  printf ("Sync\n");
+	  sleep_ms (1400);
+	  testsx--;
+	}
+      //testsx = 10;
+      while (testsx1)
+	{
+	  printf ("Ready\n");
+	  sleep_ms (100);
+	  testsx1--;
+
+	}
+      //userInput = getchar();
+      while (ptrs.inp_buf < ptrs.out_buf)
+	{
+
+
+
+
+	  //printf("head = 0x%x tail = 0x%x 0x%x 0x%x\n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf); 
+	  read_tt (ptrs.head, ptrs.endofbuf, ptrs.topofbuf);
+	  //printf("head = 0x%x tail = 0x%x 0x%x 0x%x\n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf);
+	  //for(i=0;i<32;i++) printf("%d ",tt[i]);
+	  //printf("\n");
+	  //for(i=32;i<64;i++) printf("%d ",tt[i]);
+	  //printf("\n");
+
+	  //numofchars = ptrs.head -ptrs.tail;
+	  //printf("%d ", numofchars);
+	  //printf("0x%x 0x%x 0x%x 0x%x 0x%x \n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf,ptrs.inp_buf);
+	  for (i = 0; i < 64; i++)
 	    {
-	      // set flag bit TASK6_BIT 
-	      xEventGroupSetBits (xCreatedEventGroup, TASK6_BIT);
+	      *ptrs.inp_buf = (unsigned short int) *ptrs.tail;
+	      ptrs.inp_buf++;
+	      ptrs.tail =
+		(char *) bump_tail (ptrs.tail, ptrs.endofbuf, ptrs.topofbuf);
+	    }
+	  recCRC = getchar ();
+	  //printf("recCRC 0x%x ",recCRC);
 
-	      ptrs.inp_buf = ptrs.inpbuf;
+	  //printf("0x%x 0x%x 0x%x 0x%x 0x%x \n",ptrs.head,ptrs.tail,ptrs.endofbuf,ptrs.topofbuf,ptrs.inp_buf);
+	}
+      ptrs.inp_buf = ptrs.inpbuf;
+      /*
+         for(i = 0; i < imgsize;i++) {
+         if (ptrs.inp_buf[i] == a[i]) {
+         //printf("matched %d \n",i);
+         error = 0;
+         } else {
+         //printf("error %d\n",i);
+         error = 1;
+         }
+
+         }
+         //printf("errors %d \n",error);
+
+       */
+      printf ("Command (1 = Send or 0 = Wait):\n");
+      userInput = getchar ();
 
 
-	      printf ("Command (1 = Send or 0 = Wait):\n");
-	      userInput = getchar ();
-	      processed = 1;
-	      if (userInput == '1')
+      if (userInput == '1')
+	{
+	  printf ("need to copy the data received from host to img1\n");
+	  printf ("img1 = 0x%x img2 = 0x%x\n", img1, img2);
+	  for (i = 0; i < ncols * nrows; i++)
+	    {
+	      img1[i] = ptrs.inp_buf[i];
+	      //img2[i+4095] = img1[i]; 
+	      if (i < 5)
+		printf ("%d img1 %d ptrs.buf %d \n", i, img1[i],
+			ptrs.inp_buf[i]);
+	      if (i > 4090)
+		printf ("%d img1 %d ptrs.buf %d \n", i, img1[i],
+			ptrs.inp_buf[i]);
+	    }
+	  printf ("need to copy the data from img1 to img2\n");
+	  for (i = 0; i < ncols * nrows; i++)
+	    {
+	      *img2 = *img1;
+	      if (i < 5)
+		printf ("%d img2 %d img1 %d \n", i, *img2, *img1);
+	      if (i > 4090)
+		printf ("%d img2 %d img1 %d \n", i, *img2, *img1);
+	      img2++;
+	      img1++;
+	    }
+	  img1 = &inpbuf[0];
+	  img2 = &inpbuf[4096];
+	  //printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
+
+	  KLTSelectGoodFeatures (tc, img1, ncols, nrows, fl);
+
+	  //printf("\nIn first image:\n");
+	  for (i = 0; i < fl->nFeatures; i++)
+	    {
+	      printf ("Feature #%d:  (%f,%f) with value of %d\n",
+		      i, fl->feature[i]->x, fl->feature[i]->y,
+		      fl->feature[i]->val);
+	    }
+	  lifting (ptrs.w, ptrs.inp_buf, ptrs.out_buf, ptrs.fwd_inv);
+	  //printf("liftting done \n");
+
+	  //for(i=0;i<imgsize;i++) printf("%d ",ptrs.inp_buf[i]);
+	  m = 0;
+	  for (j = 0; j < 64; j++)
+	    {
+	      //for(l=0;l<4;l++) {
+	      //printf("%d\n",l);
+	      for (i = 0; i < 64; i++)
 		{
-		  printf
-		    ("need to copy the data received from host to img1\n");
-		  printf ("img1 = 0x%x img2 = 0x%x\n", img1, img2);
-		  for (i = 0; i < ncols * nrows; i++)
-		    {
-		      img1[i] = ptrs.inp_buf[i];
-		      //img2[i+4095] = img1[i]; 
-		      if (i < 5)
-			printf ("%d img1 %d ptrs.buf %d \n", i, img1[i],
-				ptrs.inp_buf[i]);
-		      if (i > 4090)
-			printf ("%d img1 %d ptrs.buf %d \n", i, img1[i],
-				ptrs.inp_buf[i]);
-		    }
-		  printf ("need to copy the data from img1 to img2\n");
-		  for (i = 0; i < ncols * nrows; i++)
-		    {
-		      *img2 = *img1;
-		      if (i < 5)
-			printf ("%d img2 %d img1 %d \n", i, *img2, *img1);
-		      if (i > 4090)
-			printf ("%d img2 %d img1 %d \n", i, *img2, *img1);
-		      img2++;
-		      img1++;
-		    }
-		  img1 = &inpbuf[0];
-		  img2 = &inpbuf[4096];
-		  //printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
-
-		  KLTSelectGoodFeatures (tc, img1, ncols, nrows, fl);
-
-		  //printf("\nIn first image:\n");
-		  for (i = 0; i < fl->nFeatures; i++)
-		    {
-		      printf ("Feature #%d:  (%f,%f) with value of %d\n",
-			      i, fl->feature[i]->x, fl->feature[i]->y,
-			      fl->feature[i]->val);
-		    }
+		  printf ("%d,", ptrs.inp_buf[m]);
+		  //printf("%d %d %d\n",i,m,m++);
+		  m++;
 		}
+	      //m = m + 64;
+	      printf ("\n");
+	      //}
 	    }
 	}
-      xSemaphoreGive (mutex);
-      vTaskDelay (5000);
-
     }
+  syncflag = 1;
+  //sleep_ms(8000);
+  sleep_ms (50);
+  // } 
+
+  // }
 }
 
 /*Tries to create a StreamBuffer of 100 bytes and blocks after 10*/
@@ -591,12 +660,12 @@ main ()
   //MyFunction();
 
 
-  xTaskCreate (led_task, "LED_Task", 256, NULL, 1, NULL);
+  xTaskCreate (led_task, "LED_Task", 256, NULL, 2, NULL);
   xTaskCreate (usb_task, "USB_Task", 256, NULL, 1, NULL);
-  xTaskCreate (sync, "Task 1", 256, NULL, 5, NULL);
-  xTaskCreate (ready, "Task 2", 256, NULL, 3, NULL);
-  xTaskCreate (read, "Task 3", 256, NULL, 1, NULL);
-  xTaskCreate (processliftklt, "Task 4", 256, NULL, 1, NULL);
+  //xTaskCreate (sync, "Task 1", 256, NULL, 5, NULL);
+  //xTaskCreate (ready, "Task 2", 256, NULL, 3, NULL);
+  //xTaskCreate (read, "Task 3", 256, NULL, 1, NULL);
+  xTaskCreate (processliftklt, "Task 4", 256, NULL, 2, NULL);
   vTaskStartScheduler ();
 
 
