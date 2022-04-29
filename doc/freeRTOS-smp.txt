@@ -1,0 +1,87 @@
+04/29/22
+https://www.freertos.org/smp-demos-for-the-raspberry-pi-pico-board.html#introduction
+
+cd FreeRTOS-SMP-Demos/FreeRTOS/Demo/CORTEX_M0+_RP2040/build
+
+export PICO_SDK_PATH=/home/devel/FreeRTOS-SMP-Demos/FreeRTOS/Demo/CORTEX_M0+_RP2040/pico-sdk/
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program OnEitherCore/on_core_zero.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program OnEitherCore/on_core_one.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program Standard/main_full.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program Standard/main_blinky.elf verify reset exit"
+
+sudo mksquashfs FreeRTOS-SMP-Demos FreeRTOS-SMP-Demos-c84926a-042922.img
+
+sudo unsquashfs -d FreeRTOS-SMP-Demos FreeRTOS-SMP-Demos-c84926a-042922.img
+
+*****************************build-steps*****************************
+
+git clone https://github.com/FreeRTOS/FreeRTOS-SMP-Demos.git
+
+cd FreeRTOS-SMP-Demos
+
+git submodule update --init --recursive
+
+cd FreeRTOS/Demo/CORTEX_M0+_RP2040/
+
+git clone https://github.com/raspberrypi/pico-sdk
+
+cd pico-sdk
+
+git submodule update --init
+
+cd ../
+
+mkdir build
+
+cd build 
+
+export PICO_SDK_PATH=/home/devel/FreeRTOS-SMP-Demos/FreeRTOS/Demo/CORTEX_M0+_RP2040/pico-sdk/
+
+cmake ../
+
+Using PICO_SDK_PATH from environment ('/home/devel/FreeRTOS-SMP-Demos/FreeRTOS/Demo/CORTEX_M0+_RP2040/pico-sdk/')
+PICO_SDK_PATH is /home/devel/FreeRTOS-SMP-Demos/FreeRTOS/Demo/CORTEX_M0+_RP2040/pico-sdk
+Defaulting PICO_PLATFORM to rp2040 since not specified.
+Defaulting PICO platform compiler to pico_arm_gcc since not specified.
+-- Defaulting build type to 'Release' since not specified.
+PICO compiler is pico_arm_gcc
+-- The C compiler identification is GNU 8.3.1
+-- The CXX compiler identification is GNU 8.3.1
+Setting FREERTOS_KERNEL_PATH to '/home/devel/FreeRTOS-SMP-Demos/FreeRTOS/Source' found relative to enclosing project
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/arm-none-eabi-gcc
+Defaulting PICO target board to pico since not specified.
+Using board configuration from /home/devel/FreeRTOS-SMP-Demos/FreeRTOS/Demo/CORTEX_M0+_RP2040/pico-sdk/src/boards/include/boards/pico.h
+-- Found Python3: /usr/bin/python3.9 (found version "3.9.2") found components: Interpreter 
+TinyUSB available at /home/devel/FreeRTOS-SMP-Demos/FreeRTOS/Demo/CORTEX_M0+_RP2040/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/FreeRTOS-SMP-Demos/FreeRTOS/Demo/CORTEX_M0+_RP2040/build
+
+There are 2 branches main and smp.
+
+git clone --recurse-submodules https://github.com/develone/rp2040-freertos-project.git
+git clone https://github.com/develone/FreeRTOS-Kernel.git
+
+croutine.c  event_groups.c  list.c  queue.c  stream_buffer.c  tasks.c  timers.c
+cd FreeRTOS-Kernel
+
+diffuse croutine.c ../rp2040-freertos-project/freertos/FreeRTOS-Kernel/croutine.c
+
+diffuse event_groups.c ../rp2040-freertos-project/freertos/FreeRTOS-Kernel/event_groups.c
+
+diffuse list.c ../rp2040-freertos-project/freertos/FreeRTOS-Kernel/list.c
+
+diffuse queue.c ../rp2040-freertos-project/freertos/FreeRTOS-Kernel/queue.c
+
+diffuse stream_buffer.c ../rp2040-freertos-project/freertos/FreeRTOS-Kernel/stream_buffer.c
+
+diffuse tasks.c ../rp2040-freertos-project/freertos/FreeRTOS-Kernel/tasks.c
+
+diffuse timers.c ../rp2040-freertos-project/freertos/FreeRTOS-Kernel/timers.c
+
+
