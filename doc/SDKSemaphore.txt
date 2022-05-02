@@ -1,0 +1,33 @@
+https://raspberrypi.github.io/pico-sdk-doxygen/group__sem.html
+static semaphore_t xSDKSemaphore;
+main.c
+sem_init(&xSDKSemaphore, 0, 1);
+
+prvNonRTOSWorker
+printf("Core %d: Finish SDK sleep; release SDK semaphore\n", get_core_num());
+sem_release(&xSDKSemaphore);
+
+Functions
+void 	sem_init (semaphore_t *sem, int16_t initial_permits, int16_t max_permits)
+ 	Initialise a semaphore structure. More...
+ 
+int 	sem_available (semaphore_t *sem)
+ 	Return number of available permits on the semaphore. More...
+ 
+bool 	sem_release (semaphore_t *sem)
+ 	Release a permit on a semaphore. More...
+ 
+void 	sem_reset (semaphore_t *sem, int16_t permits)
+ 	Reset semaphore to a specific number of available permits. More...
+ 
+void 	sem_acquire_blocking (semaphore_t *sem)
+ 	Acquire a permit from the semaphore. More...
+ 
+bool 	sem_acquire_timeout_ms (semaphore_t *sem, uint32_t timeout_ms)
+ 	Acquire a permit from a semaphore, with timeout. More...
+ 
+bool 	sem_acquire_timeout_us (semaphore_t *sem, uint32_t timeout_us)
+ 	Acquire a permit from a semaphore, with timeout. More...
+ 
+bool 	sem_acquire_block_until (semaphore_t *sem, absolute_time_t until)
+ 	Wait to acquire a permit from a semaphore until a specific time. More...
