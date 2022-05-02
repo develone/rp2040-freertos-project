@@ -1,21 +1,10 @@
-/dev/ttyACM0 1000000 8N1
-
-openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program OnEitherCore/on_core_zero.elf verify reset exit"
-
-Core 0 - Thread 'Sem': Semaphore taken 23
-Core 0 - Thread 'Sem': Semaphore taken 24
-Core 0 - Thread 'TX': Queue send 6
-Core 0 - Thread 'Rx': Queue receive 6
-Core 0 - Thread 'Sem': Semaphore taken 25
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250508 us
-Core 0 - Thread 'Sem': Semaphore taken 26
-Core 0 - Thread 'Sem': Semaphore taken 27
+/dev/ttyACMO 100000 8N1
 Core 0 - Thread 'Sem': Semaphore taken 28
 Core 0 - Thread 'TX': Queue send 7
 Core 0 - Thread 'Rx': Queue receive 7
 Core 0 - Thread 'Sem': Semaphore taken 29
 Core 0 - Thread 'Sem': Semaphore taken 30
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250545 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
 Core 0 - Thread 'Sem': Semaphore taken 31
 Core 0 - Thread 'Sem': Semaphore taken 32
 Core 0 - Thread 'TX': Queue send 8
@@ -23,7 +12,7 @@ Core 0 - Thread 'Rx': Queue receive 8
 Core 0 - Thread 'Sem': Semaphore taken 33
 Core 0 - Thread 'Sem': Semaphore taken 34
 Core 0 - Thread 'Sem': Semaphore taken 35
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250509 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
 Core 0 - Thread 'Sem': Semaphore taken 36
 Core 0 - Thread 'TX': Queue send 9
 Core 0 - Thread 'Rx': Queue receive 9
@@ -33,7 +22,7 @@ Core 0 - Thread 'Sem': Semaphore taken 39
 Core 0 - Thread 'Sem': Semaphore taken 40
 Core 0 - Thread 'TX': Queue send 10
 Core 0 - Thread 'Rx': Queue receive 10
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250505 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
 Core 0 - Thread 'Sem': Semaphore taken 41
 Core 0 - Thread 'Sem': Semaphore taken 42
 Core 0 - Thread 'Sem': Semaphore taken 43
@@ -49,7 +38,7 @@ Core 0 - Thread 'TX': Queue send 12
 Core 0 - Thread 'Rx': Queue receive 12
 Core 0 - Thread 'Sem': Semaphore taken 49
 Core 0 - Thread 'Sem': Semaphore taken 50
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250532 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
 Core 0 - Thread 'Sem': Semaphore taken 51
 Core 0 - Thread 'Sem': Semaphore taken 52
 Core 0 - Thread 'TX': Queue send 13
@@ -58,7 +47,7 @@ Core 0 - Thread 'Sem': Semaphore taken 53
 Core 0 - Thread 'Sem': Semaphore taken 54
 Core 0 - Thread 'Sem': Semaphore taken 55
 Core 0 - Thread 'Sem': Semaphore taken 56
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250510 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
 Core 0 - Thread 'TX': Queue send 14
 Core 0 - Thread 'Rx': Queue receive 14
 Core 0 - Thread 'Sem': Semaphore taken 57
@@ -70,7 +59,7 @@ Core 0 - Thread 'SDK Mutex Use': SDK Mutex Entered, sleeping for a while 2
 Core 0 - Thread 'TX': Queue send 15
 Core 0 - Thread 'Rx': Queue receive 15
 Core 0 - Thread 'Sem': Semaphore taken 61
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250509 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250514 us
 Core 0 - Thread 'Sem': Semaphore taken 62
 Core 0 - Thread 'Sem': Semaphore taken 63
 Core 0 - Thread 'Sem': Semaphore taken 64
@@ -78,7 +67,7 @@ Core 0 - Thread 'TX': Queue send 16
 Core 0 - Thread 'Rx': Queue receive 16
 Core 0 - Thread 'Sem': Semaphore taken 65
 Core 0 - Thread 'Sem': Semaphore taken 66
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250519 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
 Core 0 - Thread 'Sem': Semaphore taken 67
 Core 0 - Thread 'Sem': Semaphore taken 68
 Core 0 - Thread 'TX': Queue send 17
@@ -86,7 +75,7 @@ Core 0 - Thread 'Rx': Queue receive 17
 Core 0 - Thread 'Sem': Semaphore taken 69
 Core 0 - Thread 'Sem': Semaphore taken 70
 Core 0 - Thread 'Sem': Semaphore taken 71
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250509 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
 Core 0 - Thread 'Sem': Semaphore taken 72
 Core 0 - Thread 'TX': Queue send 18
 Core 0 - Thread 'Rx': Queue receive 18
@@ -96,7 +85,7 @@ Core 0 - Thread 'Sem': Semaphore taken 75
 Core 0 - Thread 'Sem': Semaphore taken 76
 Core 0 - Thread 'TX': Queue send 19
 Core 0 - Thread 'Rx': Queue receive 19
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250507 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
 Core 0 - Thread 'Sem': Semaphore taken 77
 Core 0 - Thread 'Sem': Semaphore taken 78
 Core 0 - Thread 'Sem': Semaphore taken 79
@@ -104,7 +93,7 @@ Core 0 - Thread 'Sem': Semaphore taken 80
 Core 0 - Thread 'TX': Queue send 20
 Core 0 - Thread 'Rx': Queue receive 20
 Core 0 - Thread 'Sem': Semaphore taken 81
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250508 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
 Core 0 - Thread 'Sem': Semaphore taken 82
 Core 0 - Thread 'Sem': Semaphore taken 83
 Core 0 - Thread 'Sem': Semaphore taken 84
@@ -112,7 +101,7 @@ Core 0 - Thread 'TX': Queue send 21
 Core 0 - Thread 'Rx': Queue receive 21
 Core 0 - Thread 'Sem': Semaphore taken 85
 Core 0 - Thread 'Sem': Semaphore taken 86
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250520 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250509 us
 Core 0 - Thread 'Sem': Semaphore taken 87
 Core 0 - Thread 'Sem': Semaphore taken 88
 Core 0 - Thread 'TX': Queue send 22
@@ -120,7 +109,7 @@ Core 0 - Thread 'Rx': Queue receive 22
 Core 0 - Thread 'Sem': Semaphore taken 89
 Core 0 - Thread 'Sem': Semaphore taken 90
 Core 0 - Thread 'Sem': Semaphore taken 91
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250508 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
 Core 0 - Thread 'Sem': Semaphore taken 92
 Core 0 - Thread 'TX': Queue send 23
 Core 0 - Thread 'Rx': Queue receive 23
@@ -130,7 +119,7 @@ Core 0 - Thread 'Sem': Semaphore taken 95
 Core 0 - Thread 'Sem': Semaphore taken 96
 Core 0 - Thread 'TX': Queue send 24
 Core 0 - Thread 'Rx': Queue receive 24
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250508 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
 Core 0 - Thread 'Sem': Semaphore taken 97
 Core 0 - Thread 'Sem': Semaphore taken 98
 Core 0 - Thread 'Sem': Semaphore taken 99
@@ -138,7 +127,7 @@ Core 0 - Thread 'Sem': Semaphore taken 100
 Core 0 - Thread 'TX': Queue send 25
 Core 0 - Thread 'Rx': Queue receive 25
 Core 0 - Thread 'Sem': Semaphore taken 101
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250506 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
 Core 0 - Thread 'Sem': Semaphore taken 102
 Core 0 - Thread 'Sem': Semaphore taken 103
 Core 0 - Thread 'Sem': Semaphore taken 104
@@ -147,7 +136,7 @@ Core 0 - Thread 'Rx': Queue receive 26
 Core 0 - Thread 'Sem': Semaphore taken 105
 Core 0 - Thread 'Sem': Semaphore taken 106
 Core 0 - Thread 'Sem': Semaphore taken 107
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250511 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
 Core 0 - Thread 'Sem': Semaphore taken 108
 Core 0 - Thread 'TX': Queue send 27
 Core 0 - Thread 'Rx': Queue receive 27
@@ -157,7 +146,7 @@ Core 0 - Thread 'Sem': Semaphore taken 111
 Core 0 - Thread 'Sem': Semaphore taken 112
 Core 0 - Thread 'TX': Queue send 28
 Core 0 - Thread 'Rx': Queue receive 28
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250508 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
 Core 0 - Thread 'Sem': Semaphore taken 113
 Core 0 - Thread 'Sem': Semaphore taken 114
 Core 0 - Thread 'Sem': Semaphore taken 115
@@ -165,7 +154,7 @@ Core 0 - Thread 'Sem': Semaphore taken 116
 Core 0 - Thread 'TX': Queue send 29
 Core 0 - Thread 'Rx': Queue receive 29
 Core 0 - Thread 'Sem': Semaphore taken 117
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250509 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
 Core 0 - Thread 'Sem': Semaphore taken 118
 Core 0 - Thread 'Sem': Semaphore taken 119
 Core 0 - Thread 'Sem': Semaphore taken 120
@@ -175,7 +164,7 @@ Core 0 - Thread 'SDK Mutex Use': Sleep finished; SDK Mutex releasing 2
 Core 0 - Thread 'SDK Mutex Use': SDK Mutex Entered, sleeping for a while 3
 Core 0 - Thread 'Sem': Semaphore taken 121
 Core 0 - Thread 'Sem': Semaphore taken 122
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250679 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
 Core 0 - Thread 'Sem': Semaphore taken 123
 Core 0 - Thread 'Sem': Semaphore taken 124
 Core 0 - Thread 'TX': Queue send 31
@@ -183,7 +172,7 @@ Core 0 - Thread 'Rx': Queue receive 31
 Core 0 - Thread 'Sem': Semaphore taken 125
 Core 0 - Thread 'Sem': Semaphore taken 126
 Core 0 - Thread 'Sem': Semaphore taken 127
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250509 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
 Core 0 - Thread 'Sem': Semaphore taken 128
 Core 0 - Thread 'TX': Queue send 32
 Core 0 - Thread 'Rx': Queue receive 32
@@ -193,7 +182,7 @@ Core 0 - Thread 'Sem': Semaphore taken 131
 Core 0 - Thread 'Sem': Semaphore taken 132
 Core 0 - Thread 'TX': Queue send 33
 Core 0 - Thread 'Rx': Queue receive 33
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250575 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
 Core 0 - Thread 'Sem': Semaphore taken 133
 Core 0 - Thread 'Sem': Semaphore taken 134
 Core 0 - Thread 'Sem': Semaphore taken 135
@@ -201,7 +190,7 @@ Core 0 - Thread 'Sem': Semaphore taken 136
 Core 0 - Thread 'TX': Queue send 34
 Core 0 - Thread 'Rx': Queue receive 34
 Core 0 - Thread 'Sem': Semaphore taken 137
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250507 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
 Core 0 - Thread 'Sem': Semaphore taken 138
 Core 0 - Thread 'Sem': Semaphore taken 139
 Core 0 - Thread 'Sem': Semaphore taken 140
@@ -209,7 +198,7 @@ Core 0 - Thread 'TX': Queue send 35
 Core 0 - Thread 'Rx': Queue receive 35
 Core 0 - Thread 'Sem': Semaphore taken 141
 Core 0 - Thread 'Sem': Semaphore taken 142
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250507 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
 Core 0 - Thread 'Sem': Semaphore taken 143
 Core 0 - Thread 'Sem': Semaphore taken 144
 Core 0 - Thread 'TX': Queue send 36
@@ -217,7 +206,7 @@ Core 0 - Thread 'Rx': Queue receive 36
 Core 0 - Thread 'Sem': Semaphore taken 145
 Core 0 - Thread 'Sem': Semaphore taken 146
 Core 0 - Thread 'Sem': Semaphore taken 147
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250520 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
 Core 0 - Thread 'Sem': Semaphore taken 148
 Core 0 - Thread 'TX': Queue send 37
 Core 0 - Thread 'Rx': Queue receive 37
@@ -227,8 +216,8 @@ Core 0 - Thread 'Sem': Semaphore taken 151
 Core 0 - Thread 'Sem': Semaphore taken 152
 Core 0 - Thread 'TX': Queue send 38
 Core 0 - Thread 'Rx': Queue receive 38
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
 Core 0 - Thread 'Sem': Semaphore taken 153
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 251685 us
 Core 0 - Thread 'Sem': Semaphore taken 154
 Core 0 - Thread 'Sem': Semaphore taken 155
 Core 0 - Thread 'Sem': Semaphore taken 156
@@ -236,7 +225,7 @@ Core 0 - Thread 'TX': Queue send 39
 Core 0 - Thread 'Rx': Queue receive 39
 Core 0 - Thread 'Sem': Semaphore taken 157
 Core 0 - Thread 'Sem': Semaphore taken 158
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250517 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
 Core 0 - Thread 'Sem': Semaphore taken 159
 Core 0 - Thread 'Sem': Semaphore taken 160
 Core 0 - Thread 'TX': Queue send 40
@@ -244,7 +233,7 @@ Core 0 - Thread 'Rx': Queue receive 40
 Core 0 - Thread 'Sem': Semaphore taken 161
 Core 0 - Thread 'Sem': Semaphore taken 162
 Core 0 - Thread 'Sem': Semaphore taken 163
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250510 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
 Core 0 - Thread 'Sem': Semaphore taken 164
 Core 0 - Thread 'TX': Queue send 41
 Core 0 - Thread 'Rx': Queue receive 41
@@ -254,7 +243,7 @@ Core 0 - Thread 'Sem': Semaphore taken 167
 Core 0 - Thread 'Sem': Semaphore taken 168
 Core 0 - Thread 'TX': Queue send 42
 Core 0 - Thread 'Rx': Queue receive 42
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250519 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
 Core 0 - Thread 'Sem': Semaphore taken 169
 Core 0 - Thread 'Sem': Semaphore taken 170
 Core 0 - Thread 'Sem': Semaphore taken 171
@@ -262,7 +251,7 @@ Core 0 - Thread 'Sem': Semaphore taken 172
 Core 0 - Thread 'TX': Queue send 43
 Core 0 - Thread 'Rx': Queue receive 43
 Core 0 - Thread 'Sem': Semaphore taken 173
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250509 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
 Core 0 - Thread 'Sem': Semaphore taken 174
 Core 0 - Thread 'Sem': Semaphore taken 175
 Core 0 - Thread 'Sem': Semaphore taken 176
@@ -270,9 +259,433 @@ Core 0 - Thread 'TX': Queue send 44
 Core 0 - Thread 'Rx': Queue receive 44
 Core 0 - Thread 'Sem': Semaphore taken 177
 Core 0 - Thread 'Sem': Semaphore taken 178
-Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250519 us
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
 Core 0 - Thread 'Sem': Semaphore taken 179
 Core 0 - Thread 'Sem': Semaphore taken 180
 Core 0 - Thread 'TX': Queue send 45
 Core 0 - Thread 'Rx': Queue receive 45
 Core 0 - Thread 'SDK Mutex Use': Sleep finished; SDK Mutex releasing 3
+Core 0 - Thread 'SDK Mutex Use': SDK Mutex Entered, sleeping for a while 4
+Core 0 - Thread 'Sem': Semaphore taken 181
+Core 0 - Thread 'Sem': Semaphore taken 182
+Core 0 - Thread 'Sem': Semaphore taken 183
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 184
+Core 0 - Thread 'TX': Queue send 46
+Core 0 - Thread 'Rx': Queue receive 46
+Core 0 - Thread 'Sem': Semaphore taken 185
+Core 0 - Thread 'Sem': Semaphore taken 186
+Core 0 - Thread 'Sem': Semaphore taken 187
+Core 0 - Thread 'Sem': Semaphore taken 188
+Core 0 - Thread 'TX': Queue send 47
+Core 0 - Thread 'Rx': Queue receive 47
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 189
+Core 0 - Thread 'Sem': Semaphore taken 190
+Core 0 - Thread 'Sem': Semaphore taken 191
+Core 0 - Thread 'Sem': Semaphore taken 192
+Core 0 - Thread 'TX': Queue send 48
+Core 0 - Thread 'Rx': Queue receive 48
+Core 0 - Thread 'Sem': Semaphore taken 193
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
+Core 0 - Thread 'Sem': Semaphore taken 194
+Core 0 - Thread 'Sem': Semaphore taken 195
+Core 0 - Thread 'Sem': Semaphore taken 196
+Core 0 - Thread 'TX': Queue send 49
+Core 0 - Thread 'Rx': Queue receive 49
+Core 0 - Thread 'Sem': Semaphore taken 197
+Core 0 - Thread 'Sem': Semaphore taken 198
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
+Core 0 - Thread 'Sem': Semaphore taken 199
+Core 0 - Thread 'Sem': Semaphore taken 200
+Core 0 - Thread 'TX': Queue send 50
+Core 0 - Thread 'Rx': Queue receive 50
+Core 0 - Thread 'Sem': Semaphore taken 201
+Core 0 - Thread 'Sem': Semaphore taken 202
+Core 0 - Thread 'Sem': Semaphore taken 203
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 204
+Core 0 - Thread 'TX': Queue send 51
+Core 0 - Thread 'Rx': Queue receive 51
+Core 0 - Thread 'Sem': Semaphore taken 205
+Core 0 - Thread 'Sem': Semaphore taken 206
+Core 0 - Thread 'Sem': Semaphore taken 207
+Core 0 - Thread 'Sem': Semaphore taken 208
+Core 0 - Thread 'TX': Queue send 52
+Core 0 - Thread 'Rx': Queue receive 52
+Core 0 - Thread 'Sem': Semaphore taken 209
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
+Core 0 - Thread 'Sem': Semaphore taken 210
+Core 0 - Thread 'Sem': Semaphore taken 211
+Core 0 - Thread 'Sem': Semaphore taken 212
+Core 0 - Thread 'TX': Queue send 53
+Core 0 - Thread 'Rx': Queue receive 53
+Core 0 - Thread 'Sem': Semaphore taken 213
+Core 0 - Thread 'Sem': Semaphore taken 214
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250513 us
+Core 0 - Thread 'Sem': Semaphore taken 215
+Core 0 - Thread 'Sem': Semaphore taken 216
+Core 0 - Thread 'TX': Queue send 54
+Core 0 - Thread 'Rx': Queue receive 54
+Core 0 - Thread 'Sem': Semaphore taken 217
+Core 0 - Thread 'Sem': Semaphore taken 218
+Core 0 - Thread 'Sem': Semaphore taken 219
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
+Core 0 - Thread 'Sem': Semaphore taken 220
+Core 0 - Thread 'TX': Queue send 55
+Core 0 - Thread 'Rx': Queue receive 55
+Core 0 - Thread 'Sem': Semaphore taken 221
+Core 0 - Thread 'Sem': Semaphore taken 222
+Core 0 - Thread 'Sem': Semaphore taken 223
+Core 0 - Thread 'Sem': Semaphore taken 224
+Core 0 - Thread 'TX': Queue send 56
+Core 0 - Thread 'Rx': Queue receive 56
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
+Core 0 - Thread 'Sem': Semaphore taken 225
+Core 0 - Thread 'Sem': Semaphore taken 226
+Core 0 - Thread 'Sem': Semaphore taken 227
+Core 0 - Thread 'Sem': Semaphore taken 228
+Core 0 - Thread 'TX': Queue send 57
+Core 0 - Thread 'Rx': Queue receive 57
+Core 0 - Thread 'Sem': Semaphore taken 229
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
+Core 0 - Thread 'Sem': Semaphore taken 230
+Core 0 - Thread 'Sem': Semaphore taken 231
+Core 0 - Thread 'Sem': Semaphore taken 232
+Core 0 - Thread 'TX': Queue send 58
+Core 0 - Thread 'Rx': Queue receive 58
+Core 0 - Thread 'Sem': Semaphore taken 233
+Core 0 - Thread 'Sem': Semaphore taken 234
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 235
+Core 0 - Thread 'Sem': Semaphore taken 236
+Core 0 - Thread 'TX': Queue send 59
+Core 0 - Thread 'Rx': Queue receive 59
+Core 0 - Thread 'Sem': Semaphore taken 237
+Core 0 - Thread 'Sem': Semaphore taken 238
+Core 0 - Thread 'Sem': Semaphore taken 239
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
+Core 0 - Thread 'Sem': Semaphore taken 240
+Core 0 - Thread 'TX': Queue send 60
+Core 0 - Thread 'Rx': Queue receive 60
+Core 0 - Thread 'SDK Mutex Use': Sleep finished; SDK Mutex releasing 4
+Core 0 - Thread 'SDK Mutex Use': SDK Mutex Entered, sleeping for a while 5
+Core 0 - Thread 'Sem': Semaphore taken 241
+Core 0 - Thread 'Sem': Semaphore taken 242
+Core 0 - Thread 'Sem': Semaphore taken 243
+Core 0 - Thread 'Sem': Semaphore taken 244
+Core 0 - Thread 'TX': Queue send 61
+Core 0 - Thread 'Rx': Queue receive 61
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 245
+Core 0 - Thread 'Sem': Semaphore taken 246
+Core 0 - Thread 'Sem': Semaphore taken 247
+Core 0 - Thread 'Sem': Semaphore taken 248
+Core 0 - Thread 'TX': Queue send 62
+Core 0 - Thread 'Rx': Queue receive 62
+Core 0 - Thread 'Sem': Semaphore taken 249
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 250
+Core 0 - Thread 'Sem': Semaphore taken 251
+Core 0 - Thread 'Sem': Semaphore taken 252
+Core 0 - Thread 'TX': Queue send 63
+Core 0 - Thread 'Rx': Queue receive 63
+Core 0 - Thread 'Sem': Semaphore taken 253
+Core 0 - Thread 'Sem': Semaphore taken 254
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
+Core 0 - Thread 'Sem': Semaphore taken 255
+Core 0 - Thread 'Sem': Semaphore taken 256
+Core 0 - Thread 'TX': Queue send 64
+Core 0 - Thread 'Rx': Queue receive 64
+Core 0 - Thread 'Sem': Semaphore taken 257
+Core 0 - Thread 'Sem': Semaphore taken 258
+Core 0 - Thread 'Sem': Semaphore taken 259
+Core 0 - Thread 'Sem': Semaphore taken 260
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'TX': Queue send 65
+Core 0 - Thread 'Rx': Queue receive 65
+Core 0 - Thread 'Sem': Semaphore taken 261
+Core 0 - Thread 'Sem': Semaphore taken 262
+Core 0 - Thread 'Sem': Semaphore taken 263
+Core 0 - Thread 'Sem': Semaphore taken 264
+Core 0 - Thread 'TX': Queue send 66
+Core 0 - Thread 'Rx': Queue receive 66
+Core 0 - Thread 'Sem': Semaphore taken 265
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
+Core 0 - Thread 'Sem': Semaphore taken 266
+Core 0 - Thread 'Sem': Semaphore taken 267
+Core 0 - Thread 'Sem': Semaphore taken 268
+Core 0 - Thread 'TX': Queue send 67
+Core 0 - Thread 'Rx': Queue receive 67
+Core 0 - Thread 'Sem': Semaphore taken 269
+Core 0 - Thread 'Sem': Semaphore taken 270
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
+Core 0 - Thread 'Sem': Semaphore taken 271
+Core 0 - Thread 'Sem': Semaphore taken 272
+Core 0 - Thread 'TX': Queue send 68
+Core 0 - Thread 'Rx': Queue receive 68
+Core 0 - Thread 'Sem': Semaphore taken 273
+Core 0 - Thread 'Sem': Semaphore taken 274
+Core 0 - Thread 'Sem': Semaphore taken 275
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
+Core 0 - Thread 'Sem': Semaphore taken 276
+Core 0 - Thread 'TX': Queue send 69
+Core 0 - Thread 'Rx': Queue receive 69
+Core 0 - Thread 'Sem': Semaphore taken 277
+Core 0 - Thread 'Sem': Semaphore taken 278
+Core 0 - Thread 'Sem': Semaphore taken 279
+Core 0 - Thread 'Sem': Semaphore taken 280
+Core 0 - Thread 'TX': Queue send 70
+Core 0 - Thread 'Rx': Queue receive 70
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 281
+Core 0 - Thread 'Sem': Semaphore taken 282
+Core 0 - Thread 'Sem': Semaphore taken 283
+Core 0 - Thread 'Sem': Semaphore taken 284
+Core 0 - Thread 'TX': Queue send 71
+Core 0 - Thread 'Rx': Queue receive 71
+Core 0 - Thread 'Sem': Semaphore taken 285
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250533 us
+Core 0 - Thread 'Sem': Semaphore taken 286
+Core 0 - Thread 'Sem': Semaphore taken 287
+Core 0 - Thread 'Sem': Semaphore taken 288
+Core 0 - Thread 'TX': Queue send 72
+Core 0 - Thread 'Rx': Queue receive 72
+Core 0 - Thread 'Sem': Semaphore taken 289
+Core 0 - Thread 'Sem': Semaphore taken 290
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
+Core 0 - Thread 'Sem': Semaphore taken 291
+Core 0 - Thread 'Sem': Semaphore taken 292
+Core 0 - Thread 'TX': Queue send 73
+Core 0 - Thread 'Rx': Queue receive 73
+Core 0 - Thread 'Sem': Semaphore taken 293
+Core 0 - Thread 'Sem': Semaphore taken 294
+Core 0 - Thread 'Sem': Semaphore taken 295
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
+Core 0 - Thread 'Sem': Semaphore taken 296
+Core 0 - Thread 'TX': Queue send 74
+Core 0 - Thread 'Rx': Queue receive 74
+Core 0 - Thread 'Sem': Semaphore taken 297
+Core 0 - Thread 'Sem': Semaphore taken 298
+Core 0 - Thread 'Sem': Semaphore taken 299
+Core 0 - Thread 'Sem': Semaphore taken 300
+Core 0 - Thread 'TX': Queue send 75
+Core 0 - Thread 'Rx': Queue receive 75
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
+Core 0 - Thread 'SDK Mutex Use': Sleep finished; SDK Mutex releasing 5
+Core 0 - Thread 'Sem': Semaphore taken 301
+Core 0 - Thread 'SDK Mutex Use': SDK Mutex Entered, sleeping for a while 6
+Core 0 - Thread 'Sem': Semaphore taken 302
+Core 0 - Thread 'Sem': Semaphore taken 303
+Core 0 - Thread 'Sem': Semaphore taken 304
+Core 0 - Thread 'TX': Queue send 76
+Core 0 - Thread 'Rx': Queue receive 76
+Core 0 - Thread 'Sem': Semaphore taken 305
+Core 0 - Thread 'Sem': Semaphore taken 306
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
+Core 0 - Thread 'Sem': Semaphore taken 307
+Core 0 - Thread 'Sem': Semaphore taken 308
+Core 0 - Thread 'TX': Queue send 77
+Core 0 - Thread 'Rx': Queue receive 77
+Core 0 - Thread 'Sem': Semaphore taken 309
+Core 0 - Thread 'Sem': Semaphore taken 310
+Core 0 - Thread 'Sem': Semaphore taken 311
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
+Core 0 - Thread 'Sem': Semaphore taken 312
+Core 0 - Thread 'TX': Queue send 78
+Core 0 - Thread 'Rx': Queue receive 78
+Core 0 - Thread 'Sem': Semaphore taken 313
+Core 0 - Thread 'Sem': Semaphore taken 314
+Core 0 - Thread 'Sem': Semaphore taken 315
+Core 0 - Thread 'Sem': Semaphore taken 316
+Core 0 - Thread 'TX': Queue send 79
+Core 0 - Thread 'Rx': Queue receive 79
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 317
+Core 0 - Thread 'Sem': Semaphore taken 318
+Core 0 - Thread 'Sem': Semaphore taken 319
+Core 0 - Thread 'Sem': Semaphore taken 320
+Core 0 - Thread 'TX': Queue send 80
+Core 0 - Thread 'Rx': Queue receive 80
+Core 0 - Thread 'Sem': Semaphore taken 321
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
+Core 0 - Thread 'Sem': Semaphore taken 322
+Core 0 - Thread 'Sem': Semaphore taken 323
+Core 0 - Thread 'Sem': Semaphore taken 324
+Core 0 - Thread 'TX': Queue send 81
+Core 0 - Thread 'Rx': Queue receive 81
+Core 0 - Thread 'Sem': Semaphore taken 325
+Core 0 - Thread 'Sem': Semaphore taken 326
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
+Core 0 - Thread 'Sem': Semaphore taken 327
+Core 0 - Thread 'Sem': Semaphore taken 328
+Core 0 - Thread 'TX': Queue send 82
+Core 0 - Thread 'Rx': Queue receive 82
+Core 0 - Thread 'Sem': Semaphore taken 329
+Core 0 - Thread 'Sem': Semaphore taken 330
+Core 0 - Thread 'Sem': Semaphore taken 331
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
+Core 0 - Thread 'Sem': Semaphore taken 332
+Core 0 - Thread 'TX': Queue send 83
+Core 0 - Thread 'Rx': Queue receive 83
+Core 0 - Thread 'Sem': Semaphore taken 333
+Core 0 - Thread 'Sem': Semaphore taken 334
+Core 0 - Thread 'Sem': Semaphore taken 335
+Core 0 - Thread 'Sem': Semaphore taken 336
+Core 0 - Thread 'TX': Queue send 84
+Core 0 - Thread 'Rx': Queue receive 84
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 337
+Core 0 - Thread 'Sem': Semaphore taken 338
+Core 0 - Thread 'Sem': Semaphore taken 339
+Core 0 - Thread 'Sem': Semaphore taken 340
+Core 0 - Thread 'TX': Queue send 85
+Core 0 - Thread 'Rx': Queue receive 85
+Core 0 - Thread 'Sem': Semaphore taken 341
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
+Core 0 - Thread 'Sem': Semaphore taken 342
+Core 0 - Thread 'Sem': Semaphore taken 343
+Core 0 - Thread 'Sem': Semaphore taken 344
+Core 0 - Thread 'TX': Queue send 86
+Core 0 - Thread 'Rx': Queue receive 86
+Core 0 - Thread 'Sem': Semaphore taken 345
+Core 0 - Thread 'Sem': Semaphore taken 346
+Core 0 - Thread 'Sem': Semaphore taken 347
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
+Core 0 - Thread 'Sem': Semaphore taken 348
+Core 0 - Thread 'TX': Queue send 87
+Core 0 - Thread 'Rx': Queue receive 87
+Core 0 - Thread 'Sem': Semaphore taken 349
+Core 0 - Thread 'Sem': Semaphore taken 350
+Core 0 - Thread 'Sem': Semaphore taken 351
+Core 0 - Thread 'Sem': Semaphore taken 352
+Core 0 - Thread 'TX': Queue send 88
+Core 0 - Thread 'Rx': Queue receive 88
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250564 us
+Core 0 - Thread 'Sem': Semaphore taken 353
+Core 0 - Thread 'Sem': Semaphore taken 354
+Core 0 - Thread 'Sem': Semaphore taken 355
+Core 0 - Thread 'Sem': Semaphore taken 356
+Core 0 - Thread 'TX': Queue send 89
+Core 0 - Thread 'Rx': Queue receive 89
+Core 0 - Thread 'Sem': Semaphore taken 357
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
+Core 0 - Thread 'Sem': Semaphore taken 358
+Core 0 - Thread 'Sem': Semaphore taken 359
+Core 0 - Thread 'Sem': Semaphore taken 360
+Core 0 - Thread 'TX': Queue send 90
+Core 0 - Thread 'Rx': Queue receive 90
+Core 0 - Thread 'Sem': Semaphore taken 361
+Core 0 - Thread 'SDK Mutex Use': Sleep finished; SDK Mutex releasing 6
+Core 0 - Thread 'SDK Mutex Use': SDK Mutex Entered, sleeping for a while 7
+Core 0 - Thread 'Sem': Semaphore taken 362
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
+Core 0 - Thread 'Sem': Semaphore taken 363
+Core 0 - Thread 'Sem': Semaphore taken 364
+Core 0 - Thread 'TX': Queue send 91
+Core 0 - Thread 'Rx': Queue receive 91
+Core 0 - Thread 'Sem': Semaphore taken 365
+Core 0 - Thread 'Sem': Semaphore taken 366
+Core 0 - Thread 'Sem': Semaphore taken 367
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
+Core 0 - Thread 'Sem': Semaphore taken 368
+Core 0 - Thread 'TX': Queue send 92
+Core 0 - Thread 'Rx': Queue receive 92
+Core 0 - Thread 'Sem': Semaphore taken 369
+Core 0 - Thread 'Sem': Semaphore taken 370
+Core 0 - Thread 'Sem': Semaphore taken 371
+Core 0 - Thread 'Sem': Semaphore taken 372
+Core 0 - Thread 'TX': Queue send 93
+Core 0 - Thread 'Rx': Queue receive 93
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 373
+Core 0 - Thread 'Sem': Semaphore taken 374
+Core 0 - Thread 'Sem': Semaphore taken 375
+Core 0 - Thread 'Sem': Semaphore taken 376
+Core 0 - Thread 'TX': Queue send 94
+Core 0 - Thread 'Rx': Queue receive 94
+Core 0 - Thread 'Sem': Semaphore taken 377
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 378
+Core 0 - Thread 'Sem': Semaphore taken 379
+Core 0 - Thread 'Sem': Semaphore taken 380
+Core 0 - Thread 'TX': Queue send 95
+Core 0 - Thread 'Rx': Queue receive 95
+Core 0 - Thread 'Sem': Semaphore taken 381
+Core 0 - Thread 'Sem': Semaphore taken 382
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
+Core 0 - Thread 'Sem': Semaphore taken 383
+Core 0 - Thread 'Sem': Semaphore taken 384
+Core 0 - Thread 'TX': Queue send 96
+Core 0 - Thread 'Rx': Queue receive 96
+Core 0 - Thread 'Sem': Semaphore taken 385
+Core 0 - Thread 'Sem': Semaphore taken 386
+Core 0 - Thread 'Sem': Semaphore taken 387
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
+Core 0 - Thread 'Sem': Semaphore taken 388
+Core 0 - Thread 'TX': Queue send 97
+Core 0 - Thread 'Rx': Queue receive 97
+Core 0 - Thread 'Sem': Semaphore taken 389
+Core 0 - Thread 'Sem': Semaphore taken 390
+Core 0 - Thread 'Sem': Semaphore taken 391
+Core 0 - Thread 'Sem': Semaphore taken 392
+Core 0 - Thread 'TX': Queue send 98
+Core 0 - Thread 'Rx': Queue receive 98
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 393
+Core 0 - Thread 'Sem': Semaphore taken 394
+Core 0 - Thread 'Sem': Semaphore taken 395
+Core 0 - Thread 'Sem': Semaphore taken 396
+Core 0 - Thread 'TX': Queue send 99
+Core 0 - Thread 'Rx': Queue receive 99
+Core 0 - Thread 'Sem': Semaphore taken 397
+Core 0 - Thread 'Sem': Semaphore taken 398
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250504 us
+Core 0 - Thread 'Sem': Semaphore taken 399
+Core 0 - Thread 'Sem': Semaphore taken 400
+Core 0 - Thread 'TX': Queue send 100
+Core 0 - Thread 'Rx': Queue receive 100
+Core 0 - Thread 'Sem': Semaphore taken 401
+Core 0 - Thread 'Sem': Semaphore taken 402
+Core 0 - Thread 'Sem': Semaphore taken 403
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
+Core 0 - Thread 'Sem': Semaphore taken 404
+Core 0 - Thread 'TX': Queue send 101
+Core 0 - Thread 'Rx': Queue receive 101
+Core 0 - Thread 'Sem': Semaphore taken 405
+Core 0 - Thread 'Sem': Semaphore taken 406
+Core 0 - Thread 'Sem': Semaphore taken 407
+Core 0 - Thread 'Sem': Semaphore taken 408
+Core 0 - Thread 'TX': Queue send 102
+Core 0 - Thread 'Rx': Queue receive 102
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
+Core 0 - Thread 'Sem': Semaphore taken 409
+Core 0 - Thread 'Sem': Semaphore taken 410
+Core 0 - Thread 'Sem': Semaphore taken 411
+Core 0 - Thread 'Sem': Semaphore taken 412
+Core 0 - Thread 'TX': Queue send 103
+Core 0 - Thread 'Rx': Queue receive 103
+Core 0 - Thread 'Sem': Semaphore taken 413
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250501 us
+Core 0 - Thread 'Sem': Semaphore taken 414
+Core 0 - Thread 'Sem': Semaphore taken 415
+Core 0 - Thread 'Sem': Semaphore taken 416
+Core 0 - Thread 'TX': Queue send 104
+Core 0 - Thread 'Rx': Queue receive 104
+Core 0 - Thread 'Sem': Semaphore taken 417
+Core 0 - Thread 'Sem': Semaphore taken 418
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250502 us
+Core 0 - Thread 'Sem': Semaphore taken 419
+Core 0 - Thread 'Sem': Semaphore taken 420
+Core 0 - Thread 'TX': Queue send 105
+Core 0 - Thread 'Rx': Queue receive 105
+Core 0 - Thread 'Sem': Semaphore taken 421
+Core 0 - Thread 'SDK Mutex Use': Sleep finished; SDK Mutex releasing 7
+Core 0 - Thread 'SDK Mutex Use': SDK Mutex Entered, sleeping for a while 8
+Core 0 - Thread 'Sem': Semaphore taken 422
+Core 0 - Thread 'Sem': Semaphore taken 423
+Core 0 - Thread 'SDK Seamphore U': SDK Sem wait timeout (ok) after 250503 us
+Core 0 - Thread 'Sem': Semaphore taken 424
+Core 0 - Thread 'TX': Queue send 106
+Core 0 - Thread 'Rx': Queue receive 106
+Core 0 - Thread 'Sem': Semaphore taken 425
