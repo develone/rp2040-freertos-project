@@ -1,3 +1,89 @@
+05/01/22
+Should I use git submodules?
+Git submodules may look powerful or cool upfront, but for all the reasons above it is a bad idea 
+to share code using submodules, especially when the code changes frequently. It will be much worse 
+when you have more and more developers working on the same repos.
+
+git clone git@github.com:develone/FreeRTOS-SMP-Demos.git
+cd FreeRTOS-SMP-Demos/
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[remote "origin"]
+        url = git@github.com:develone/FreeRTOS-SMP-Demos.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+        remote = origin
+        merge = refs/heads/main
+
+git clone git@github.com:develone/FreeRTOS-Kernel.git FreeRTOS/Source
+cd FreeRTOS/Source/
+git checkout -b smp
+Switched to a new branch 'smp'
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[remote "origin"]
+        url = git@github.com:develone/FreeRTOS-Kernel.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+        remote = origin
+        merge = refs/heads/main
+git log
+commit cf6850583c7c7b69726531dd56fa0264159f1750 (HEAD -> smp, origin/main, origin/HEAD, main)
+Author: Robert Berger <github@reliableembeddedsystems.com>
+Date:   Tue Apr 26 00:11:51 2022 +0300
+
+    queue.h: cTaskWokenByPost -> xTaskWokenByReceive (#491)
+    
+    Co-authored-by: Robert Berger <robert.berger@ReliableEmbeddedSystems.com>
+    Co-authored-by: Paul Bartell <pbartell@amazon.com>
+cd ../Demo/
+cd CORTEX_M0+_RP2040/
+git clone git@github.com:develone/pico-sdk.git
+cd pico-sdk
+git submodule update --init
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[remote "origin"]
+        url = git@github.com:develone/pico-sdk.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+[submodule "tinyusb"]
+        active = true
+        url = https://github.com/hathach/tinyusb.git
+commit 2062372d203b372849d573f252cf7c6dc2800c0a (HEAD -> master, origin/master, origin/HEAD)
+Author: Graham Sanderson <graham.sanderson@raspberrypi.com>
+Date:   Mon Nov 1 14:20:54 2021 -0500
+
+    SDK 1.3.0 release
+
+cd ../
+mkdir build
+cd build
+export PICO_SDK_PATH=/home/devel/FreeRTOS-SMP-Demos/FreeRTOS/Demo/CORTEX_M0+_RP2040/pico-sdk/
+cmake ..
+make
+. ~/Ultibo_Projects/picoultibo.sh
+/home/devel/ultibo/core:/home/devel/qemu-6.2.0-rpios/bin:/home/devel/local/openocd/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+ 
+
+prvNonRTOSWorker
+prvLaunchRTOS
+prvSDKMutexUseTask
+prvEventSemaphoreTask
+prvSDKSemaphoreUseTask
+prvLaunchRTOS
+
 This repo 
 04/29/22
 https://www.freertos.org/smp-demos-for-the-raspberry-pi-pico-board.html#introduction
