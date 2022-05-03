@@ -1,0 +1,660 @@
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 6
+Core 0: Busy work with mutex 7
+Core 0: Busy work with mutex 8
+Core 0: Busy work with mutex 9
+Core 0: Busy work with mutex 10
+Core 0: Busy work with mutex 11
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 12
+Core 0: Busy work with mutex 13
+Core 0: Busy work with mutex 14
+Core 0: Busy work with mutex 15
+Core 0: Busy work with mutex 16
+Core 0: Busy work with mutex 17
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 18
+Core 0: Busy work with mutex 19
+Core 0: Busy work with mutex 20
+Core 0: Busy work with mutex 21
+Core 0: Busy work with mutex 22
+Core 0: Busy work with mutex 23
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 24
+Core 0: Busy work with mutex 25
+Core 0: Busy work with mutex 26
+Core 0: Busy work with mutex 27
+Core 0: Busy work with mutex 28
+Core 0: Busy work with mutex 29
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 30
+Core 0: Busy work with mutex 31
+Core 0: Busy work with mutex 32
+Core 0: Busy work with mutex 33
+Core 0: Busy work with mutex 34
+Core 0: Busy work with mutex 35
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 36
+Core 0: Busy work with mutex 37
+Core 0: Busy work with mutex 38
+Core 0: Busy work with mutex 39
+Core 0: Busy work with mutex 40
+Core 0: Busy work with mutex 41
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 42
+Core 0: Busy work with mutex 43
+Core 0: Busy work with mutex 44
+Core 0: Busy work with mutex 45
+Core 0: Busy work with mutex 46
+Core 0: Busy work with mutex 47
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 48
+Core 0: Busy work with mutex 49
+Core 0: Busy work with mutex 50
+Core 0: Busy work with mutex 51
+Core 0: Busy work with mutex 52
+Core 0: Busy work with mutex 53
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 54
+Core 0: Busy work with mutex 55
+Core 0: Busy work with mutex 56
+Core 0: Busy work with mutex 57
+Core 0: Busy work with mutex 58
+Core 0: Busy work with mutex 59
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 60
+Core 0: Busy work with mutex 61
+Core 0: Busy work with mutex 62
+Core 0: Busy work with mutex 63
+Core 0: Busy work with mutex 64
+Core 0: Busy work with mutex 65
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 66
+Core 0: Busy work with mutex 67
+Core 0: Busy work with mutex 68
+Core 0: Busy work with mutex 69
+Core 0: Busy work with mutex 70
+Core 0: Busy work with mutex 71
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 72
+Core 0: Busy work with mutex 73
+Core 0: Busy work with mutex 74
+Core 0: Busy work with mutex 75
+Core 0: Busy work with mutex 76
+Core 0: Busy work with mutex 77
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 78
+Core 0: Busy work with mutex 79
+Core 0: Busy work with mutex 80
+Core 0: Busy work with mutex 81
+Core 0: Busy work with mutex 82
+Core 0: Busy work with mutex 83
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 84
+Core 0: Busy work with mutex 85
+Core 0: Busy work with mutex 86
+Core 0: Busy work with mutex 87
+Core 0: Busy work with mutex 88
+Core 0: Busy work with mutex 89
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 90
+Core 0: Busy work with mutex 91
+Core 0: Busy work with mutex 92
+Core 0: Busy work with mutex 93
+Core 0: Busy work with mutex 94
+Core 0: Busy work with mutex 95
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 96
+Core 0: Busy work with mutex 97
+Core 0: Busy work with mutex 98
+Core 0: Busy work with mutex 99
+Core 0: Busy work with mutex 100
+Core 0: Busy work with mutex 101
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 102
+Core 0: Busy work with mutex 103
+Core 0: Busy work with mutex 104
+Core 0: Busy work with mutex 105
+Core 0: Busy work with mutex 106
+Core 0: Busy work with mutex 107
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 108
+Core 0: Busy work with mutex 109
+Core 0: Busy work with mutex 110
+Core 0: Busy work with mutex 111
+Core 0: Busy work with mutex 112
+Core 0: Busy work with mutex 113
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 114
+Core 0: Busy work with mutex 115
+Core 0: Busy work with mutex 116
+Core 0: Busy work with mutex 117
+Core 0: Busy work with mutex 118
+Core 0: Busy work with mutex 119
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 120
+Core 0: Busy work with mutex 121
+Core 0: Busy work with mutex 122
+Core 0: Busy work with mutex 123
+Core 0: Busy work with mutex 124
+Core 0: Busy work with mutex 125
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 126
+Core 0: Busy work with mutex 127
+Core 0: Busy work with mutex 128
+Core 0: Busy work with mutex 129
+Core 0: Busy work with mutex 130
+Core 0: Busy work with mutex 131
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 132
+Core 0: Busy work with mutex 133
+Core 0: Busy work with mutex 134
+Core 0: Busy work with mutex 135
+Core 0: Busy work with mutex 136
+Core 0: Busy work with mutex 137
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 138
+Core 0: Busy work with mutex 139
+Core 0: Busy work with mutex 140
+Core 0: Busy work with mutex 141
+Core 0: Busy work with mutex 142
+Core 0: Busy work with mutex 143
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 144
+Core 0: Busy work with mutex 145
+Core 0: Busy work with mutex 146
+Core 0: Busy work with mutex 147
+Core 0: Busy work with mutex 148
+Core 0: Busy work with mutex 149
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 150
+Core 0: Busy work with mutex 151
+Core 0: Busy work with mutex 152
+Core 0: Busy work with mutex 153
+Core 0: Busy work with mutex 154
+Core 0: Busy work with mutex 155
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 156
+Core 0: Busy work with mutex 157
+Core 0: Busy work with mutex 158
+Core 0: Busy work with mutex 159
+Core 0: Busy work with mutex 160
+Core 0: Busy work with mutex 161
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 162
+Core 0: Busy work with mutex 163
+Core 0: Busy work with mutex 164
+Core 0: Busy work with mutex 165
+Core 0: Busy work with mutex 166
+Core 0: Busy work with mutex 167
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 168
+Core 0: Busy work with mutex 169
+Core 0: Busy work with mutex 170
+Core 0: Busy work with mutex 171
+Core 0: Busy work with mutex 172
+Core 0: Busy work with mutex 173
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 174
+Core 0: Busy work with mutex 175
+Core 0: Busy work with mutex 176
+Core 0: Busy work with mutex 177
+Core 0: Busy work with mutex 178
+Core 0: Busy work with mutex 179
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 180
+Core 0: Busy work with mutex 181
+Core 0: Busy work with mutex 182
+Core 0: Busy work with mutex 183
+Core 0: Busy work with mutex 184
+Core 0: Busy work with mutex 185
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 186
+Core 0: Busy work with mutex 187
+Core 0: Busy work with mutex 188
+Core 0: Busy work with mutex 189
+Core 0: Busy work with mutex 190
+Core 0: Busy work with mutex 191
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 192
+Core 0: Busy work with mutex 193
+Core 0: Busy work with mutex 194
+Core 0: Busy work with mutex 195
+Core 0: Busy work with mutex 196
+Core 0: Busy work with mutex 197
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 198
+Core 0: Busy work with mutex 199
+Core 0: Busy work with mutex 200
+Core 0: Busy work with mutex 201
+Core 0: Busy work with mutex 202
+Core 0: Busy work with mutex 203
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 204
+Core 0: Busy work with mutex 205
+Core 0: Busy work with mutex 206
+Core 0: Busy work with mutex 207
+Core 0: Busy work with mutex 208
+Core 0: Busy work with mutex 209
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 210
+Core 0: Busy work with mutex 211
+Core 0: Busy work with mutex 212
+Core 0: Busy work with mutex 213
+Core 0: Busy work with mutex 214
+Core 0: Busy work with mutex 215
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 216
+Core 0: Busy work with mutex 217
+Core 0: Busy work with mutex 218
+Core 0: Busy work with mutex 219
+Core 0: Busy work with mutex 220
+Core 0: Busy work with mutex 221
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 222
+Core 0: Busy work with mutex 223
+Core 0: Busy work with mutex 224
+Core 0: Busy work with mutex 225
+Core 0: Busy work with mutex 226
+Core 0: Busy work with mutex 227
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 228
+Core 0: Busy work with mutex 229
+Core 0: Busy work with mutex 230
+Core 0: Busy work with mutex 231
+Core 0: Busy work with mutex 232
+Core 0: Busy work with mutex 233
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 234
+Core 0: Busy work with mutex 235
+Core 0: Busy work with mutex 236
+Core 0: Busy work with mutex 237
+Core 0: Busy work with mutex 238
+Core 0: Busy work with mutex 239
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 240
+Core 0: Busy work with mutex 241
+Core 0: Busy work with mutex 242
+Core 0: Busy work with mutex 243
+Core 0: Busy work with mutex 244
+Core 0: Busy work with mutex 245
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 246
+Core 0: Busy work with mutex 247
+Core 0: Busy work with mutex 248
+Core 0: Busy work with mutex 249
+Core 0: Busy work with mutex 250
+Core 0: Busy work with mutex 251
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 252
+Core 0: Busy work with mutex 253
+Core 0: Busy work with mutex 254
+Core 0: Busy work with mutex 255
+Core 0: Busy work with mutex 256
+Core 0: Busy work with mutex 257
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 258
+Core 0: Busy work with mutex 259
+Core 0: Busy work with mutex 260
+Core 0: Busy work with mutex 261
+Core 0: Busy work with mutex 262
+Core 0: Busy work with mutex 263
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 264
+Core 0: Busy work with mutex 265
+Core 0: Busy work with mutex 266
+Core 0: Busy work with mutex 267
+Core 0: Busy work with mutex 268
+Core 0: Busy work with mutex 269
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 270
+Core 0: Busy work with mutex 271
+Core 0: Busy work with mutex 272
+Core 0: Busy work with mutex 273
+Core 0: Busy work with mutex 274
+Core 0: Busy work with mutex 275
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 276
+Core 0: Busy work with mutex 277
+Core 0: Busy work with mutex 278
+Core 0: Busy work with mutex 279
+Core 0: Busy work with mutex 280
+Core 0: Busy work with mutex 281
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 282
+Core 0: Busy work with mutex 283
+Core 0: Busy work with mutex 284
+Core 0: Busy work with mutex 285
+Core 0: Busy work with mutex 286
+Core 0: Busy work with mutex 287
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 288
+Core 0: Busy work with mutex 289
+Core 0: Busy work with mutex 290
+Core 0: Busy work with mutex 291
+Core 0: Busy work with mutex 292
+Core 0: Busy work with mutex 293
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 294
+Core 0: Busy work with mutex 295
+Core 0: Busy work with mutex 296
+Core 0: Busy work with mutex 297
+Core 0: Busy work with mutex 298
+Core 0: Busy work with mutex 299
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 300
+Core 0: Busy work with mutex 301
+Core 0: Busy work with mutex 302
+Core 0: Busy work with mutex 303
+Core 0: Busy work with mutex 304
+Core 0: Busy work with mutex 305
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 306
+Core 0: Busy work with mutex 307
+Core 0: Busy work with mutex 308
+Core 0: Busy work with mutex 309
+Core 0: Busy work with mutex 310
+Core 0: Busy work with mutex 311
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 312
+Core 0: Busy work with mutex 313
+Core 0: Busy work with mutex 314
+Core 0: Busy work with mutex 315
+Core 0: Busy work with mutex 316
+Core 0: Busy work with mutex 317
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 318
+Core 0: Busy work with mutex 319
+Core 0: Busy work with mutex 320
+Core 0: Busy work with mutex 321
+Core 0: Busy work with mutex 322
+Core 0: Busy work with mutex 323
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 324
+Core 0: Busy work with mutex 325
+Core 0: Busy work with mutex 326
+Core 0: Busy work with mutex 327
+Core 0: Busy work with mutex 328
+Core 0: Busy work with mutex 329
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 330
+Core 0: Busy work with mutex 331
+Core 0: Busy work with mutex 332
+Core 0: Busy work with mutex 333
+Core 0: Busy work with mutex 334
+Core 0: Busy work with mutex 335
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 336
+Core 0: Busy work with mutex 337
+Core 0: Busy work with mutex 338
+Core 0: Busy work with mutex 339
+Core 0: Busy work with mutex 340
+Core 0: Busy work with mutex 341
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 342
+Core 0: Busy work with mutex 343
+Core 0: Busy work with mutex 344
+Core 0: Busy work with mutex 345
+Core 0: Busy work with mutex 346
+Core 0: Busy work with mutex 347
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 348
+Core 0: Busy work with mutex 349
+Core 0: Busy work with mutex 350
+Core 0: Busy work with mutex 351
+Core 0: Busy work with mutex 352
+Core 0: Busy work with mutex 353
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 354
+Core 0: Busy work with mutex 355
+Core 0: Busy work with mutex 356
+Core 0: Busy work with mutex 357
+Core 0: Busy work with mutex 358
+Core 0: Busy work with mutex 359
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 360
+Core 0: Busy work with mutex 361
+Core 0: Busy work with mutex 362
+Core 0: Busy work with mutex 363
+Core 0: Busy work with mutex 364
+Core 0: Busy work with mutex 365
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 366
+Core 0: Busy work with mutex 367
+Core 0: Busy work with mutex 368
+Core 0: Busy work with mutex 369
+Core 0: Busy work with mutex 370
+Core 0: Busy work with mutex 371
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 372
+Core 0: Busy work with mutex 373
+Core 0: Busy work with mutex 374
+Core 0: Busy work with mutex 375
+Core 0: Busy work with mutex 376
+Core 0: Busy work with mutex 377
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 378
+Core 0: Busy work with mutex 379
+Core 0: Busy work with mutex 380
+Core 0: Busy work with mutex 381
+Core 0: Busy work with mutex 382
+Core 0: Busy work with mutex 383
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 384
+Core 0: Busy work with mutex 385
+Core 0: Busy work with mutex 386
+Core 0: Busy work with mutex 387
+Core 0: Busy work with mutex 388
+Core 0: Busy work with mutex 389
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 390
+Core 0: Busy work with mutex 391
+Core 0: Busy work with mutex 392
+Core 0: Busy work with mutex 393
+Core 0: Busy work with mutex 394
+Core 0: Busy work with mutex 395
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
+Core 0: Finish SDK sleep; release SDK semaphore
+Core 0: Acquire SDK mutex
+Core 0: Busy work with mutex 396
+Core 0: Busy work with mutex 397
+Core 0: Busy work with mutex 398
+Core 0: Busy work with mutex 399
+Core 0: Busy work with mutex 400
+Core 0: Busy work with mutex 401
+Core 0: Release SDK mutex
+Core 0: Starting SDK sleep
