@@ -1,0 +1,229 @@
+05-04-22
+
+git clone git@github.com:develone/picoprobe.git 
+
+cd picoprobe
+
+git clone git@github.com:develone/pico-sdk.git
+
+cd pico-sdk
+
+git submodule update --init
+
+cd ../
+
+mkdir build
+
+cd build 
+
+export PICO_SDK_PATH=/home/devel/picoprobe/pico-sdk/
+
+devel@pi4-27:~/picoprobe/build $ cmake ..
+PICO_SDK_PATH is /home/devel/rp2040-freertos-project/pico-sdk
+PICO platform is rp2040.
+PICO target board is pico.
+Using board configuration from /home/devel/rp2040-freertos-project/pico-sdk/src/boards/include/boards/pico.h
+TinyUSB available at /home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/picoprobe/build
+devel@pi4-27:~/picoprobe/build $ make
+Scanning dependencies of target ELF2UF2Build
+[  1%] Creating directories for 'ELF2UF2Build'
+[  2%] No download step for 'ELF2UF2Build'
+[  3%] No update step for 'ELF2UF2Build'
+[  4%] No patch step for 'ELF2UF2Build'
+[  5%] Performing configure step for 'ELF2UF2Build'
+-- The C compiler identification is GNU 10.2.1
+-- The CXX compiler identification is GNU 10.2.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/picoprobe/build/elf2uf2
+[  6%] Performing build step for 'ELF2UF2Build'
+Scanning dependencies of target elf2uf2
+[ 50%] Building CXX object CMakeFiles/elf2uf2.dir/main.cpp.o
+[100%] Linking CXX executable elf2uf2
+[100%] Built target elf2uf2
+[  7%] No install step for 'ELF2UF2Build'
+[  8%] Completed 'ELF2UF2Build'
+[  8%] Built target ELF2UF2Build
+Scanning dependencies of target PioasmBuild
+[  9%] Creating directories for 'PioasmBuild'
+[ 10%] No download step for 'PioasmBuild'
+[ 11%] No update step for 'PioasmBuild'
+[ 12%] No patch step for 'PioasmBuild'
+[ 13%] Performing configure step for 'PioasmBuild'
+-- The CXX compiler identification is GNU 10.2.1
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/picoprobe/build/pioasm
+[ 14%] Performing build step for 'PioasmBuild'
+Scanning dependencies of target pioasm
+[ 10%] Building CXX object CMakeFiles/pioasm.dir/main.cpp.o
+[ 20%] Building CXX object CMakeFiles/pioasm.dir/pio_assembler.cpp.o
+[ 30%] Building CXX object CMakeFiles/pioasm.dir/pio_disassembler.cpp.o
+[ 40%] Building CXX object CMakeFiles/pioasm.dir/gen/lexer.cpp.o
+[ 50%] Building CXX object CMakeFiles/pioasm.dir/gen/parser.cpp.o
+In file included from /usr/include/c++/10/vector:72,
+                 from /home/devel/rp2040-freertos-project/pico-sdk/tools/pioasm/pio_types.h:14,
+                 from /home/devel/rp2040-freertos-project/pico-sdk/tools/pioasm/gen/parser.hpp:52,
+                 from /home/devel/rp2040-freertos-project/pico-sdk/tools/pioasm/gen/parser.cpp:41:
+/usr/include/c++/10/bits/vector.tcc: In member function ‘void std::vector<_Tp, _Alloc>::emplace_back(_Args&& ...) [with _Args = {yy::parser::stack_symbol_type}; _Tp = yy::parser::stack_symbol_type; _Alloc = std::allocator<yy::parser::stack_symbol_type>]’:
+/usr/include/c++/10/bits/vector.tcc:121:21: note: parameter passing for argument of type ‘__gnu_cxx::__normal_iterator<yy::parser::stack_symbol_type*, std::vector<yy::parser::stack_symbol_type, std::allocator<yy::parser::stack_symbol_type> > >’ changed in GCC 7.1
+  121 |    _M_realloc_insert(end(), std::forward<_Args>(__args)...);
+      |    ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/10/bits/vector.tcc: In member function ‘void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {yy::parser::stack_symbol_type}; _Tp = yy::parser::stack_symbol_type; _Alloc = std::allocator<yy::parser::stack_symbol_type>]’:
+/usr/include/c++/10/bits/vector.tcc:426:7: note: parameter passing for argument of type ‘std::vector<yy::parser::stack_symbol_type, std::allocator<yy::parser::stack_symbol_type> >::iterator’ changed in GCC 7.1
+  426 |       vector<_Tp, _Alloc>::
+      |       ^~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/10/vector:66,
+                 from /home/devel/rp2040-freertos-project/pico-sdk/tools/pioasm/pio_types.h:14,
+                 from /home/devel/rp2040-freertos-project/pico-sdk/tools/pioasm/gen/parser.hpp:52,
+                 from /home/devel/rp2040-freertos-project/pico-sdk/tools/pioasm/gen/parser.cpp:41:
+/usr/include/c++/10/bits/stl_uninitialized.h: In function ‘_ForwardIterator std::__uninitialized_move_if_noexcept_a(_InputIterator, _InputIterator, _ForwardIterator, _Allocator&) [with _InputIterator = yy::parser::stack_symbol_type*; _ForwardIterator = yy::parser::stack_symbol_type*; _Allocator = std::allocator<yy::parser::stack_symbol_type>]’:
+/usr/include/c++/10/bits/stl_uninitialized.h:347:2: note: parameter passing for argument of type ‘std::move_iterator<yy::parser::stack_symbol_type*>’ changed in GCC 7.1
+  346 |       return std::__uninitialized_copy_a
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  347 |  (_GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__first),
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  348 |   _GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__last), __result, __alloc);
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/10/bits/stl_uninitialized.h: In function ‘_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp>&) [with _InputIterator = std::move_iterator<yy::parser::stack_symbol_type*>; _ForwardIterator = yy::parser::stack_symbol_type*; _Tp = yy::parser::stack_symbol_type]’:
+/usr/include/c++/10/bits/stl_uninitialized.h:323:5: note: parameter passing for argument of type ‘std::move_iterator<yy::parser::stack_symbol_type*>’ changed in GCC 7.1
+  323 |     __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/10/bits/stl_uninitialized.h:323:5: note: parameter passing for argument of type ‘std::move_iterator<yy::parser::stack_symbol_type*>’ changed in GCC 7.1
+/usr/include/c++/10/bits/stl_uninitialized.h:325:37: note: parameter passing for argument of type ‘std::move_iterator<yy::parser::stack_symbol_type*>’ changed in GCC 7.1
+  325 |     { return std::uninitialized_copy(__first, __last, __result); }
+      |              ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/10/bits/stl_uninitialized.h: In function ‘_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = std::move_iterator<yy::parser::stack_symbol_type*>; _ForwardIterator = yy::parser::stack_symbol_type*]’:
+/usr/include/c++/10/bits/stl_uninitialized.h:125:5: note: parameter passing for argument of type ‘std::move_iterator<yy::parser::stack_symbol_type*>’ changed in GCC 7.1
+  125 |     uninitialized_copy(_InputIterator __first, _InputIterator __last,
+      |     ^~~~~~~~~~~~~~~~~~
+/usr/include/c++/10/bits/stl_uninitialized.h:125:5: note: parameter passing for argument of type ‘std::move_iterator<yy::parser::stack_symbol_type*>’ changed in GCC 7.1
+/usr/include/c++/10/bits/stl_uninitialized.h:150:15: note: parameter passing for argument of type ‘std::move_iterator<yy::parser::stack_symbol_type*>’ changed in GCC 7.1
+  147 |       return std::__uninitialized_copy<__is_trivial(_ValueType1)
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  148 |            && __is_trivial(_ValueType2)
+      |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  149 |            && __assignable>::
+      |            ~~~~~~~~~~~~~~~~~~
+  150 |  __uninit_copy(__first, __last, __result);
+      |  ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/10/bits/stl_uninitialized.h: In static member function ‘static _ForwardIterator std::__uninitialized_copy<_TrivialValueTypes>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = std::move_iterator<yy::parser::stack_symbol_type*>; _ForwardIterator = yy::parser::stack_symbol_type*; bool _TrivialValueTypes = false]’:
+/usr/include/c++/10/bits/stl_uninitialized.h:84:9: note: parameter passing for argument of type ‘std::move_iterator<yy::parser::stack_symbol_type*>’ changed in GCC 7.1
+   84 |         __uninit_copy(_InputIterator __first, _InputIterator __last,
+      |         ^~~~~~~~~~~~~
+/usr/include/c++/10/bits/stl_uninitialized.h:84:9: note: parameter passing for argument of type ‘std::move_iterator<yy::parser::stack_symbol_type*>’ changed in GCC 7.1
+[ 60%] Building CXX object CMakeFiles/pioasm.dir/c_sdk_output.cpp.o
+[ 70%] Building CXX object CMakeFiles/pioasm.dir/python_output.cpp.o
+[ 80%] Building CXX object CMakeFiles/pioasm.dir/hex_output.cpp.o
+[ 90%] Building CXX object CMakeFiles/pioasm.dir/ada_output.cpp.o
+[100%] Linking CXX executable pioasm
+[100%] Built target pioasm
+[ 15%] No install step for 'PioasmBuild'
+[ 16%] Completed 'PioasmBuild'
+[ 16%] Built target PioasmBuild
+Scanning dependencies of target bs2_default
+[ 17%] Building ASM object pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
+[ 18%] Linking ASM executable bs2_default.elf
+[ 18%] Built target bs2_default
+Scanning dependencies of target bs2_default_padded_checksummed_asm
+[ 19%] Generating bs2_default.bin
+[ 20%] Generating bs2_default_padded_checksummed.S
+[ 20%] Built target bs2_default_padded_checksummed_asm
+Scanning dependencies of target picoprobe_probe_pio_h
+[ 21%] Generating probe.pio.h
+[ 21%] Built target picoprobe_probe_pio_h
+Scanning dependencies of target picoprobe
+[ 22%] Building C object CMakeFiles/picoprobe.dir/src/led.c.obj
+[ 23%] Building C object CMakeFiles/picoprobe.dir/src/main.c.obj
+[ 25%] Building C object CMakeFiles/picoprobe.dir/src/usb_descriptors.c.obj
+[ 26%] Building C object CMakeFiles/picoprobe.dir/src/probe.c.obj
+[ 27%] Building C object CMakeFiles/picoprobe.dir/src/cdc_uart.c.obj
+[ 28%] Building C object CMakeFiles/picoprobe.dir/src/get_serial.c.obj
+[ 29%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+[ 30%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+[ 31%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+[ 32%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+[ 33%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+[ 34%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+[ 35%] Building ASM object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
+[ 36%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/common/pico_time/time.c.obj
+[ 37%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+[ 38%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+[ 39%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/common/pico_sync/sem.c.obj
+[ 40%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/common/pico_sync/lock_core.c.obj
+[ 41%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/common/pico_sync/mutex.c.obj
+[ 42%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/common/pico_sync/critical_section.c.obj
+[ 43%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/common/pico_util/datetime.c.obj
+[ 44%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/common/pico_util/pheap.c.obj
+[ 45%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/common/pico_util/queue.c.obj
+[ 46%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+[ 47%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+[ 48%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+[ 50%] Building ASM object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+[ 51%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+[ 52%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
+[ 53%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+[ 54%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+[ 55%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+[ 56%] Building ASM object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+[ 57%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+[ 58%] Building ASM object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+[ 59%] Building ASM object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+[ 60%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+[ 61%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
+[ 62%] Building ASM object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+[ 63%] Building ASM object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+[ 64%] Building ASM object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+[ 65%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+[ 66%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+[ 67%] Building ASM object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+[ 68%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+[ 69%] Building ASM object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+[ 70%] Building ASM object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+[ 71%] Building CXX object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+[ 72%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+[ 73%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+[ 75%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+[ 76%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+[ 77%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+[ 78%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+[ 79%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+[ 80%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+[ 81%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+[ 82%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
+[ 83%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+[ 84%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
+[ 85%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
+[ 86%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+[ 87%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
+[ 88%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
+[ 89%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
+[ 90%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
+[ 91%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
+[ 92%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+[ 93%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
+[ 94%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/tusb.c.obj
+[ 95%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+[ 96%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+[ 97%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+[ 98%] Building C object CMakeFiles/picoprobe.dir/home/devel/rp2040-freertos-project/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+[100%] Linking CXX executable picoprobe.elf
+[100%] Built target picoprobe
