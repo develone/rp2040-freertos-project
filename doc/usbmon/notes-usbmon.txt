@@ -1,0 +1,36 @@
+https://technolinchpin.wordpress.com/2015/10/23/usb-bus-sniffers-for-linux-system/
+
+
+
+lsmod | grep -i usbmon
+usbmon                 32768  0
+
+modinfo usbmon
+filename:       /lib/modules/5.10.92-v7l+/kernel/drivers/usb/mon/usbmon.ko
+license:        GPL
+srcversion:     576FBD7571787F1E970A340
+depends:        
+intree:         Y
+name:           usbmon
+vermagic:       5.10.92-v7l+ SMP mod_unload modversions ARMv7 p2v8
+
+Also make sure debufs is mounted . If debugfs is not already mounted on /sys/kernel/debug, 
+ensure that it is mounted, else issue the following command as root:
+
+mount -t debugfs none_debugs /sys/kernel/debug
+
+df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+/dev/root       61227908 36035888  22649244  62% /
+devtmpfs         3879284        0   3879284   0% /dev
+tmpfs            4044148        0   4044148   0% /dev/shm
+tmpfs            1617660     1984   1615676   1% /run
+tmpfs               5120        4      5116   1% /run/lock
+/dev/mmcblk0p1    258095    49436    208660  20% /boot
+tmpfs             808828       20    808808   1% /run/user/1001
+
+mount -t debugfs none_debugs /sys/kernel/debug
+
+mount: /sys/kernel/debug: none_debugs already mounted or mount point busy.
+
+lsusb -v > /home/devel/results.txt
