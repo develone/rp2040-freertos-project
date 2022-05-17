@@ -6,6 +6,8 @@ git clone  --recurse-submodules git@github.com:develone/rp2040-freertos-project
 
 cd rp2040-freertos-project
 
+git clone git@github.com:develone/pico-sdk.git
+
 git clone https://github.com/raspberrypi/pico-sdk
 
 cd pico-sdk
