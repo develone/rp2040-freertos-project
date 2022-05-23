@@ -4,6 +4,8 @@ add_library(crc16
     ${PICO_SDK_CRC16_SOURCE}/crc16.c
 		${PICO_SDK_CRC16_SOURCE}/head-tail.c
 		${PICO_SDK_CRC16_SOURCE}/cvtutils.c
+		${PICO_SDK_CRC16_SOURCE}/lfs_util.c
+		${PICO_SDK_CRC16_SOURCE}/lfs.c
 			
 )
 
