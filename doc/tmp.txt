@@ -25,6 +25,8 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2tasks
 
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program test-read/test-read.elf verify reset exit"
 
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program test-read-crc16/test-read-crc16.elf verify reset exit"
+
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-ultibo/pico-ultibo.elf verify reset exit"
 freeRTOS tasks in development
 
