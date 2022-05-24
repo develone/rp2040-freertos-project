@@ -6,6 +6,7 @@
 [  2%] Building C object crc16/CMakeFiles/crc16.dir/CRC16-Files/cvtutils.c.obj
 [  2%] Building C object crc16/CMakeFiles/crc16.dir/CRC16-Files/lfs_util.c.obj
 [  2%] Building C object crc16/CMakeFiles/crc16.dir/CRC16-Files/lfs.c.obj
+[  2%] Building C object crc16/CMakeFiles/crc16.dir/CRC16-Files/fs.c.obj
 [  2%] Linking C static library libcrc16.a
 [  2%] Built target crc16
 [  2%] Creating directories for 'ELF2UF2Build'
@@ -27,7 +28,7 @@
 [  3%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/rp2040-logic-analyzer.c.obj
 [  3%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 [  3%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-[  3%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+[  4%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 [  4%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 [  4%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 [  4%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
@@ -38,7 +39,7 @@
 [  4%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/common/pico_sync/sem.c.obj
 [  4%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/common/pico_sync/lock_core.c.obj
 [  4%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/common/pico_sync/mutex.c.obj
-[  4%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/common/pico_sync/critical_section.c.obj
+[  5%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/common/pico_sync/critical_section.c.obj
 [  5%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/common/pico_util/datetime.c.obj
 [  5%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/common/pico_util/pheap.c.obj
 [  5%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/common/pico_util/queue.c.obj
@@ -50,7 +51,7 @@
 [  5%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 [  5%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 [  5%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-[  5%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+[  6%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 [  6%] Building ASM object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 [  6%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 [  6%] Building ASM object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
@@ -61,7 +62,7 @@
 [  6%] Building ASM object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 [  6%] Building ASM object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 [  6%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-[  6%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+[  7%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 [  7%] Building ASM object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
 [  7%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 [  7%] Building ASM object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
@@ -72,7 +73,7 @@
 [  7%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
 [  7%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
 [  7%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-[  7%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+[  8%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
 [  8%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
 [  8%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
 [  8%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
@@ -83,7 +84,7 @@
 [  8%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
 [  8%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
 [  8%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
-[  8%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
+[  9%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
 [  9%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
 [  9%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
 [  9%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
@@ -95,36 +96,36 @@
 [  9%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
 [  9%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
 [  9%] Building C object rp2040-logic-analyzer/CMakeFiles/rp2040-logic-analyzer.dir/__/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
-[  9%] Linking CXX executable rp2040-logic-analyzer.elf
-[  9%] Built target rp2040-logic-analyzer
-[  9%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/event_groups.c.obj
-[  9%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/list.c.obj
-[  9%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/queue.c.obj
-[  9%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/stream_buffer.c.obj
-[  9%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/tasks.c.obj
-[  9%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/timers.c.obj
-[  9%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/portable/MemMang/heap_3.c.obj
-[ 10%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/portable/GCC/ARM_CM0/port.c.obj
-[ 10%] Linking C static library libfreertos.a
-[ 10%] Built target freertos
-[ 10%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/selectGoodFeatures.c.obj
-[ 10%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/pyramid.c.obj
-[ 10%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/convolve.c.obj
-[ 10%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/error.c.obj
-[ 10%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/klt.c.obj
-[ 10%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/klt_util.c.obj
-[ 10%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/portable/MemMang/heap_3.c.obj
-[ 11%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/portable/GCC/ARM_CM0/port.c.obj
-[ 11%] Linking C static library libklt.a
-[ 11%] Built target klt
-[ 11%] Building C object crc/CMakeFiles/crc.dir/CRC-Files/crc.c.obj
-[ 11%] Building C object crc/CMakeFiles/crc.dir/CRC-Files/head-tail.c.obj
-[ 11%] Building C object crc/CMakeFiles/crc.dir/CRC-Files/cvtutils.c.obj
-[ 11%] Linking C static library libcrc.a
-[ 11%] Built target crc
-[ 11%] Building C object lifting/CMakeFiles/lifting.dir/LIFTING-Files/lifting.c.obj
-[ 11%] Linking C static library liblifting.a
-[ 11%] Built target lifting
+[ 10%] Linking CXX executable rp2040-logic-analyzer.elf
+[ 10%] Built target rp2040-logic-analyzer
+[ 10%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/event_groups.c.obj
+[ 10%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/list.c.obj
+[ 10%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/queue.c.obj
+[ 10%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/stream_buffer.c.obj
+[ 10%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/tasks.c.obj
+[ 10%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/timers.c.obj
+[ 11%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/portable/MemMang/heap_3.c.obj
+[ 11%] Building C object freertos/CMakeFiles/freertos.dir/FreeRTOS-Kernel/portable/GCC/ARM_CM0/port.c.obj
+[ 11%] Linking C static library libfreertos.a
+[ 11%] Built target freertos
+[ 11%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/selectGoodFeatures.c.obj
+[ 11%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/pyramid.c.obj
+[ 11%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/convolve.c.obj
+[ 11%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/error.c.obj
+[ 11%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/klt.c.obj
+[ 11%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/klt_util.c.obj
+[ 12%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/portable/MemMang/heap_3.c.obj
+[ 12%] Building C object klt/CMakeFiles/klt.dir/KLT-Kernel/portable/GCC/ARM_CM0/port.c.obj
+[ 12%] Linking C static library libklt.a
+[ 12%] Built target klt
+[ 12%] Building C object crc/CMakeFiles/crc.dir/CRC-Files/crc.c.obj
+[ 12%] Building C object crc/CMakeFiles/crc.dir/CRC-Files/head-tail.c.obj
+[ 12%] Building C object crc/CMakeFiles/crc.dir/CRC-Files/cvtutils.c.obj
+[ 12%] Linking C static library libcrc.a
+[ 12%] Built target crc
+[ 12%] Building C object lifting/CMakeFiles/lifting.dir/LIFTING-Files/lifting.c.obj
+[ 12%] Linking C static library liblifting.a
+[ 12%] Built target lifting
 [ 12%] Building C object test-read/CMakeFiles/test-read.dir/main.c.obj
 [ 12%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 [ 12%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
@@ -135,7 +136,7 @@
 [ 12%] Building ASM object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 [ 12%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/common/pico_time/time.c.obj
 [ 12%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/common/pico_time/timeout_helper.c.obj
-[ 12%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+[ 13%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 [ 13%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/common/pico_sync/sem.c.obj
 [ 13%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/common/pico_sync/lock_core.c.obj
 [ 13%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/common/pico_sync/mutex.c.obj
@@ -146,7 +147,7 @@
 [ 13%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 [ 13%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 [ 13%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-[ 13%] Building ASM object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+[ 14%] Building ASM object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 [ 14%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 [ 14%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 [ 14%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
@@ -157,7 +158,7 @@
 [ 14%] Building ASM object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 [ 14%] Building ASM object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 [ 14%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-[ 14%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
+[ 15%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 [ 15%] Building ASM object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 [ 15%] Building ASM object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 [ 15%] Building ASM object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
@@ -169,7 +170,7 @@
 [ 15%] Building ASM object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 [ 15%] Building CXX object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 [ 15%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
-[ 15%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+[ 16%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 [ 16%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
 [ 16%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
 [ 16%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
@@ -180,7 +181,7 @@
 [ 16%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 [ 16%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
 [ 16%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
-[ 16%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
+[ 17%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
 [ 17%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
 [ 17%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
 [ 17%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
@@ -191,15 +192,15 @@
 [ 17%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
 [ 17%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/lib/tinyusb/src/tusb.c.obj
 [ 17%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-[ 17%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+[ 18%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 [ 18%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
 [ 18%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
 [ 18%] Linking CXX executable test-read.elf
 [ 18%] Built target test-read
+Scanning dependencies of target test-read-crc16
 [ 18%] Building C object test-read-crc16/CMakeFiles/test-read-crc16.dir/main.c.obj
 [ 18%] Building C object test-read-crc16/CMakeFiles/test-read-crc16.dir/xreceive.c.obj
 [ 18%] Building C object test-read-crc16/CMakeFiles/test-read-crc16.dir/xtransmit.c.obj
-[ 18%] Building C object test-read-crc16/CMakeFiles/test-read-crc16.dir/fs.c.obj
 [ 18%] Building C object test-read-crc16/CMakeFiles/test-read-crc16.dir/vi.c.obj
 [ 18%] Building C object test-read-crc16/CMakeFiles/test-read-crc16.dir/__/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 [ 18%] Building C object test-read-crc16/CMakeFiles/test-read-crc16.dir/__/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
@@ -277,7 +278,7 @@
 [ 24%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 [ 24%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 [ 24%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-[ 24%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+[ 25%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 [ 25%] Building ASM object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 [ 25%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/common/pico_time/time.c.obj
 [ 25%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/common/pico_time/timeout_helper.c.obj
@@ -288,7 +289,7 @@
 [ 25%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/common/pico_sync/critical_section.c.obj
 [ 25%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/common/pico_util/datetime.c.obj
 [ 25%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/common/pico_util/pheap.c.obj
-[ 25%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/common/pico_util/queue.c.obj
+[ 26%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/common/pico_util/queue.c.obj
 [ 26%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 [ 26%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 [ 26%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
@@ -299,7 +300,7 @@
 [ 26%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 [ 26%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 [ 26%] Building ASM object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
-[ 26%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+[ 27%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 [ 27%] Building ASM object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 [ 27%] Building ASM object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 [ 27%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
@@ -310,7 +311,7 @@
 [ 27%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
 [ 27%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 [ 27%] Building ASM object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-[ 27%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+[ 28%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 [ 28%] Building ASM object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 [ 28%] Building ASM object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 [ 28%] Building CXX object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
@@ -322,7 +323,7 @@
 [ 28%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
 [ 28%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
 [ 28%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-[ 28%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+[ 29%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
 [ 29%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 [ 29%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
 [ 29%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
@@ -333,7 +334,7 @@
 [ 29%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
 [ 29%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
 [ 29%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
-[ 29%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+[ 30%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
 [ 30%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
 [ 30%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/tusb.c.obj
 [ 30%] Building C object pico-ultibo/CMakeFiles/pico-ultibo.dir/__/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
@@ -348,7 +349,7 @@
 [ 30%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 [ 30%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 [ 30%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-[ 30%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+[ 31%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 [ 31%] Building ASM object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 [ 31%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/common/pico_time/time.c.obj
 [ 31%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/common/pico_time/timeout_helper.c.obj
@@ -359,7 +360,7 @@
 [ 31%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/common/pico_sync/critical_section.c.obj
 [ 31%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/common/pico_util/datetime.c.obj
 [ 31%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/common/pico_util/pheap.c.obj
-[ 31%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/common/pico_util/queue.c.obj
+[ 32%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/common/pico_util/queue.c.obj
 [ 32%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 [ 32%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 [ 32%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
@@ -370,7 +371,7 @@
 [ 32%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 [ 32%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 [ 32%] Building ASM object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
-[ 32%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+[ 33%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 [ 33%] Building ASM object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 [ 33%] Building ASM object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 [ 33%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
@@ -382,7 +383,7 @@
 [ 33%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 [ 33%] Building ASM object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
 [ 33%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
-[ 33%] Building ASM object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+[ 34%] Building ASM object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 [ 34%] Building ASM object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 [ 34%] Building CXX object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 [ 34%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
@@ -393,7 +394,7 @@
 [ 34%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
 [ 34%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
 [ 34%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-[ 34%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+[ 35%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
 [ 35%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 [ 35%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
 [ 35%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
@@ -404,7 +405,7 @@
 [ 35%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
 [ 35%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
 [ 35%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
-[ 35%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+[ 36%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
 [ 36%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
 [ 36%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/tusb.c.obj
 [ 36%] Building C object kltdwt-ultibo/CMakeFiles/kltdwt-ultibo.dir/__/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
@@ -414,7 +415,7 @@
 [ 36%] Linking CXX executable kltdwt-ultibo.elf
 [ 36%] Built target kltdwt-ultibo
 [ 36%] Building C object 2cores/CMakeFiles/multicore.dir/multicore.c.obj
-[ 36%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+[ 37%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
 [ 37%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/common/pico_sync/sem.c.obj
 [ 37%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/common/pico_sync/lock_core.c.obj
 [ 37%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
@@ -426,7 +427,7 @@
 [ 37%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/common/pico_util/datetime.c.obj
 [ 37%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/common/pico_util/pheap.c.obj
 [ 37%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/common/pico_util/queue.c.obj
-[ 37%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/common/pico_sync/mutex.c.obj
+[ 38%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/common/pico_sync/mutex.c.obj
 [ 38%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/common/pico_sync/critical_section.c.obj
 [ 38%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 [ 38%] Building ASM object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
@@ -437,7 +438,7 @@
 [ 38%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 [ 38%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 [ 38%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-[ 38%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
+[ 39%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 [ 39%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 [ 39%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 [ 39%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
@@ -448,7 +449,7 @@
 [ 39%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 [ 39%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 [ 39%] Building ASM object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-[ 39%] Building ASM object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+[ 40%] Building ASM object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 [ 40%] Building ASM object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 [ 40%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
 [ 40%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
@@ -459,7 +460,7 @@
 [ 40%] Building CXX object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 [ 40%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 [ 40%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-[ 40%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+[ 41%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
 [ 41%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
 [ 41%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
 [ 41%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
@@ -471,7 +472,7 @@
 [ 41%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
 [ 41%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
 [ 41%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
-[ 41%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
+[ 42%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
 [ 42%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
 [ 42%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
 [ 42%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
@@ -482,7 +483,7 @@
 [ 42%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 [ 42%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 [ 42%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-[ 42%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+[ 43%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
 [ 43%] Building C object 2cores/CMakeFiles/multicore.dir/__/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
 [ 43%] Linking CXX executable multicore.elf
 [ 43%] Built target multicore
@@ -494,7 +495,7 @@
 [ 43%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 [ 43%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 [ 43%] Building ASM object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
-[ 43%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/common/pico_time/time.c.obj
+[ 44%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/common/pico_time/time.c.obj
 [ 44%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 [ 44%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 [ 44%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/common/pico_sync/sem.c.obj
@@ -506,7 +507,7 @@
 [ 44%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/common/pico_util/queue.c.obj
 [ 44%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 [ 44%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-[ 44%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+[ 45%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 [ 45%] Building ASM object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 [ 45%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 [ 45%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
@@ -517,7 +518,7 @@
 [ 45%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 [ 45%] Building ASM object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 [ 45%] Building ASM object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-[ 45%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+[ 46%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 [ 46%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 [ 46%] Building ASM object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 [ 46%] Building ASM object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
@@ -528,7 +529,7 @@
 [ 46%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 [ 46%] Building ASM object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 [ 46%] Building ASM object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-[ 46%] Building CXX object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+[ 47%] Building CXX object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 [ 47%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 [ 47%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 [ 47%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
@@ -539,7 +540,7 @@
 [ 47%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
 [ 47%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
 [ 47%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
-[ 47%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+[ 48%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
 [ 48%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
 [ 48%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
 [ 48%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
@@ -551,7 +552,7 @@
 [ 48%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
 [ 48%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
 [ 48%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/tusb.c.obj
-[ 48%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+[ 49%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 [ 49%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 [ 49%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
 [ 49%] Building C object klt-test/CMakeFiles/klt-test.dir/__/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
@@ -969,7 +970,7 @@
 [ 84%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 [ 84%] Building ASM object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 [ 84%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/common/pico_time/time.c.obj
-[ 84%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+[ 85%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 [ 85%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 [ 85%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/common/pico_sync/sem.c.obj
 [ 85%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/common/pico_sync/lock_core.c.obj
@@ -980,7 +981,7 @@
 [ 85%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/common/pico_util/queue.c.obj
 [ 85%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 [ 85%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-[ 85%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+[ 86%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 [ 86%] Building ASM object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 [ 86%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 [ 86%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
@@ -991,7 +992,7 @@
 [ 86%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 [ 86%] Building ASM object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 [ 86%] Building ASM object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-[ 86%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+[ 87%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 [ 87%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 [ 87%] Building ASM object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 [ 87%] Building ASM object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
@@ -1002,7 +1003,7 @@
 [ 87%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 [ 87%] Building ASM object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 [ 87%] Building ASM object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-[ 87%] Building CXX object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+[ 88%] Building CXX object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 [ 88%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 [ 88%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 [ 88%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
@@ -1014,7 +1015,7 @@
 [ 88%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
 [ 88%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 [ 88%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-[ 88%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
+[ 89%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
 [ 89%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
 [ 89%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
 [ 89%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
@@ -1025,7 +1026,7 @@
 [ 89%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
 [ 89%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
 [ 89%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/tusb.c.obj
-[ 89%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+[ 90%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 [ 90%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 [ 90%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
 [ 90%] Building C object pico-lifting-sf/CMakeFiles/hello_usb.dir/__/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
@@ -1039,7 +1040,7 @@
 [ 90%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 [ 90%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 [ 90%] Building ASM object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
-[ 90%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/common/pico_time/time.c.obj
+[ 91%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/common/pico_time/time.c.obj
 [ 91%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 [ 91%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 [ 91%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/common/pico_sync/sem.c.obj
@@ -1050,7 +1051,7 @@
 [ 91%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/common/pico_util/pheap.c.obj
 [ 91%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/common/pico_util/queue.c.obj
 [ 91%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-[ 91%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+[ 92%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 [ 92%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 [ 92%] Building ASM object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 [ 92%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
@@ -1062,7 +1063,7 @@
 [ 92%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 [ 92%] Building ASM object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 [ 92%] Building ASM object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-[ 92%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+[ 93%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 [ 93%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 [ 93%] Building ASM object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 [ 93%] Building ASM object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
@@ -1073,7 +1074,7 @@
 [ 93%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 [ 93%] Building ASM object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 [ 93%] Building ASM object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-[ 93%] Building CXX object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
+[ 94%] Building CXX object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 [ 94%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 [ 94%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 [ 94%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
@@ -1084,7 +1085,7 @@
 [ 94%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
 [ 94%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
 [ 94%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
-[ 94%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+[ 95%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
 [ 95%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
 [ 95%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
 [ 95%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
@@ -1095,7 +1096,7 @@
 [ 95%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
 [ 95%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
 [ 95%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
-[ 95%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/tusb.c.obj
+[ 96%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/tusb.c.obj
 [ 96%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 [ 96%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 [ 96%] Building C object pico-lifting/CMakeFiles/pico-lifting.dir/__/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj

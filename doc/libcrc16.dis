@@ -1,4 +1,4 @@
-In archive build/crc16/libcrc16.a:
+In archive crc16/libcrc16.a:
 
 crc16.c.obj:     file format elf32-littlearm
 
@@ -15140,3 +15140,91 @@ Disassembly of section .text:
     79a6:	46c0      	nop			; (mov r8, r8)
     79a8:	00000202 	.word	0x00000202
     79ac:	20000008 	.word	0x20000008
+
+fs.c.obj:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <fs_hal_sync>:
+   0:	2000      	movs	r0, #0
+   2:	4770      	bx	lr
+
+00000004 <fs_hal_erase>:
+   4:	b570      	push	{r4, r5, r6, lr}
+   6:	4d08      	ldr	r5, [pc, #32]	; (28 <fs_hal_erase+0x24>)
+   8:	69ec      	ldr	r4, [r5, #28]
+   a:	434c      	muls	r4, r1
+   c:	f7ff fffe 	bl	0 <save_and_disable_interrupts>
+  10:	2380      	movs	r3, #128	; 0x80
+  12:	0006      	movs	r6, r0
+  14:	035b      	lsls	r3, r3, #13
+  16:	69e9      	ldr	r1, [r5, #28]
+  18:	18e0      	adds	r0, r4, r3
+  1a:	f7ff fffe 	bl	0 <flash_range_erase>
+  1e:	0030      	movs	r0, r6
+  20:	f7ff fffe 	bl	0 <restore_interrupts>
+  24:	2000      	movs	r0, #0
+  26:	bd70      	pop	{r4, r5, r6, pc}
+  28:	00000000 	.word	0x00000000
+
+0000002c <fs_hal_prog>:
+  2c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+  2e:	001f      	movs	r7, r3
+  30:	4b09      	ldr	r3, [pc, #36]	; (58 <fs_hal_prog+0x2c>)
+  32:	0014      	movs	r4, r2
+  34:	69dd      	ldr	r5, [r3, #28]
+  36:	434d      	muls	r5, r1
+  38:	f7ff fffe 	bl	0 <save_and_disable_interrupts>
+  3c:	2380      	movs	r3, #128	; 0x80
+  3e:	0006      	movs	r6, r0
+  40:	035b      	lsls	r3, r3, #13
+  42:	18e0      	adds	r0, r4, r3
+  44:	1940      	adds	r0, r0, r5
+  46:	0039      	movs	r1, r7
+  48:	9a06      	ldr	r2, [sp, #24]
+  4a:	f7ff fffe 	bl	0 <flash_range_program>
+  4e:	0030      	movs	r0, r6
+  50:	f7ff fffe 	bl	0 <restore_interrupts>
+  54:	2000      	movs	r0, #0
+  56:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+  58:	00000000 	.word	0x00000000
+
+0000005c <fs_hal_read>:
+  5c:	4806      	ldr	r0, [pc, #24]	; (78 <fs_hal_read+0x1c>)
+  5e:	b510      	push	{r4, lr}
+  60:	69c4      	ldr	r4, [r0, #28]
+  62:	4806      	ldr	r0, [pc, #24]	; (7c <fs_hal_read+0x20>)
+  64:	4361      	muls	r1, r4
+  66:	4684      	mov	ip, r0
+  68:	4462      	add	r2, ip
+  6a:	1889      	adds	r1, r1, r2
+  6c:	0018      	movs	r0, r3
+  6e:	9a02      	ldr	r2, [sp, #8]
+  70:	f7ff fffe 	bl	0 <memcpy>
+  74:	2000      	movs	r0, #0
+  76:	bd10      	pop	{r4, pc}
+  78:	00000000 	.word	0x00000000
+  7c:	13100000 	.word	0x13100000
+
+00000080 <fs_fsstat>:
+  80:	4b06      	ldr	r3, [pc, #24]	; (9c <fs_fsstat+0x1c>)
+  82:	b510      	push	{r4, lr}
+  84:	69da      	ldr	r2, [r3, #28]
+  86:	6a1b      	ldr	r3, [r3, #32]
+  88:	0004      	movs	r4, r0
+  8a:	6043      	str	r3, [r0, #4]
+  8c:	6002      	str	r2, [r0, #0]
+  8e:	4804      	ldr	r0, [pc, #16]	; (a0 <fs_fsstat+0x20>)
+  90:	f7ff fffe 	bl	0 <lfs_fs_size>
+  94:	60a0      	str	r0, [r4, #8]
+  96:	2000      	movs	r0, #0
+  98:	bd10      	pop	{r4, pc}
+  9a:	46c0      	nop			; (mov r8, r8)
+	...
+
+000000a4 <fs_flash_base>:
+  a4:	2080      	movs	r0, #128	; 0x80
+  a6:	0340      	lsls	r0, r0, #13
+  a8:	4770      	bx	lr
+  aa:	46c0      	nop			; (mov r8, r8)
