@@ -1,7 +1,6 @@
 [  1%] Building ASM object pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
 [  1%] Linking ASM executable bs2_default.elf
 [  1%] Built target bs2_default
-Scanning dependencies of target crc16
 [  1%] Building C object crc16/CMakeFiles/crc16.dir/CRC16-Files/crc16.c.obj
 [  1%] Building C object crc16/CMakeFiles/crc16.dir/CRC16-Files/head-tail.c.obj
 [  2%] Building C object crc16/CMakeFiles/crc16.dir/CRC16-Files/cvtutils.c.obj
@@ -197,7 +196,6 @@ Scanning dependencies of target crc16
 [ 18%] Building C object test-read/CMakeFiles/test-read.dir/__/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
 [ 18%] Linking CXX executable test-read.elf
 [ 18%] Built target test-read
-Scanning dependencies of target test-read-crc16
 [ 18%] Building C object test-read-crc16/CMakeFiles/test-read-crc16.dir/main.c.obj
 [ 18%] Building C object test-read-crc16/CMakeFiles/test-read-crc16.dir/xreceive.c.obj
 [ 18%] Building C object test-read-crc16/CMakeFiles/test-read-crc16.dir/xtransmit.c.obj

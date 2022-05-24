@@ -366,6 +366,13 @@ read (void *pvParameters)
     }
 }
 
+void pshell(void *pvParameters)
+{
+	while(true) {
+		printf("This is a place holder for the pshell task\n");
+		vTaskDelay (35000); 
+	}
+}
 void debug(void *pvParameters)
 {
 	unsigned char message[9] = {0xd3, 0x01, 0x00,0xd3, 0x01, 0x00,0xd3, 0x01, 0x10};
@@ -374,6 +381,7 @@ void debug(void *pvParameters)
 		printf("Hello, world!\n");
     crc = crc16_ccitt(message, 9);
     printf("0x%x\n",crc);
+    vTaskDelay (35000);
   }
 }
 
@@ -679,7 +687,8 @@ main ()
   //xTaskCreate (ready, "Task 2", 256, NULL, 3, NULL);
   //xTaskCreate (read, "Task 3", 256, NULL, 1, NULL);
   //xTaskCreate (processliftklt, "Task 4", 256, NULL, 2, NULL);
-  xTaskCreate (debug, "Task 4", 256, NULL, 2, NULL);
+  xTaskCreate (debug, "Task 4", 256, NULL, 4, NULL);
+  xTaskCreate (pshell, "Task 5", 256, NULL, 2, NULL);
   vTaskStartScheduler ();
 
 
