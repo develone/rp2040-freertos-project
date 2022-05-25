@@ -15228,3 +15228,642 @@ Disassembly of section .text:
   a6:	0340      	lsls	r0, r0, #13
   a8:	4770      	bx	lr
   aa:	46c0      	nop			; (mov r8, r8)
+
+xreceive.c.obj:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <getbyte>:
+   0:	b510      	push	{r4, lr}
+   2:	0143      	lsls	r3, r0, #5
+   4:	1a1b      	subs	r3, r3, r0
+   6:	009b      	lsls	r3, r3, #2
+   8:	1818      	adds	r0, r3, r0
+   a:	00c0      	lsls	r0, r0, #3
+   c:	f7ff fffe 	bl	0 <getchar_timeout_us>
+  10:	bd10      	pop	{r4, pc}
+  12:	46c0      	nop			; (mov r8, r8)
+
+00000014 <putCAN>:
+  14:	b510      	push	{r4, lr}
+  16:	2018      	movs	r0, #24
+  18:	f7ff fffe 	bl	0 <putchar>
+  1c:	2018      	movs	r0, #24
+  1e:	f7ff fffe 	bl	0 <putchar>
+  22:	2018      	movs	r0, #24
+  24:	f7ff fffe 	bl	0 <putchar>
+  28:	bd10      	pop	{r4, pc}
+  2a:	46c0      	nop			; (mov r8, r8)
+
+0000002c <flushreceive>:
+  2c:	b510      	push	{r4, lr}
+  2e:	4803      	ldr	r0, [pc, #12]	; (3c <flushreceive+0x10>)
+  30:	f7ff fffe 	bl	0 <getchar_timeout_us>
+  34:	2800      	cmp	r0, #0
+  36:	dafa      	bge.n	2e <flushreceive+0x2>
+  38:	bd10      	pop	{r4, pc}
+  3a:	46c0      	nop			; (mov r8, r8)
+  3c:	0016e360 	.word	0x0016e360
+
+00000040 <xmodemReceive>:
+  40:	b5f0      	push	{r4, r5, r6, r7, lr}
+  42:	46de      	mov	lr, fp
+  44:	4657      	mov	r7, sl
+  46:	4645      	mov	r5, r8
+  48:	464e      	mov	r6, r9
+  4a:	4bb0      	ldr	r3, [pc, #704]	; (30c <xmodemReceive+0x2cc>)
+  4c:	b5e0      	push	{r5, r6, r7, lr}
+  4e:	469b      	mov	fp, r3
+  50:	6018      	str	r0, [r3, #0]
+  52:	2319      	movs	r3, #25
+  54:	b087      	sub	sp, #28
+  56:	9302      	str	r3, [sp, #8]
+  58:	3b18      	subs	r3, #24
+  5a:	9301      	str	r3, [sp, #4]
+  5c:	2300      	movs	r3, #0
+  5e:	2543      	movs	r5, #67	; 0x43
+  60:	469a      	mov	sl, r3
+  62:	2410      	movs	r4, #16
+  64:	0028      	movs	r0, r5
+  66:	f7ff fffe 	bl	0 <putchar>
+  6a:	48a9      	ldr	r0, [pc, #676]	; (310 <xmodemReceive+0x2d0>)
+  6c:	f7ff fffe 	bl	0 <getchar_timeout_us>
+  70:	2800      	cmp	r0, #0
+  72:	db0d      	blt.n	90 <xmodemReceive+0x50>
+  74:	2802      	cmp	r0, #2
+  76:	d100      	bne.n	7a <xmodemReceive+0x3a>
+  78:	e110      	b.n	29c <xmodemReceive+0x25c>
+  7a:	dd30      	ble.n	de <xmodemReceive+0x9e>
+  7c:	2804      	cmp	r0, #4
+  7e:	d01e      	beq.n	be <xmodemReceive+0x7e>
+  80:	2818      	cmp	r0, #24
+  82:	d105      	bne.n	90 <xmodemReceive+0x50>
+  84:	48a3      	ldr	r0, [pc, #652]	; (314 <xmodemReceive+0x2d4>)
+  86:	f7ff fffe 	bl	0 <getchar_timeout_us>
+  8a:	2818      	cmp	r0, #24
+  8c:	d100      	bne.n	90 <xmodemReceive+0x50>
+  8e:	e0f7      	b.n	280 <xmodemReceive+0x240>
+  90:	3c01      	subs	r4, #1
+  92:	2c00      	cmp	r4, #0
+  94:	d1e6      	bne.n	64 <xmodemReceive+0x24>
+  96:	2d43      	cmp	r5, #67	; 0x43
+  98:	d100      	bne.n	9c <xmodemReceive+0x5c>
+  9a:	e117      	b.n	2cc <xmodemReceive+0x28c>
+  9c:	489e      	ldr	r0, [pc, #632]	; (318 <xmodemReceive+0x2d8>)
+  9e:	f7ff fffe 	bl	0 <getchar_timeout_us>
+  a2:	2800      	cmp	r0, #0
+  a4:	dafa      	bge.n	9c <xmodemReceive+0x5c>
+  a6:	2018      	movs	r0, #24
+  a8:	f7ff fffe 	bl	0 <putchar>
+  ac:	2018      	movs	r0, #24
+  ae:	f7ff fffe 	bl	0 <putchar>
+  b2:	2018      	movs	r0, #24
+  b4:	f7ff fffe 	bl	0 <putchar>
+  b8:	2002      	movs	r0, #2
+  ba:	4240      	negs	r0, r0
+  bc:	e008      	b.n	d0 <xmodemReceive+0x90>
+  be:	4896      	ldr	r0, [pc, #600]	; (318 <xmodemReceive+0x2d8>)
+  c0:	f7ff fffe 	bl	0 <getchar_timeout_us>
+  c4:	2800      	cmp	r0, #0
+  c6:	dafa      	bge.n	be <xmodemReceive+0x7e>
+  c8:	2006      	movs	r0, #6
+  ca:	f7ff fffe 	bl	0 <putchar>
+  ce:	2000      	movs	r0, #0
+  d0:	b007      	add	sp, #28
+  d2:	bc3c      	pop	{r2, r3, r4, r5}
+  d4:	4690      	mov	r8, r2
+  d6:	4699      	mov	r9, r3
+  d8:	46a2      	mov	sl, r4
+  da:	46ab      	mov	fp, r5
+  dc:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  de:	2801      	cmp	r0, #1
+  e0:	d1d6      	bne.n	90 <xmodemReceive+0x50>
+  e2:	4e8e      	ldr	r6, [pc, #568]	; (31c <xmodemReceive+0x2dc>)
+  e4:	2383      	movs	r3, #131	; 0x83
+  e6:	2201      	movs	r2, #1
+  e8:	2780      	movs	r7, #128	; 0x80
+  ea:	498d      	ldr	r1, [pc, #564]	; (320 <xmodemReceive+0x2e0>)
+  ec:	4689      	mov	r9, r1
+  ee:	2d43      	cmp	r5, #67	; 0x43
+  f0:	d100      	bne.n	f4 <xmodemReceive+0xb4>
+  f2:	e0d0      	b.n	296 <xmodemReceive+0x256>
+  f4:	4653      	mov	r3, sl
+  f6:	19db      	adds	r3, r3, r7
+  f8:	3302      	adds	r3, #2
+  fa:	1cb5      	adds	r5, r6, #2
+  fc:	7032      	strb	r2, [r6, #0]
+  fe:	1c74      	adds	r4, r6, #1
+ 100:	46b0      	mov	r8, r6
+ 102:	18ed      	adds	r5, r5, r3
+ 104:	e003      	b.n	10e <xmodemReceive+0xce>
+ 106:	7020      	strb	r0, [r4, #0]
+ 108:	3401      	adds	r4, #1
+ 10a:	42ac      	cmp	r4, r5
+ 10c:	d032      	beq.n	174 <xmodemReceive+0x134>
+ 10e:	4881      	ldr	r0, [pc, #516]	; (314 <xmodemReceive+0x2d4>)
+ 110:	f7ff fffe 	bl	0 <getchar_timeout_us>
+ 114:	2800      	cmp	r0, #0
+ 116:	daf6      	bge.n	106 <xmodemReceive+0xc6>
+ 118:	487f      	ldr	r0, [pc, #508]	; (318 <xmodemReceive+0x2d8>)
+ 11a:	f7ff fffe 	bl	0 <getchar_timeout_us>
+ 11e:	2800      	cmp	r0, #0
+ 120:	dafa      	bge.n	118 <xmodemReceive+0xd8>
+ 122:	2015      	movs	r0, #21
+ 124:	f7ff fffe 	bl	0 <putchar>
+ 128:	2410      	movs	r4, #16
+ 12a:	4879      	ldr	r0, [pc, #484]	; (310 <xmodemReceive+0x2d0>)
+ 12c:	f7ff fffe 	bl	0 <getchar_timeout_us>
+ 130:	2800      	cmp	r0, #0
+ 132:	db0f      	blt.n	154 <xmodemReceive+0x114>
+ 134:	2780      	movs	r7, #128	; 0x80
+ 136:	2202      	movs	r2, #2
+ 138:	00ff      	lsls	r7, r7, #3
+ 13a:	2802      	cmp	r0, #2
+ 13c:	d0da      	beq.n	f4 <xmodemReceive+0xb4>
+ 13e:	dd12      	ble.n	166 <xmodemReceive+0x126>
+ 140:	2804      	cmp	r0, #4
+ 142:	d0bc      	beq.n	be <xmodemReceive+0x7e>
+ 144:	2818      	cmp	r0, #24
+ 146:	d105      	bne.n	154 <xmodemReceive+0x114>
+ 148:	4872      	ldr	r0, [pc, #456]	; (314 <xmodemReceive+0x2d4>)
+ 14a:	f7ff fffe 	bl	0 <getchar_timeout_us>
+ 14e:	2818      	cmp	r0, #24
+ 150:	d100      	bne.n	154 <xmodemReceive+0x114>
+ 152:	e095      	b.n	280 <xmodemReceive+0x240>
+ 154:	3c01      	subs	r4, #1
+ 156:	2c00      	cmp	r4, #0
+ 158:	d1e7      	bne.n	12a <xmodemReceive+0xea>
+ 15a:	486f      	ldr	r0, [pc, #444]	; (318 <xmodemReceive+0x2d8>)
+ 15c:	f7ff fffe 	bl	0 <getchar_timeout_us>
+ 160:	2800      	cmp	r0, #0
+ 162:	da9b      	bge.n	9c <xmodemReceive+0x5c>
+ 164:	e79f      	b.n	a6 <xmodemReceive+0x66>
+ 166:	2500      	movs	r5, #0
+ 168:	2801      	cmp	r0, #1
+ 16a:	d0bb      	beq.n	e4 <xmodemReceive+0xa4>
+ 16c:	3c01      	subs	r4, #1
+ 16e:	2c00      	cmp	r4, #0
+ 170:	d1db      	bne.n	12a <xmodemReceive+0xea>
+ 172:	e7f2      	b.n	15a <xmodemReceive+0x11a>
+ 174:	78b3      	ldrb	r3, [r6, #2]
+ 176:	7870      	ldrb	r0, [r6, #1]
+ 178:	43db      	mvns	r3, r3
+ 17a:	b2db      	uxtb	r3, r3
+ 17c:	4298      	cmp	r0, r3
+ 17e:	d1cb      	bne.n	118 <xmodemReceive+0xd8>
+ 180:	9b01      	ldr	r3, [sp, #4]
+ 182:	4298      	cmp	r0, r3
+ 184:	d002      	beq.n	18c <xmodemReceive+0x14c>
+ 186:	3b01      	subs	r3, #1
+ 188:	4298      	cmp	r0, r3
+ 18a:	d1c5      	bne.n	118 <xmodemReceive+0xd8>
+ 18c:	003b      	movs	r3, r7
+ 18e:	444b      	add	r3, r9
+ 190:	9303      	str	r3, [sp, #12]
+ 192:	4653      	mov	r3, sl
+ 194:	2b00      	cmp	r3, #0
+ 196:	d000      	beq.n	19a <xmodemReceive+0x15a>
+ 198:	e086      	b.n	2a8 <xmodemReceive+0x268>
+ 19a:	4b60      	ldr	r3, [pc, #384]	; (31c <xmodemReceive+0x2dc>)
+ 19c:	0001      	movs	r1, r0
+ 19e:	78db      	ldrb	r3, [r3, #3]
+ 1a0:	4640      	mov	r0, r8
+ 1a2:	9305      	str	r3, [sp, #20]
+ 1a4:	1e7b      	subs	r3, r7, #1
+ 1a6:	9304      	str	r3, [sp, #16]
+ 1a8:	1f3b      	subs	r3, r7, #4
+ 1aa:	469c      	mov	ip, r3
+ 1ac:	44b4      	add	ip, r6
+ 1ae:	4665      	mov	r5, ip
+ 1b0:	2300      	movs	r3, #0
+ 1b2:	46bc      	mov	ip, r7
+ 1b4:	46b0      	mov	r8, r6
+ 1b6:	002f      	movs	r7, r5
+ 1b8:	4c5a      	ldr	r4, [pc, #360]	; (324 <xmodemReceive+0x2e4>)
+ 1ba:	4a5b      	ldr	r2, [pc, #364]	; (328 <xmodemReceive+0x2e8>)
+ 1bc:	001e      	movs	r6, r3
+ 1be:	6845      	ldr	r5, [r0, #4]
+ 1c0:	4026      	ands	r6, r4
+ 1c2:	4025      	ands	r5, r4
+ 1c4:	1975      	adds	r5, r6, r5
+ 1c6:	6846      	ldr	r6, [r0, #4]
+ 1c8:	3004      	adds	r0, #4
+ 1ca:	4073      	eors	r3, r6
+ 1cc:	4013      	ands	r3, r2
+ 1ce:	406b      	eors	r3, r5
+ 1d0:	4287      	cmp	r7, r0
+ 1d2:	d1f3      	bne.n	1bc <xmodemReceive+0x17c>
+ 1d4:	0008      	movs	r0, r1
+ 1d6:	9905      	ldr	r1, [sp, #20]
+ 1d8:	4667      	mov	r7, ip
+ 1da:	468c      	mov	ip, r1
+ 1dc:	041a      	lsls	r2, r3, #16
+ 1de:	0e12      	lsrs	r2, r2, #24
+ 1e0:	189a      	adds	r2, r3, r2
+ 1e2:	0219      	lsls	r1, r3, #8
+ 1e4:	0e09      	lsrs	r1, r1, #24
+ 1e6:	4462      	add	r2, ip
+ 1e8:	9c04      	ldr	r4, [sp, #16]
+ 1ea:	1852      	adds	r2, r2, r1
+ 1ec:	0e1b      	lsrs	r3, r3, #24
+ 1ee:	18d3      	adds	r3, r2, r3
+ 1f0:	0021      	movs	r1, r4
+ 1f2:	2203      	movs	r2, #3
+ 1f4:	4391      	bics	r1, r2
+ 1f6:	000a      	movs	r2, r1
+ 1f8:	4646      	mov	r6, r8
+ 1fa:	b2db      	uxtb	r3, r3
+ 1fc:	3101      	adds	r1, #1
+ 1fe:	4294      	cmp	r4, r2
+ 200:	d02d      	beq.n	25e <xmodemReceive+0x21e>
+ 202:	464c      	mov	r4, r9
+ 204:	5c61      	ldrb	r1, [r4, r1]
+ 206:	185b      	adds	r3, r3, r1
+ 208:	1c91      	adds	r1, r2, #2
+ 20a:	b2db      	uxtb	r3, r3
+ 20c:	42b9      	cmp	r1, r7
+ 20e:	da26      	bge.n	25e <xmodemReceive+0x21e>
+ 210:	5c61      	ldrb	r1, [r4, r1]
+ 212:	185b      	adds	r3, r3, r1
+ 214:	1cd1      	adds	r1, r2, #3
+ 216:	b2db      	uxtb	r3, r3
+ 218:	428f      	cmp	r7, r1
+ 21a:	dd20      	ble.n	25e <xmodemReceive+0x21e>
+ 21c:	5c61      	ldrb	r1, [r4, r1]
+ 21e:	185b      	adds	r3, r3, r1
+ 220:	1d11      	adds	r1, r2, #4
+ 222:	b2db      	uxtb	r3, r3
+ 224:	428f      	cmp	r7, r1
+ 226:	dd1a      	ble.n	25e <xmodemReceive+0x21e>
+ 228:	5c61      	ldrb	r1, [r4, r1]
+ 22a:	185b      	adds	r3, r3, r1
+ 22c:	1d51      	adds	r1, r2, #5
+ 22e:	b2db      	uxtb	r3, r3
+ 230:	428f      	cmp	r7, r1
+ 232:	dd14      	ble.n	25e <xmodemReceive+0x21e>
+ 234:	5c61      	ldrb	r1, [r4, r1]
+ 236:	185b      	adds	r3, r3, r1
+ 238:	1d91      	adds	r1, r2, #6
+ 23a:	b2db      	uxtb	r3, r3
+ 23c:	428f      	cmp	r7, r1
+ 23e:	dd0e      	ble.n	25e <xmodemReceive+0x21e>
+ 240:	5c61      	ldrb	r1, [r4, r1]
+ 242:	185b      	adds	r3, r3, r1
+ 244:	1dd1      	adds	r1, r2, #7
+ 246:	b2db      	uxtb	r3, r3
+ 248:	428f      	cmp	r7, r1
+ 24a:	dd08      	ble.n	25e <xmodemReceive+0x21e>
+ 24c:	5c61      	ldrb	r1, [r4, r1]
+ 24e:	3208      	adds	r2, #8
+ 250:	185b      	adds	r3, r3, r1
+ 252:	b2db      	uxtb	r3, r3
+ 254:	4297      	cmp	r7, r2
+ 256:	dd02      	ble.n	25e <xmodemReceive+0x21e>
+ 258:	5ca2      	ldrb	r2, [r4, r2]
+ 25a:	189b      	adds	r3, r3, r2
+ 25c:	b2db      	uxtb	r3, r3
+ 25e:	9a03      	ldr	r2, [sp, #12]
+ 260:	7812      	ldrb	r2, [r2, #0]
+ 262:	429a      	cmp	r2, r3
+ 264:	d000      	beq.n	268 <xmodemReceive+0x228>
+ 266:	e757      	b.n	118 <xmodemReceive+0xd8>
+ 268:	9b01      	ldr	r3, [sp, #4]
+ 26a:	4298      	cmp	r0, r3
+ 26c:	d041      	beq.n	2f2 <xmodemReceive+0x2b2>
+ 26e:	9b02      	ldr	r3, [sp, #8]
+ 270:	3b01      	subs	r3, #1
+ 272:	9302      	str	r3, [sp, #8]
+ 274:	2b00      	cmp	r3, #0
+ 276:	dd2b      	ble.n	2d0 <xmodemReceive+0x290>
+ 278:	2006      	movs	r0, #6
+ 27a:	f7ff fffe 	bl	0 <putchar>
+ 27e:	e753      	b.n	128 <xmodemReceive+0xe8>
+ 280:	4825      	ldr	r0, [pc, #148]	; (318 <xmodemReceive+0x2d8>)
+ 282:	f7ff fffe 	bl	0 <getchar_timeout_us>
+ 286:	2800      	cmp	r0, #0
+ 288:	dafa      	bge.n	280 <xmodemReceive+0x240>
+ 28a:	2006      	movs	r0, #6
+ 28c:	f7ff fffe 	bl	0 <putchar>
+ 290:	2001      	movs	r0, #1
+ 292:	4240      	negs	r0, r0
+ 294:	e71c      	b.n	d0 <xmodemReceive+0x90>
+ 296:	2101      	movs	r1, #1
+ 298:	468a      	mov	sl, r1
+ 29a:	e72e      	b.n	fa <xmodemReceive+0xba>
+ 29c:	2780      	movs	r7, #128	; 0x80
+ 29e:	4b23      	ldr	r3, [pc, #140]	; (32c <xmodemReceive+0x2ec>)
+ 2a0:	2202      	movs	r2, #2
+ 2a2:	00ff      	lsls	r7, r7, #3
+ 2a4:	4e1d      	ldr	r6, [pc, #116]	; (31c <xmodemReceive+0x2dc>)
+ 2a6:	e720      	b.n	ea <xmodemReceive+0xaa>
+ 2a8:	0039      	movs	r1, r7
+ 2aa:	4648      	mov	r0, r9
+ 2ac:	f7ff fffe 	bl	0 <crc16_ccitt>
+ 2b0:	464b      	mov	r3, r9
+ 2b2:	9a03      	ldr	r2, [sp, #12]
+ 2b4:	3301      	adds	r3, #1
+ 2b6:	7812      	ldrb	r2, [r2, #0]
+ 2b8:	5ddb      	ldrb	r3, [r3, r7]
+ 2ba:	0212      	lsls	r2, r2, #8
+ 2bc:	189b      	adds	r3, r3, r2
+ 2be:	b29b      	uxth	r3, r3
+ 2c0:	4298      	cmp	r0, r3
+ 2c2:	d000      	beq.n	2c6 <xmodemReceive+0x286>
+ 2c4:	e728      	b.n	118 <xmodemReceive+0xd8>
+ 2c6:	4b15      	ldr	r3, [pc, #84]	; (31c <xmodemReceive+0x2dc>)
+ 2c8:	7858      	ldrb	r0, [r3, #1]
+ 2ca:	e7cd      	b.n	268 <xmodemReceive+0x228>
+ 2cc:	2515      	movs	r5, #21
+ 2ce:	e6c8      	b.n	62 <xmodemReceive+0x22>
+ 2d0:	4811      	ldr	r0, [pc, #68]	; (318 <xmodemReceive+0x2d8>)
+ 2d2:	f7ff fffe 	bl	0 <getchar_timeout_us>
+ 2d6:	2800      	cmp	r0, #0
+ 2d8:	dafa      	bge.n	2d0 <xmodemReceive+0x290>
+ 2da:	2018      	movs	r0, #24
+ 2dc:	f7ff fffe 	bl	0 <putchar>
+ 2e0:	2018      	movs	r0, #24
+ 2e2:	f7ff fffe 	bl	0 <putchar>
+ 2e6:	2018      	movs	r0, #24
+ 2e8:	f7ff fffe 	bl	0 <putchar>
+ 2ec:	2003      	movs	r0, #3
+ 2ee:	4240      	negs	r0, r0
+ 2f0:	e6ee      	b.n	d0 <xmodemReceive+0x90>
+ 2f2:	465b      	mov	r3, fp
+ 2f4:	0039      	movs	r1, r7
+ 2f6:	681b      	ldr	r3, [r3, #0]
+ 2f8:	4648      	mov	r0, r9
+ 2fa:	4798      	blx	r3
+ 2fc:	9b01      	ldr	r3, [sp, #4]
+ 2fe:	3301      	adds	r3, #1
+ 300:	b2db      	uxtb	r3, r3
+ 302:	9301      	str	r3, [sp, #4]
+ 304:	2319      	movs	r3, #25
+ 306:	9302      	str	r3, [sp, #8]
+ 308:	e7b6      	b.n	278 <xmodemReceive+0x238>
+ 30a:	46c0      	nop			; (mov r8, r8)
+ 30c:	00000000 	.word	0x00000000
+ 310:	001e8480 	.word	0x001e8480
+ 314:	000f4240 	.word	0x000f4240
+ 318:	0016e360 	.word	0x0016e360
+ 31c:	00000004 	.word	0x00000004
+ 320:	00000007 	.word	0x00000007
+ 324:	7f7f7f7f 	.word	0x7f7f7f7f
+ 328:	80808080 	.word	0x80808080
+ 32c:	00000403 	.word	0x00000403
+
+xtransmit.c.obj:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <xmodemTransmit>:
+   0:	b5f0      	push	{r4, r5, r6, r7, lr}
+   2:	4645      	mov	r5, r8
+   4:	46de      	mov	lr, fp
+   6:	4657      	mov	r7, sl
+   8:	464e      	mov	r6, r9
+   a:	b5e0      	push	{r5, r6, r7, lr}
+   c:	4c80      	ldr	r4, [pc, #512]	; (210 <xmodemTransmit+0x210>)
+   e:	4680      	mov	r8, r0
+  10:	44a5      	add	sp, r4
+  12:	2410      	movs	r4, #16
+  14:	9102      	str	r1, [sp, #8]
+  16:	20fa      	movs	r0, #250	; 0xfa
+  18:	00c0      	lsls	r0, r0, #3
+  1a:	f7ff fffe 	bl	0 <getbyte>
+  1e:	2800      	cmp	r0, #0
+  20:	db07      	blt.n	32 <xmodemTransmit+0x32>
+  22:	2818      	cmp	r0, #24
+  24:	d100      	bne.n	28 <xmodemTransmit+0x28>
+  26:	e0cb      	b.n	1c0 <xmodemTransmit+0x1c0>
+  28:	2843      	cmp	r0, #67	; 0x43
+  2a:	d100      	bne.n	2e <xmodemTransmit+0x2e>
+  2c:	e0c4      	b.n	1b8 <xmodemTransmit+0x1b8>
+  2e:	2815      	cmp	r0, #21
+  30:	d00a      	beq.n	48 <xmodemTransmit+0x48>
+  32:	3c01      	subs	r4, #1
+  34:	2c00      	cmp	r4, #0
+  36:	d1ee      	bne.n	16 <xmodemTransmit+0x16>
+  38:	f7ff fffe 	bl	0 <putCAN>
+  3c:	f7ff fffe 	bl	0 <flushreceive>
+  40:	2302      	movs	r3, #2
+  42:	425b      	negs	r3, r3
+  44:	4698      	mov	r8, r3
+  46:	e05c      	b.n	102 <xmodemTransmit+0x102>
+  48:	2300      	movs	r3, #0
+  4a:	2484      	movs	r4, #132	; 0x84
+  4c:	469b      	mov	fp, r3
+  4e:	9b02      	ldr	r3, [sp, #8]
+  50:	2201      	movs	r2, #1
+  52:	469c      	mov	ip, r3
+  54:	2101      	movs	r1, #1
+  56:	44e0      	add	r8, ip
+  58:	9301      	str	r3, [sp, #4]
+  5a:	4643      	mov	r3, r8
+  5c:	46da      	mov	sl, fp
+  5e:	4693      	mov	fp, r2
+  60:	4689      	mov	r9, r1
+  62:	9901      	ldr	r1, [sp, #4]
+  64:	9303      	str	r3, [sp, #12]
+  66:	4648      	mov	r0, r9
+  68:	9b02      	ldr	r3, [sp, #8]
+  6a:	1a5a      	subs	r2, r3, r1
+  6c:	ab04      	add	r3, sp, #16
+  6e:	7018      	strb	r0, [r3, #0]
+  70:	4658      	mov	r0, fp
+  72:	7058      	strb	r0, [r3, #1]
+  74:	43c3      	mvns	r3, r0
+  76:	a804      	add	r0, sp, #16
+  78:	7083      	strb	r3, [r0, #2]
+  7a:	2980      	cmp	r1, #128	; 0x80
+  7c:	dc53      	bgt.n	126 <xmodemTransmit+0x126>
+  7e:	2900      	cmp	r1, #0
+  80:	da00      	bge.n	84 <xmodemTransmit+0x84>
+  82:	e0ad      	b.n	1e0 <xmodemTransmit+0x1e0>
+  84:	ab04      	add	r3, sp, #16
+  86:	1cd8      	adds	r0, r3, #3
+  88:	2280      	movs	r2, #128	; 0x80
+  8a:	2100      	movs	r1, #0
+  8c:	f7ff fffe 	bl	0 <memset>
+  90:	9b01      	ldr	r3, [sp, #4]
+  92:	2b00      	cmp	r3, #0
+  94:	d000      	beq.n	98 <xmodemTransmit+0x98>
+  96:	e07d      	b.n	194 <xmodemTransmit+0x194>
+  98:	331a      	adds	r3, #26
+  9a:	aa04      	add	r2, sp, #16
+  9c:	70d3      	strb	r3, [r2, #3]
+  9e:	4653      	mov	r3, sl
+  a0:	2b00      	cmp	r3, #0
+  a2:	d04a      	beq.n	13a <xmodemTransmit+0x13a>
+  a4:	ab04      	add	r3, sp, #16
+  a6:	2180      	movs	r1, #128	; 0x80
+  a8:	1cd8      	adds	r0, r3, #3
+  aa:	f7ff fffe 	bl	0 <crc16_ccitt>
+  ae:	2383      	movs	r3, #131	; 0x83
+  b0:	a904      	add	r1, sp, #16
+  b2:	0a02      	lsrs	r2, r0, #8
+  b4:	54ca      	strb	r2, [r1, r3]
+  b6:	3301      	adds	r3, #1
+  b8:	54c8      	strb	r0, [r1, r3]
+  ba:	2719      	movs	r7, #25
+  bc:	2500      	movs	r5, #0
+  be:	ae04      	add	r6, sp, #16
+  c0:	7830      	ldrb	r0, [r6, #0]
+  c2:	3501      	adds	r5, #1
+  c4:	f7ff fffe 	bl	0 <putchar>
+  c8:	3601      	adds	r6, #1
+  ca:	42a5      	cmp	r5, r4
+  cc:	dbf8      	blt.n	c0 <xmodemTransmit+0xc0>
+  ce:	20fa      	movs	r0, #250	; 0xfa
+  d0:	0080      	lsls	r0, r0, #2
+  d2:	f7ff fffe 	bl	0 <getbyte>
+  d6:	2800      	cmp	r0, #0
+  d8:	db09      	blt.n	ee <xmodemTransmit+0xee>
+  da:	2806      	cmp	r0, #6
+  dc:	d01a      	beq.n	114 <xmodemTransmit+0x114>
+  de:	2818      	cmp	r0, #24
+  e0:	d105      	bne.n	ee <xmodemTransmit+0xee>
+  e2:	20fa      	movs	r0, #250	; 0xfa
+  e4:	0080      	lsls	r0, r0, #2
+  e6:	f7ff fffe 	bl	0 <getbyte>
+  ea:	2818      	cmp	r0, #24
+  ec:	d06f      	beq.n	1ce <xmodemTransmit+0x1ce>
+  ee:	3f01      	subs	r7, #1
+  f0:	2f00      	cmp	r7, #0
+  f2:	d1e3      	bne.n	bc <xmodemTransmit+0xbc>
+  f4:	f7ff fffe 	bl	0 <putCAN>
+  f8:	f7ff fffe 	bl	0 <flushreceive>
+  fc:	2304      	movs	r3, #4
+  fe:	425b      	negs	r3, r3
+ 100:	4698      	mov	r8, r3
+ 102:	4640      	mov	r0, r8
+ 104:	4b43      	ldr	r3, [pc, #268]	; (214 <xmodemTransmit+0x214>)
+ 106:	449d      	add	sp, r3
+ 108:	bc3c      	pop	{r2, r3, r4, r5}
+ 10a:	4690      	mov	r8, r2
+ 10c:	4699      	mov	r9, r3
+ 10e:	46a2      	mov	sl, r4
+ 110:	46ab      	mov	fp, r5
+ 112:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 114:	465e      	mov	r6, fp
+ 116:	3601      	adds	r6, #1
+ 118:	b2f3      	uxtb	r3, r6
+ 11a:	469b      	mov	fp, r3
+ 11c:	9b01      	ldr	r3, [sp, #4]
+ 11e:	3b80      	subs	r3, #128	; 0x80
+ 120:	9301      	str	r3, [sp, #4]
+ 122:	0019      	movs	r1, r3
+ 124:	e79f      	b.n	66 <xmodemTransmit+0x66>
+ 126:	9b03      	ldr	r3, [sp, #12]
+ 128:	2280      	movs	r2, #128	; 0x80
+ 12a:	1a59      	subs	r1, r3, r1
+ 12c:	ab04      	add	r3, sp, #16
+ 12e:	1cd8      	adds	r0, r3, #3
+ 130:	f7ff fffe 	bl	0 <memcpy>
+ 134:	4653      	mov	r3, sl
+ 136:	2b00      	cmp	r3, #0
+ 138:	d1b4      	bne.n	a4 <xmodemTransmit+0xa4>
+ 13a:	ab04      	add	r3, sp, #16
+ 13c:	78db      	ldrb	r3, [r3, #3]
+ 13e:	46a0      	mov	r8, r4
+ 140:	469c      	mov	ip, r3
+ 142:	2300      	movs	r3, #0
+ 144:	4e34      	ldr	r6, [pc, #208]	; (218 <xmodemTransmit+0x218>)
+ 146:	4f35      	ldr	r7, [pc, #212]	; (21c <xmodemTransmit+0x21c>)
+ 148:	a805      	add	r0, sp, #20
+ 14a:	ad24      	add	r5, sp, #144	; 0x90
+ 14c:	c804      	ldmia	r0!, {r2}
+ 14e:	0019      	movs	r1, r3
+ 150:	0014      	movs	r4, r2
+ 152:	4031      	ands	r1, r6
+ 154:	4034      	ands	r4, r6
+ 156:	1861      	adds	r1, r4, r1
+ 158:	405a      	eors	r2, r3
+ 15a:	000b      	movs	r3, r1
+ 15c:	403a      	ands	r2, r7
+ 15e:	4053      	eors	r3, r2
+ 160:	4285      	cmp	r5, r0
+ 162:	d1f3      	bne.n	14c <xmodemTransmit+0x14c>
+ 164:	2280      	movs	r2, #128	; 0x80
+ 166:	a904      	add	r1, sp, #16
+ 168:	5c8a      	ldrb	r2, [r1, r2]
+ 16a:	2181      	movs	r1, #129	; 0x81
+ 16c:	a804      	add	r0, sp, #16
+ 16e:	5c41      	ldrb	r1, [r0, r1]
+ 170:	4644      	mov	r4, r8
+ 172:	1852      	adds	r2, r2, r1
+ 174:	2182      	movs	r1, #130	; 0x82
+ 176:	5c41      	ldrb	r1, [r0, r1]
+ 178:	1852      	adds	r2, r2, r1
+ 17a:	4462      	add	r2, ip
+ 17c:	0419      	lsls	r1, r3, #16
+ 17e:	18d2      	adds	r2, r2, r3
+ 180:	0e09      	lsrs	r1, r1, #24
+ 182:	1852      	adds	r2, r2, r1
+ 184:	0219      	lsls	r1, r3, #8
+ 186:	0e09      	lsrs	r1, r1, #24
+ 188:	1852      	adds	r2, r2, r1
+ 18a:	0e1b      	lsrs	r3, r3, #24
+ 18c:	18d3      	adds	r3, r2, r3
+ 18e:	2283      	movs	r2, #131	; 0x83
+ 190:	5483      	strb	r3, [r0, r2]
+ 192:	e792      	b.n	ba <xmodemTransmit+0xba>
+ 194:	001d      	movs	r5, r3
+ 196:	9a03      	ldr	r2, [sp, #12]
+ 198:	a804      	add	r0, sp, #16
+ 19a:	1ad1      	subs	r1, r2, r3
+ 19c:	3003      	adds	r0, #3
+ 19e:	001a      	movs	r2, r3
+ 1a0:	f7ff fffe 	bl	0 <memcpy>
+ 1a4:	002b      	movs	r3, r5
+ 1a6:	2d80      	cmp	r5, #128	; 0x80
+ 1a8:	d100      	bne.n	1ac <xmodemTransmit+0x1ac>
+ 1aa:	e778      	b.n	9e <xmodemTransmit+0x9e>
+ 1ac:	a904      	add	r1, sp, #16
+ 1ae:	468c      	mov	ip, r1
+ 1b0:	221a      	movs	r2, #26
+ 1b2:	4463      	add	r3, ip
+ 1b4:	70da      	strb	r2, [r3, #3]
+ 1b6:	e772      	b.n	9e <xmodemTransmit+0x9e>
+ 1b8:	2301      	movs	r3, #1
+ 1ba:	2485      	movs	r4, #133	; 0x85
+ 1bc:	469b      	mov	fp, r3
+ 1be:	e746      	b.n	4e <xmodemTransmit+0x4e>
+ 1c0:	20fa      	movs	r0, #250	; 0xfa
+ 1c2:	0080      	lsls	r0, r0, #2
+ 1c4:	f7ff fffe 	bl	0 <getbyte>
+ 1c8:	2818      	cmp	r0, #24
+ 1ca:	d000      	beq.n	1ce <xmodemTransmit+0x1ce>
+ 1cc:	e731      	b.n	32 <xmodemTransmit+0x32>
+ 1ce:	2006      	movs	r0, #6
+ 1d0:	f7ff fffe 	bl	0 <putchar>
+ 1d4:	f7ff fffe 	bl	0 <flushreceive>
+ 1d8:	2301      	movs	r3, #1
+ 1da:	425b      	negs	r3, r3
+ 1dc:	4698      	mov	r8, r3
+ 1de:	e790      	b.n	102 <xmodemTransmit+0x102>
+ 1e0:	4690      	mov	r8, r2
+ 1e2:	240a      	movs	r4, #10
+ 1e4:	2004      	movs	r0, #4
+ 1e6:	f7ff fffe 	bl	0 <putchar>
+ 1ea:	20fa      	movs	r0, #250	; 0xfa
+ 1ec:	00c0      	lsls	r0, r0, #3
+ 1ee:	f7ff fffe 	bl	0 <getbyte>
+ 1f2:	2806      	cmp	r0, #6
+ 1f4:	d008      	beq.n	208 <xmodemTransmit+0x208>
+ 1f6:	3c01      	subs	r4, #1
+ 1f8:	2c00      	cmp	r4, #0
+ 1fa:	d1f3      	bne.n	1e4 <xmodemTransmit+0x1e4>
+ 1fc:	f7ff fffe 	bl	0 <flushreceive>
+ 200:	2305      	movs	r3, #5
+ 202:	425b      	negs	r3, r3
+ 204:	4698      	mov	r8, r3
+ 206:	e77c      	b.n	102 <xmodemTransmit+0x102>
+ 208:	f7ff fffe 	bl	0 <flushreceive>
+ 20c:	e779      	b.n	102 <xmodemTransmit+0x102>
+ 20e:	46c0      	nop			; (mov r8, r8)
+ 210:	fffffbe4 	.word	0xfffffbe4
+ 214:	0000041c 	.word	0x0000041c
+ 218:	7f7f7f7f 	.word	0x7f7f7f7f
+ 21c:	80808080 	.word	0x80808080
