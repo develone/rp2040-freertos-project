@@ -13,5 +13,7 @@ add_library(crc16
 target_include_directories(crc16 PUBLIC
     .
     ${PICO_SDK_CRC16_SOURCE}/include
+		${PICO_SDK_CRC16_SOURCE}/hardware
+		
     ${PICO_SDK_CRC16_SOURCE}/portable/GCC/ARM_CM0
 )
