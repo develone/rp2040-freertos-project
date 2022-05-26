@@ -11,8 +11,21 @@
 #include "crc16.h"
 #include "head-tail.h"
 #include "klt.h"
+
+/*adding pshell */
 #include "xreceive.h"
 #include "xtransmit.h"
+#include "hardware/watchdog.h"
+
+#include "pico/stdio.h"
+#include "pico/stdlib.h"
+
+#include "fs.h"
+#include "tusb.h"
+#include "vi.h"
+#include "pshell.h"
+/*adding pshell */
+
 /***********************needs to be in a header***********************/
 #define STORAGE_SIZE_BYTES 100
 
@@ -370,6 +383,7 @@ void pshell(void *pvParameters)
 {
 	while(true) {
 		printf("This is a place holder for the pshell task\n");
+		
 		vTaskDelay (35000); 
 	}
 }
@@ -611,9 +625,21 @@ vAReadStream (StreamBufferHandle_t xStreamBuffer)
 int
 main ()
 {
-
+     
   stdio_init_all ();
 
+/*adding pshell */
+		bool uart = stdio_init(PICO_DEFAULT_UART_RX_PIN);
+    bool detected = screen_size();
+    printf(VT_CLEAR "\n"
+                    "Pico Shell - Copyright (C) 1883 Thomas Edison\n"
+                    "This program comes with ABSOLUTELY NO WARRANTY.\n"
+                    "This is free software, and you are welcome to redistribute it\n"
+                    "under certain conditions. See LICENSE file for details.\n\n"
+                    "console on %s (%s %u rows, %u columns)\n\n"
+                    "enter command, hit return for help\n\n",
+           uart ? "UART" : "USB", detected ? "detected" : "defaulted to", screen_y, screen_x);
+/*adding pshell */
   xQueue = xQueueCreate (1, sizeof (uint));
   mutex = xSemaphoreCreateMutex ();
 
