@@ -9,6 +9,7 @@ add_library(crc16
 		${PICO_SDK_CRC16_SOURCE}/fs.c
 		${PICO_SDK_CRC16_SOURCE}/xreceive.c
 		${PICO_SDK_CRC16_SOURCE}/xtransmit.c
+		${PICO_SDK_CRC16_SOURCE}/vi.c
 			
 )
 
