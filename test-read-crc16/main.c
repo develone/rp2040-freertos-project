@@ -393,17 +393,17 @@ void pshell(void *pvParameters)
         if (argc)
             for (i = 0; i < sizeof cmd_table / sizeof cmd_table[0]; i++)
                 if (strcmp(argv[0], cmd_table[i].name) == 0) {
-                    //cmd_table[i].func();
+                    cmd_table[i].func();
 										printf("%d %s %s\n",i ,cmd_table[i].name, cmd_table[i].descr);
                     found = true;
                     break;
                 }
         if (!found) {
             if (argc)
-                printf("command unknown! this should be 13\n\n");
+                printf("command unknown!\n\n");
             for (int i = 0; i < sizeof cmd_table / sizeof cmd_table[0]; i++)
-                //printf("%7s - %s\n", cmd_table[i].name, cmd_table[i].descr);
-            printf("%d  \n",i );
+                printf("%7s - %s\n", cmd_table[i].name, cmd_table[i].descr);
+            printf("\n");
             continue;
         }
         printf("%s\n", result);
@@ -739,7 +739,7 @@ main ()
   //xTaskCreate (ready, "Task 2", 256, NULL, 3, NULL);
   //xTaskCreate (read, "Task 3", 256, NULL, 1, NULL);
   //xTaskCreate (processliftklt, "Task 4", 256, NULL, 2, NULL);
-  xTaskCreate (debug, "Task 4", 256, NULL, 4, NULL);
+  //xTaskCreate (debug, "Task 4", 256, NULL, 4, NULL);
   xTaskCreate (pshell, "Task 5", 256, NULL, 2, NULL);
   vTaskStartScheduler ();
 
