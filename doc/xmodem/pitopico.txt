@@ -1,0 +1,9 @@
+minicom 			minicom -s
+
+mount
+/dev/ttyACMO	/dev/ttyUSB0
+put xxx <-- ctlAS upload pi
+enter 				then enter
+
+xmodemReceive(xmodem_cb);
+
