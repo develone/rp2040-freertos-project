@@ -1,0 +1,124 @@
+05/31/22
+connects on uart
+
+ git clone git@github.com:develone/pico-littlefs.git
+ cd pico-littlefs/
+ git submodule update --init
+ mkdir build
+ cmake ..
+ cd build/
+ cmake ..
+ make
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program example0.elf verify reset exit"
+
+format (N/y) ? 
+FS: blocks 64, block size 4096, used 2
+Boot count: 1
+File size (should be 4) : 4
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program example1.elf verify reset exit"
+
+Hit any key
+File list
+.
+..
+boot_count
+End of list
+Creating 32 files
+File list
+.
+..
+11083411647.tst
+11147115083.tst
+11162822862.tst
+11163427835.tst
+11266627076.tst
+11273288311.tst
+11358308654.tst
+113746869.tst
+11375579819.tst
+11676269473.tst
+11782900833.tst
+11811120002.tst
+11934391899.tst
+11936908977.tst                                                                 
+11948853245.tst                                                                 
+12053750710.tst                                                                 
+12111126580.tst                                                                 
+1241865139.tst                                                                  
+1312065421.tst                                                                  
+1367789129.tst                                                                  
+1457794866.tst                                                                  
+1496183475.tst                                                                  
+1499739362.tst                                                                  
+1557698670.tst                                                                  
+1573320177.tst                                                                  
+1715409330.tst                                                                  
+1765400678.tst                                                                  
+1793174479.tst                                                                  
+1794029364.tst                                                                  
+1798779070.tst                                                                  
+193418078.tst                                                                   
+1941947560.tst                                                                  
+boot_count                                                                      
+End of list                                                                     
+FS: blocks 64, block size 4096, used 2                                          
+Renaming 32 files                                                               
+File list                                                                       
+.                                                                               
+..                                                                              
+21083405120.tst                                                                 
+21147103668.tst                                                                 
+21162853169.tst                                                                 
+21163427844.tst                                                                 
+21266667003.tst                                                                 
+21273244040.tst                                                                 
+21358355153.tst                                                                 
+213712714.tst                                                                   
+21375555924.tst                                                                 
+21676224606.tst                                                                 
+21782847390.tst                                                                 
+21811120253.tst                                                                 
+21934394788.tst                                                                 
+21936858446.tst                                                                 
+21948900354.tst                                                                 
+22053718089.tst                                                                 
+22111161291.tst                                                                 
+2241856076.tst                                                                  
+2312033906.tst                                                                  
+2367852470.tst                                                                  
+2457808589.tst                                                                  
+2496228172.tst                                                                  
+2499750173.tst                                                                  
+2557658513.tst                                                                  
+2573363214.tst                                                                  
+2715438157.tst                                                                  
+2765454745.tst                                                                  
+2793124400.tst                                                                  
+2793973451.tst                                                                  
+2798792001.tst                                                                  
+293425057.tst                                                                   
+2941884759.tst                                                                  
+boot_count                                                                      
+End of list                                                                     
+FS: blocks 64, block size 4096, used 2                                          
+Verifying then removing 32 files                                                
+File list                                                                       
+.                                                                               
+..                                                                              
+boot_count                                                                      
+End of list                                                                     
+FS: blocks 64, block size 4096, used 2                                          
+Pass          
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program example2.elf verify reset exit"
+
+Hit any key
+FS: blocks 64, block size 4096, used 2
+Creating 200K file
+FS: blocks 64, block size 4096, used 53
+reading 200K file
+removing file
+FS: blocks 64, block size 4096, used 2
+Pass

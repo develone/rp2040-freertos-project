@@ -1,0 +1,133 @@
+./first_pwm/50_pwm.elf
+./klt-test/klt-test.elf
+./Mutex/Mutex.elf
+./Semaphore/Semaphore.elf
+./pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf
+./ultibo_blink/ultibo_blink.elf
+./pico-lifting-sf/hello_usb.elf
+./pico-lifting/pico-lifting.elf
+./ProjectFiles/blink.elf
+./Scheduling/Scheduling.elf
+./kltdwt-ultibo/kltdwt-ultibo.elf
+./2cores/multicore.elf
+./pico-ultibo/pico-ultibo.elf
+./2tasks/2tasks.elf
+./rp2040-logic-analyzer/rp2040-logic-analyzer.elf
+commit 2062372d203b372849d573f252cf7c6dc2800c0a (HEAD -> master, tag: 1.3.0, origin/master, origin/HEAD)
+Author: Graham Sanderson <graham.sanderson@raspberrypi.com>
+Date:   Mon Nov 1 14:20:54 2021 -0500
+
+    SDK 1.3.0 release
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program example0.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program example1.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program example2.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pshell.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program rp2040-logic-analyzer/rp2040-logic-analyzer.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2tasks/2tasks.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program test-read/test-read.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program test-read-crc16/test-read-crc16.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-ultibo/pico-ultibo.elf verify reset exit"
+freeRTOS tasks in development
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2cores/multicore.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program kltdwt-ultibo/kltdwt-ultibo.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program Scheduling/Scheduling.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-lifting/pico-lifting.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program Semaphore/Semaphore.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program 2tasks/2tasks.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program ultibo_blink/ultibo_blink.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program Mutex/Mutex.elf verify reset exit"
+
+cp pico-ultibo/pico-ultibo.uf2 /media/devel/RPI-RP2/
+
+************************************pico-sdk-test************************************ 
+commit 2062372d203b372849d573f252cf7c6dc2800c0a (HEAD -> master, tag: 1.3.0, origin/master, origin/HEAD)
+Author: Graham Sanderson <graham.sanderson@raspberrypi.com>
+Date:   Mon Nov 1 14:20:54 2021 -0500
+
+    SDK 1.3.0 release
+
+export PICO_SDK_PATH=/home/devel/pico-sdk-test/pico-sdk
+
+cd pico-sdk-test/pico-examples/build
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program hello_world/usb/hello_usb.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program rtc/hello_rtc/hello_rtc.elf verify reset exit"cd
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program adc/hello_adc/hello_adc.elf verify reset exit"
+
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program blink/blink.elf verify reset exit"
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pio/logic_analyser/pio_logic_analyser.elf verify reset exit"
+
+*********************************************https://forums.raspberrypi.com/viewtopic.php?t=304041*********************************************
+git clone git@github.com:develone/rp2040-logic-analyzer.git
+
+cd rp2040-logic-analyzer/
+
+Need pico-sdk in this tree
+
+mkdir build
+
+export PICO_SDK_PATH=/home/devel/rp2040-logic-analyzer/pico-sdk/
+
+cd build
+
+cmake ..
+
+make
+
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program rp2040-logic-analyzer.elf verify reset exit"
+
+
+ uint CAPTURE_PIN_BASE = 17;
+-uint CAPTURE_PIN_COUNT = 2;
+-uint CAPTURE_N_SAMPLES = 200000;
++uint CAPTURE_PIN_COUNT = 20;
++uint CAPTURE_N_SAMPLES = 2000;
+
+
+ uint CAPTURE_PIN_BASE = 17;
+-uint CAPTURE_PIN_COUNT = 2;
+-uint CAPTURE_N_SAMPLES = 200000;
++uint CAPTURE_PIN_COUNT = 20;
++uint CAPTURE_N_SAMPLES = 3000;
+**************************************************
+    This file was missing after moving rp2040-logic-analyzer to
+    rp2040-freertos-project such that only 1 pico-sdk is needed
+    and uses the export PICO_SDK_PATH=/home/devel/rp2040-freertos-project/pico-sdk
+    from .bashrc
+
+devel@pi4-28:~/rp2040-freertos-project/build $ cmake ..
+PICO_SDK_PATH is /home/devel/rp2040-freertos-project/pico-sdk
+PICO platform is rp2040.
+PICO target board is pico.
+Using board configuration from /home/devel/rp2040-freertos-project/pico-sdk/src/boards/include/boards/pico.h
+TinyUSB available at /home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+CMake Error at rp2040-logic-analyzer/CMakeLists.txt:13 (include):
+  include could not find load file:
+
+    pico_sdk_import.cmake
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/devel/rp2040-freertos-project/build/CMakeFiles/CMakeOutput.log".
+See also "/home/devel/rp2040-freertos-project/build/CMakeFiles/CMakeError.log".
