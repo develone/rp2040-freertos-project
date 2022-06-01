@@ -5,6 +5,7 @@ include(pico_sdk_import.cmake)
 project(Pico-FreeRTOS)
 
 pico_sdk_init()
+add_subdirectory(pico-littlefs)
 add_subdirectory(littlefs)
 add_subdirectory(crc16)
 add_subdirectory(rp2040-logic-analyzer)

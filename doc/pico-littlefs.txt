@@ -1,4 +1,17 @@
 05/31/22
+
+After testing copied to rp204-freertos-project
+Modifie top CMakeLists.txt
+	 pico_sdk_init()
+	+add_subdirectory(pico-littlefs)
+ 	add_subdirectory(littlefs)
+
+rm -rf ../pico-littlefs/.git
+
+rm -rf ../pico-littlefs/.gitmodules
+
+rm -rf ../pico-littlefs/build/
+
 connects on uart
 
  git clone git@github.com:develone/pico-littlefs.git
