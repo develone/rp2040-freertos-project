@@ -1,6 +1,25 @@
-05/31/22
+06/01/22
+I now have a master branch and a dev branch at repo https://github.com/develone/rp2040-freertos-project
+where I am testing new features.
 
-After testing copied to rp204-freertos-project
+Forked https://github.com/lurk101/pico-littlefs.  This appears to add features to the littlefs 
+from https://github.com/littlefs-project/littlefs.  The pico-littlefs uses littlefs-lib from
+https://github.com/lurk101/littlefs-lib.  
+
+05/31/22
+Initial tests. 
+The examples0, example1, and example2 connects on uart
+
+ git clone git@github.com:develone/pico-littlefs.git
+ cd pico-littlefs/
+ git submodule update --init
+ mkdir build
+ cmake ..
+ cd build/
+ cmake ..
+ make
+
+After testing https://github.com/develone/pico-littlefs copied to rp204-freertos-project
 Modifie top CMakeLists.txt
 	 pico_sdk_init()
 	+add_subdirectory(pico-littlefs)
@@ -12,16 +31,6 @@ rm -rf ../pico-littlefs/.gitmodules
 
 rm -rf ../pico-littlefs/build/
 
-connects on uart
-
- git clone git@github.com:develone/pico-littlefs.git
- cd pico-littlefs/
- git submodule update --init
- mkdir build
- cmake ..
- cd build/
- cmake ..
- make
 
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program example0.elf verify reset exit"
 
