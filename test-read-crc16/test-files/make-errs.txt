@@ -1,0 +1,135 @@
+cmake ..
+PICO_SDK_PATH is /home/devel/rp2040-freertos-project/pico-sdk
+PICO platform is rp2040.
+PICO target board is pico.
+Using board configuration from /home/devel/rp2040-freertos-project/pico-sdk/src/boards/include/boards/pico.h
+TinyUSB available at /home/devel/rp2040-freertos-project/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; enabling build support for USB.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/devel/xx/rp2040-freertos-project/build
+devel@pi4-27:~/xx/rp2040-freertos-project/build $ make 
+[  1%] Built target bs2_default
+[  1%] Performing build step for 'ELF2UF2Build'
+[100%] Built target elf2uf2
+[  1%] No install step for 'ELF2UF2Build'
+[  1%] Completed 'ELF2UF2Build'
+[  1%] Built target ELF2UF2Build
+[  1%] Built target bs2_default_padded_checksummed_asm
+[  5%] Built target example2
+[  9%] Built target example1
+[ 13%] Built target example0
+[ 13%] Built target crc16
+[ 19%] Built target rp2040-logic-analyzer
+[ 20%] Built target freertos
+[ 20%] Built target klt
+[ 20%] Built target crc
+[ 20%] Built target lifting
+[ 25%] Built target test-read
+[ 25%] Building C object test-read-crc16/CMakeFiles/test-read-crc16.dir/main.c.obj
+In file included from /home/devel/xx/rp2040-freertos-project/test-read-crc16/main.c:26:
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'xmodem_cb':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:129:9: warning: implicit declaration of function 'fs_file_write'; did you mean 'lfs_file_write'? [-Wimplicit-function-declaration]
+     if (fs_file_write(&file, buf, len) != len)
+         ^~~~~~~~~~~~~
+         lfs_file_write
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'put_cmd':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:152:9: warning: implicit declaration of function 'fs_file_open'; did you mean 'lfs_file_open'? [-Wimplicit-function-declaration]
+     if (fs_file_open(&file, full_path(argv[1]), LFS_O_WRONLY | LFS_O_CREAT) < 0) {
+         ^~~~~~~~~~~~
+         lfs_file_open
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:159:15: warning: implicit declaration of function 'fs_file_seek'; did you mean 'lfs_file_seek'? [-Wimplicit-function-declaration]
+     int pos = fs_file_seek(&file, 0, LFS_SEEK_END);
+               ^~~~~~~~~~~~
+               lfs_file_seek
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:160:5: warning: implicit declaration of function 'fs_file_close'; did you mean 'lfs_file_close'? [-Wimplicit-function-declaration]
+     fs_file_close(&file);
+     ^~~~~~~~~~~~~
+     lfs_file_close
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'check_cp_parms':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:180:17: warning: implicit declaration of function 'fs_stat'; did you mean 'lfs_stat'? [-Wimplicit-function-declaration]
+             if (fs_stat(*from, &info) < 0) {
+                 ^~~~~~~
+                 lfs_stat
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'mv_cmd':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:219:9: warning: implicit declaration of function 'fs_rename'; did you mean 'lfs_rename'? [-Wimplicit-function-declaration]
+     if (fs_rename(from, to) < 0)
+         ^~~~~~~~~
+         lfs_rename
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'cp_cmd':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:249:17: warning: implicit declaration of function 'fs_file_read'; did you mean 'lfs_file_read'? [-Wimplicit-function-declaration]
+         int l = fs_file_read(&in, buf, 4096);
+                 ^~~~~~~~~~~~
+                 lfs_file_read
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'get_cmd':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:278:5: warning: implicit declaration of function 'fs_file_rewind'; did you mean 'lfs_file_rewind'? [-Wimplicit-function-declaration]
+     fs_file_rewind(&file);
+     ^~~~~~~~~~~~~~
+     lfs_file_rewind
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'mkdir_cmd':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:304:9: warning: implicit declaration of function 'fs_mkdir'; did you mean 'lfs_mkdir'? [-Wimplicit-function-declaration]
+     if (fs_mkdir(full_path(argv[1])) < 0) {
+         ^~~~~~~~
+         lfs_mkdir
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'rm_cmd':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:327:9: warning: implicit declaration of function 'fs_dir_open'; did you mean 'lfs_dir_open'? [-Wimplicit-function-declaration]
+         fs_dir_open(&dir, fp);
+         ^~~~~~~~~~~
+         lfs_dir_open
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:329:16: warning: implicit declaration of function 'fs_dir_read'; did you mean 'lfs_dir_read'? [-Wimplicit-function-declaration]
+         while (fs_dir_read(&dir, &info))
+                ^~~~~~~~~~~
+                lfs_dir_read
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:332:9: warning: implicit declaration of function 'fs_dir_close'; did you mean 'lfs_dir_close'? [-Wimplicit-function-declaration]
+         fs_dir_close(&dir);
+         ^~~~~~~~~~~~
+         lfs_dir_close
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:338:9: warning: implicit declaration of function 'fs_remove'; did you mean 'lfs_remove'? [-Wimplicit-function-declaration]
+     if (fs_remove(fp) < 0)
+         ^~~~~~~~~
+         lfs_remove
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'mount_cmd':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:346:9: warning: implicit declaration of function 'fs_mount'; did you mean 'lfs_mount'? [-Wimplicit-function-declaration]
+     if (fs_mount() != LFS_ERR_OK) {
+         ^~~~~~~~
+         lfs_mount
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'unmount_cmd':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:357:9: warning: implicit declaration of function 'fs_unmount'; did you mean 'lfs_unmount'? [-Wimplicit-function-declaration]
+     if (fs_unmount() != LFS_ERR_OK) {
+         ^~~~~~~~~~
+         lfs_unmount
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'format_cmd':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:375:9: warning: implicit declaration of function 'fs_format'; did you mean 'lfs_format'? [-Wimplicit-function-declaration]
+     if (fs_format() != LFS_ERR_OK)
+         ^~~~~~~~~
+         lfs_format
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'status_cmd':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:383:24: error: storage size of 'stat' isn't known
+     struct fs_fsstat_t stat;
+                        ^~~~
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:384:5: warning: implicit declaration of function 'fs_fsstat'; did you mean 'lfs_stat'? [-Wimplicit-function-declaration]
+     fs_fsstat(&stat);
+     ^~~~~~~~~
+     lfs_stat
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:388:13: warning: implicit declaration of function 'fs_flash_base' [-Wimplicit-function-declaration]
+             fs_flash_base(), (int)stat.block_count, (int)stat.block_size, (int)stat.blocks_used,
+             ^~~~~~~~~~~~~
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h: In function 'ls_cmd':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/pshell.h:411:5: warning: implicit declaration of function 'fs_dir_rewind'; did you mean 'lfs_dir_rewind'? [-Wimplicit-function-declaration]
+     fs_dir_rewind(&dir);
+     ^~~~~~~~~~~~~
+     lfs_dir_rewind
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/main.c: In function 'vASendStream':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/main.c:612:52: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   xByteSent = xStreamBufferSend (DynxStreamBuffer, (void *) ucArrayToSend,
+                                                    ^
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/main.c: In function 'vAReadStream':
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/main.c:638:13: warning: assignment to 'uint8_t *' {aka 'unsigned char *'} from incompatible pointer type 'uint8_t (*)[40]' {aka 'unsigned char (*)[40]'} [-Wincompatible-pointer-types]
+   pucRXData = &ucRXData;
+             ^
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/main.c: At top level:
+/home/devel/xx/rp2040-freertos-project/test-read-crc16/main.c:107:17: warning: array 'a' assumed to have one element
+ const short int a[];
+                 ^
+make[2]: *** [test-read-crc16/CMakeFiles/test-read-crc16.dir/build.make:82: test-read-crc16/CMakeFiles/test-read-crc16.dir/main.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2421: test-read-crc16/CMakeFiles/test-read-crc16.dir/all] Error 2
+make: *** [Makefile:103: all] Error 2

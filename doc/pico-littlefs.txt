@@ -1,3 +1,48 @@
+06/02/22
+littlefs-lib stdinit-lib 
+Trying to add pico-littlefs to test-read-crc16 replacing littlefs with littlefs-lib
+
+find ../ -name pico_hal.h
+../pico-littlefs/littlefs-lib/pico_hal.h
+
+cp ../pico-littlefs/littlefs-lib/pico_hal.h ../test-read-crc16/
+
+git diff ../test-read-crc16/CMakeLists.txt
+index f59f7b3..cce10f1 100644
+--- a/test-read-crc16/CMakeLists.txt
++++ b/test-read-crc16/CMakeLists.txt
+@@ -1,8 +1,8 @@
+ add_executable(test-read-crc16
+-        main.c crc16.h xreceive.c xreceive.h xtransmit.c xtransmit.h fs.c fs.h vi.c vi.h pshell.h
++        main.c crc16.h xreceive.c xreceive.h xtransmit.c xtransmit.h fs.c fs.h vi.c vi.h pshell.h pico_hal.h
+ )
+ 
+-target_link_libraries(test-read-crc16 pico_stdlib freertos lifting crc16 klt littlefs)
++target_link_libraries(test-read-crc16 pico_stdlib freertos lifting crc16 klt littlefs-lib)
+ 
+ pico_enable_stdio_usb(test-read-crc16 1)
+ pico_enable_stdio_uart(test-read-crc16 1)
+
+git diff ../test-read-crc16/main.c
+diff --git a/test-read-crc16/main.c b/test-read-crc16/main.c
+index 615e24d..7320569 100644
+--- a/test-read-crc16/main.c
++++ b/test-read-crc16/main.c
+@@ -11,7 +11,7 @@
+ #include "crc16.h"
+ #include "head-tail.h"
+ #include "klt.h"
+-
++#include "pico_hal.h"
+ /*adding pshell */
+ #include "xreceive.h"
+ #include "xtransmit.h"
+
+cmake ..
+
+make gets multiple wranings and errors.
+
+../test-read-crc16/test-files/make-errs.txt
 06/01/22
 I now have a master branch and a dev branch at repo https://github.com/develone/rp2040-freertos-project
 where I am testing new features.
