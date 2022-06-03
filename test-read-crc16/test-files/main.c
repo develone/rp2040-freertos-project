@@ -20,7 +20,8 @@
 #include "pico/stdio.h"
 #include "pico/stdlib.h"
 
-#include "fs.h"
+#include "lfs.h"
+#include "lfs_util.h"
 #include "tusb.h"
 #include "vi.h"
 #include "pshell.h"
