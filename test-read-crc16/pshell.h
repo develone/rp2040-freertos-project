@@ -22,7 +22,7 @@
 #include "pico/stdio.h"
 #include "pico/stdlib.h"
 
-#include "lfs.h"
+#include "fs.h"
 #include "tusb.h"
 #include "vi.h"
 #include "xreceive.h"
@@ -126,7 +126,7 @@ char* full_path(const char* name) {
 }
 
 static void xmodem_cb(uint8_t* buf, uint32_t len) {
-    if (lfs_file_write(&file, buf, len) != len)
+    if (fs_file_write(&file, buf, len) != len)
         printf("error writing file\n");
 }
 
@@ -149,15 +149,15 @@ static void put_cmd(void) {
         return;
     if (check_name())
         return;
-    if (lfs_file_open(&file, full_path(argv[1]), LFS_O_WRONLY | LFS_O_CREAT) < 0) {
+    if (fs_file_open(&file, full_path(argv[1]), LFS_O_WRONLY | LFS_O_CREAT) < 0) {
         strcpy(result, "Can't create file");
         return;
     }
     stdio_set_translate_crlf(&stdio_uart, false);
     xmodemReceive(xmodem_cb);
     stdio_set_translate_crlf(&stdio_uart, true);
-    int pos = lfs_file_seek(&file, 0, LFS_SEEK_END);
-    lfs_file_close(&file);
+    int pos = fs_file_seek(&file, 0, LFS_SEEK_END);
+    fs_file_close(&file);
     sprintf(result, "\nfile transfered, size: %d\n", pos);
 }
 
@@ -177,7 +177,7 @@ int check_cp_parms(char** from, char** to, int copy) {
         }
         if (copy) {
             struct lfs_info info;
-            if (lfs_stat(*from, &info) < 0) {
+            if (fs_stat(*from, &info) < 0) {
                 sprintf(result, "%s not found", *from);
                 break;
             }
@@ -192,11 +192,11 @@ int check_cp_parms(char** from, char** to, int copy) {
             break;
         }
         struct lfs_info info;
-        if (lfs_stat(*from, &info) < 0) {
+        if (fs_stat(*from, &info) < 0) {
             sprintf(result, "%s not found", *from);
             break;
         }
-        if (lfs_stat(*to, &info) >= 0) {
+        if (fs_stat(*to, &info) >= 0) {
             sprintf(result, "%s already exists", *to);
             break;
         }
@@ -216,7 +216,7 @@ static void mv_cmd(void) {
     char* to;
     if (check_cp_parms(&from, &to, 0))
         return;
-    if (lfs_rename(from, to) < 0)
+    if (fs_rename(from, to) < 0)
         sprintf(result, "could not rename %s to %s", from, to);
     else
         sprintf(result, "%s renamed to %s", from, to);
@@ -238,25 +238,25 @@ static void cp_cmd(void) {
             strcpy(result, "no memory");
             break;
         }
-        if (lfs_file_open(&in, from, LFS_O_RDONLY) < 0) {
+        if (fs_file_open(&in, from, LFS_O_RDONLY) < 0) {
             sprintf(result, "error opening %s", from);
             break;
         }
-        if (lfs_file_open(&out, to, LFS_O_WRONLY | LFS_O_CREAT) < 0) {
+        if (fs_file_open(&out, to, LFS_O_WRONLY | LFS_O_CREAT) < 0) {
             sprintf(result, "error opening %s", from);
             break;
         }
-        int l = lfs_file_read(&in, buf, 4096);
+        int l = fs_file_read(&in, buf, 4096);
         while (l > 0) {
-            if (lfs_file_write(&out, buf, l) != l) {
+            if (fs_file_write(&out, buf, l) != l) {
                 sprintf(result, "error writing %s", to);
                 break;
             }
-            l = lfs_file_read(&in, buf, 4096);
+            l = fs_file_read(&in, buf, 4096);
         }
     } while (false);
-    lfs_file_close(&in);
-    lfs_file_close(&out);
+    fs_file_close(&in);
+    fs_file_close(&out);
     if (buf)
         free(buf);
     if (!result[0])
@@ -270,18 +270,18 @@ static void get_cmd(void) {
         return;
     if (check_name())
         return;
-    if (lfs_file_open(&file, full_path(argv[1]), LFS_O_RDONLY) < 0) {
+    if (fs_file_open(&file, full_path(argv[1]), LFS_O_RDONLY) < 0) {
         strcpy(result, "Can't open file");
         return;
     }
-    uint32_t len = lfs_file_seek(&file, 0, LFS_SEEK_END);
-    lfs_file_rewind(&file);
+    uint32_t len = fs_file_seek(&file, 0, LFS_SEEK_END);
+    fs_file_rewind(&file);
     char* buf = malloc(len);
     if (buf == NULL) {
         strcpy(result, "not enough memory");
         goto err2;
     }
-    if (lfs_file_read(&file, buf, len) != len) {
+    if (fs_file_read(&file, buf, len) != len) {
         strcpy(result, "error reading file");
         goto err1;
     }
@@ -292,7 +292,7 @@ static void get_cmd(void) {
 err1:
     free(buf);
 err2:
-    lfs_file_close(&file);
+    fs_file_close(&file);
     strcpy(result, "transfered");
 }
 
@@ -301,7 +301,7 @@ static void mkdir_cmd(void) {
         return;
     if (check_name())
         return;
-    if (lfs_mkdir(full_path(argv[1])) < 0) {
+    if (fs_mkdir(full_path(argv[1])) < 0) {
         strcpy(result, "Can't create directory");
         return;
     }
@@ -316,7 +316,7 @@ static void rm_cmd(void) {
     // lfs won't remove a non empty directory but returns without error!
     struct lfs_info info;
     char* fp = full_path(argv[1]);
-    if (lfs_stat(fp, &info) < 0) {
+    if (fs_stat(fp, &info) < 0) {
         sprintf(result, "%s not found", full_path(argv[1]));
         return;
     }
@@ -324,18 +324,18 @@ static void rm_cmd(void) {
     if (info.type == LFS_TYPE_DIR) {
         isdir = 1;
         lfs_dir_t dir;
-        lfs_dir_open(&dir, fp);
+        fs_dir_open(&dir, fp);
         int n = 0;
-        while (lfs_dir_read(&dir, &info))
+        while (fs_dir_read(&dir, &info))
             if ((strcmp(info.name, ".") != 0) && (strcmp(info.name, "..") != 0))
                 n++;
-        lfs_dir_close(&dir);
+        fs_dir_close(&dir);
         if (n) {
             sprintf(result, "directory %s not empty", fp);
             return;
         }
     }
-    if (lfs_remove(fp) < 0)
+    if (fs_remove(fp) < 0)
         strcpy(result, "Can't remove file or directory");
     sprintf(result, "%s %s removed", isdir ? "directory" : "file", fp);
 }
@@ -343,7 +343,7 @@ static void rm_cmd(void) {
 static void mount_cmd(void) {
     if (check_mount(false))
         return;
-    if (lfs_mount() != LFS_ERR_OK) {
+    if (fs_mount() != LFS_ERR_OK) {
         strcpy(result, "Error mounting filesystem");
         return;
     }
@@ -354,7 +354,7 @@ static void mount_cmd(void) {
 static void unmount_cmd(void) {
     if (check_mount(true))
         return;
-    if (lfs_unmount() != LFS_ERR_OK) {
+    if (fs_unmount() != LFS_ERR_OK) {
         strcpy(result, "Error unmounting filesystem");
         return;
     }
@@ -372,7 +372,7 @@ static void format_cmd(void) {
         strcpy(result, "user cancelled");
         return;
     }
-    if (lfs_format() != LFS_ERR_OK)
+    if (fs_format() != LFS_ERR_OK)
         strcpy(result, "Error formating filesystem");
     strcpy(result, "formatted");
 }
@@ -380,12 +380,12 @@ static void format_cmd(void) {
 static void status_cmd(void) {
     if (check_mount(true))
         return;
-    struct lfs_fsstat_t stat;
-    lfs_stat(&stat);
+    struct fs_fsstat_t stat;
+    fs_fsstat(&stat);
     const char percent = 37;
     sprintf(result,
             "\nflash base 0x%x, blocks %d, block size %d, used %d, total %u bytes, %1.1f%c used.\n",
-            lfs_flash_base(), (int)stat.block_count, (int)stat.block_size, (int)stat.blocks_used,
+            fs_flash_base(), (int)stat.block_count, (int)stat.block_size, (int)stat.blocks_used,
             stat.block_count * stat.block_size, stat.blocks_used * 100.0 / stat.block_count,
             percent);
 }
@@ -398,22 +398,22 @@ static void ls_cmd(void) {
     else
         full_path("");
     lfs_dir_t dir;
-    if (lfs_dir_open(&dir, path) < 0) {
+    if (fs_dir_open(&dir, path) < 0) {
         strcpy(result, "not a directory");
         return;
     }
     printf("\n");
     struct lfs_info info;
-    while (lfs_dir_read(&dir, &info) > 0)
+    while (fs_dir_read(&dir, &info) > 0)
         if (strcmp(info.name, ".") && strcmp(info.name, ".."))
             if (info.type == LFS_TYPE_DIR)
                 printf(" %7d [%s]\n", info.size, info.name);
-    lfs_dir_rewind(&dir);
-    while (lfs_dir_read(&dir, &info) > 0)
+    fs_dir_rewind(&dir);
+    while (fs_dir_read(&dir, &info) > 0)
         if (strcmp(info.name, ".") && strcmp(info.name, ".."))
             if (info.type == LFS_TYPE_REG)
                 printf(" %7d %s\n", info.size, info.name);
-    lfs_dir_close(&dir);
+    fs_dir_close(&dir);
     result[0] = 0;
 }
 
@@ -440,11 +440,11 @@ static void cd_cmd(void) {
     }
     full_path(argv[1]);
     lfs_dir_t dir;
-    if (lfs_dir_open(&dir, path) < 0) {
+    if (fs_dir_open(&dir, path) < 0) {
         strcpy(result, "not a directory");
         return;
     }
-    lfs_dir_close(&dir);
+    fs_dir_close(&dir);
     strcpy(curdir, path);
     sprintf(result, "changed to %s", curdir);
 }
@@ -459,7 +459,7 @@ static void vi_cmd(void) {
 static void quit_cmd(void) {
     // release any resources we were using
     if (mounted)
-        lfs_unmount();
+        fs_unmount();
     strcpy(result, "");
     run = false;
 }

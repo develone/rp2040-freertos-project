@@ -11,7 +11,7 @@
 #include "crc16.h"
 #include "head-tail.h"
 #include "klt.h"
-#include "pico_hal.h"
+
 /*adding pshell */
 #include "xreceive.h"
 #include "xtransmit.h"
@@ -20,8 +20,7 @@
 #include "pico/stdio.h"
 #include "pico/stdlib.h"
 
-#include "lfs.h"
-#include "lfs_util.h"
+#include "fs.h"
 #include "tusb.h"
 #include "vi.h"
 #include "pshell.h"
