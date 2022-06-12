@@ -456,6 +456,54 @@ static void vi_cmd(void) {
     strcpy(result, VT_CLEAR "\n");
 }
 
+static void lst0_cmd(void) {
+    char* from;
+    char* to;
+    char* buf = NULL;
+    if (check_cp_parms(&from, &to, 1))
+        return;
+    if (check_mount(true))
+        return;
+    vi(screen_x, screen_y, argc - 1, argv + 1);
+    strcpy(result, VT_CLEAR "\n");
+}
+
+static void lst1_cmd(void) {
+    char* from;
+    char* to;
+    char* buf = NULL;
+    if (check_cp_parms(&from, &to, 1))
+        return;
+    if (check_mount(true))
+        return;
+    vi(screen_x, screen_y, argc - 1, argv + 1);
+    strcpy(result, VT_CLEAR "\n");
+}
+
+static void klt0_cmd(void) {
+    char* from;
+    char* to;
+    char* buf = NULL;
+    if (check_cp_parms(&from, &to, 1))
+        return;
+    if (check_mount(true))
+        return;
+    vi(screen_x, screen_y, argc - 1, argv + 1);
+    strcpy(result, VT_CLEAR "\n");
+}
+
+static void klt1_cmd(void) {
+    char* from;
+    char* to;
+    char* buf = NULL;
+    if (check_cp_parms(&from, &to, 1))
+        return;
+    if (check_mount(true))
+        return;
+    vi(screen_x, screen_y, argc - 1, argv + 1);
+    strcpy(result, VT_CLEAR "\n");
+}
+
 static void quit_cmd(void) {
     // release any resources we were using
     if (mounted)
@@ -485,7 +533,11 @@ static cmd_t cmd_table[] = {
     {"rm", 		rm_cmd, 		"remove file or directory"},
     {"status", 	status_cmd,		"filesystem status"},
     {"unmount",	unmount_cmd,	"unmount filesystem"},
-    {"vi", 		vi_cmd, 		"vi editor"}
+    {"vi", 		vi_cmd, 		"vi editor"},
+    {"klt0", 		klt0_cmd, 		"KLT a64.bin"},	
+    {"klt1", 		klt1_cmd, 		"KLT bb.bin"},
+    {"lst0", 		lst0_cmd, 		"lifting step a64.bin"},	
+    {"lst1", 		lst1_cmd, 		"lifting step bb.bin"}
 };
 // clang-format on
 
