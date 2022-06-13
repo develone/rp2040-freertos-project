@@ -456,11 +456,62 @@ static void vi_cmd(void) {
     strcpy(result, VT_CLEAR "\n");
 }
 
+int check_kltls_parms(char** from, char** to, int copy) {
+    *from = NULL;
+    *to = NULL;
+    int rc = 1;
+    do {
+        if (argc < 3) {
+            strcpy(result, "need two names");
+            break;
+        }
+        *from = strdup(full_path(argv[1]));
+        if (*from == NULL) {
+            strcpy(result, "no memory");
+            break;
+        }
+        if (copy) {
+            struct lfs_info info;
+            if (fs_stat(*from, &info) < 0) {
+                sprintf(result, "%s not found", *from);
+                break;
+            }
+            if (info.type != LFS_TYPE_REG) {
+                sprintf(result, "%s is a directory", *from);
+                break;
+            }
+        }
+        *to = strdup(full_path(argv[2]));
+        if (*to == NULL) {
+            strcpy(result, "no memory");
+            break;
+        }
+        struct lfs_info info;
+        if (fs_stat(*from, &info) < 0) {
+            sprintf(result, "%s not found", *from);
+            break;
+        }
+        if (fs_stat(*to, &info) >= 0) {
+            sprintf(result, "%s already exists", *to);
+            break;
+        }
+        rc = 0;
+    } while (0);
+    if (rc) {
+        if (*from)
+            free(*from);
+        if (*to)
+            free(*to);
+    }
+    return rc;
+}
+
+
 static void lst0_cmd(void) {
     char* from;
     char* to;
     char* buf = NULL;
-    if (check_cp_parms(&from, &to, 1))
+    if (check_kltls_parms(&from, &to, 0))
         return;
     if (check_mount(true))
         return;
@@ -472,7 +523,7 @@ static void lst1_cmd(void) {
     char* from;
     char* to;
     char* buf = NULL;
-    if (check_cp_parms(&from, &to, 1))
+    if (check_kltls_parms(&from, &to, 0))
         return;
     if (check_mount(true))
         return;
@@ -484,7 +535,7 @@ static void klt0_cmd(void) {
     char* from;
     char* to;
     char* buf = NULL;
-    if (check_cp_parms(&from, &to, 1))
+    if (check_kltls_parms(&from, &to, 0))
         return;
     if (check_mount(true))
         return;
@@ -496,7 +547,7 @@ static void klt1_cmd(void) {
     char* from;
     char* to;
     char* buf = NULL;
-    if (check_cp_parms(&from, &to, 1))
+    if (check_kltls_parms(&from, &to, 0))
         return;
     if (check_mount(true))
         return;
