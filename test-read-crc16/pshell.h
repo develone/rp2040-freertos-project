@@ -467,14 +467,16 @@ static void lst0_cmd(void) {
   
     
    lfs_file_t fd;
-
+    
    if (fs_file_open(&fd, argv[1], LFS_O_RDONLY) < 0)
-        return NULL;
+        printf("error in open\n");        
+	//return NULL;
     
     int l = fs_file_size(&fd);
-    int ii=0;
+    int ii=0,jj=0;
     unsigned char rcrc,ccrc,msg[64];
     char* buf = malloc(l + 1);
+    unsigned short int* buf1 = malloc(8192+1);
     //printf("%d 0x%x\n",l,fd);
     fs_file_read(&fd, buf, l);
     for(int rr=0;rr<64;rr++) {
@@ -485,13 +487,29 @@ static void lst0_cmd(void) {
         }
     	printf("\n");
 	rcrc=msg[64];
-        msg[64]=0;
-        ccrc=getCRC(msg,64);
-        printf("%d %d\n",rcrc,ccrc);
         
+	msg[64]=0;
+        ccrc=getCRC(msg,64);
+        if (rcrc != ccrc) printf("%d %d\n",rcrc,ccrc);
+        /*
+	for(int k=0;k<64;k++) {
+	   for(int j=0;j<64;j++) {
+	     buf1[jj]=(unsigned short int)msg[j];
+             jj++;
+           }
+        }
+        */
     }
+    
+     
+    
     free(buf);
+    printf("0x%x %d\n",&fd,fd);
     fs_file_close(&fd);
+    printf("0x%x %d\n",&fd,fd);
+    if (fs_file_open(&fd, argv[2], LFS_O_WRONLY) < 0)
+        printf("error in open\n");        
+	//return NULL;
     return;
 	
 }
@@ -505,14 +523,16 @@ static void lst1_cmd(void) {
   
     
    lfs_file_t fd;
-
+    
    if (fs_file_open(&fd, argv[1], LFS_O_RDONLY) < 0)
-        return NULL;
+        printf("error in open\n");        
+	//return NULL;
     
     int l = fs_file_size(&fd);
-    int ii=0;
+    int ii=0,jj=0;
     unsigned char rcrc,ccrc,msg[64];
     char* buf = malloc(l + 1);
+    unsigned short int* buf1 = malloc(8192+1);
     //printf("%d 0x%x\n",l,fd);
     fs_file_read(&fd, buf, l);
     for(int rr=0;rr<64;rr++) {
@@ -523,64 +543,37 @@ static void lst1_cmd(void) {
         }
     	printf("\n");
 	rcrc=msg[64];
-        msg[64]=0;
-        ccrc=getCRC(msg,64);
-        printf("%d %d\n",rcrc,ccrc);
         
+	msg[64]=0;
+        ccrc=getCRC(msg,64);
+        if (rcrc != ccrc) printf("%d %d\n",rcrc,ccrc);
+        /*
+	for(int k=0;k<64;k++) {
+	   for(int j=0;j<64;j++) {
+	     buf1[jj]=(unsigned short int)msg[j];
+             jj++;
+           }
+        }
+        */
     }
+    
+     
+    
     free(buf);
+    printf("0x%x %d\n",&fd,fd);
     fs_file_close(&fd);
+    printf("0x%x %d\n",&fd,fd);
+    if (fs_file_open(&fd, argv[2], LFS_O_WRONLY) < 0)
+        printf("error in open\n");        
+	//return NULL;
     return;
 	
 }
 
 static void klt0_cmd(void) {
-    if (check_mount(true))
-        return;
-    
-   printf("%d %s\n",argc,argv[1]);
-  
-    
-   lfs_file_t fd;
-
-   if (fs_file_open(&fd, argv[1], LFS_O_RDONLY) < 0)
-        return NULL;
-    
-    int l = fs_file_size(&fd);
-    char* buf = malloc(l + 1);
-    //printf("%d 0x%x\n",l,fd);
-    fs_file_read(&fd, buf, l);
-    printf("%d\n",buf[0]);
-    printf("%d\n",buf[1]);
-    free(buf);
-    fs_file_close(&fd);
-    return;
-	
-	
 }
 
 static void klt1_cmd(void) {
-    if (check_mount(true))
-        return;
-    
-   printf("%d %s\n",argc,argv[1]);
-  
-    
-   lfs_file_t fd;
-
-   if (fs_file_open(&fd, argv[1], LFS_O_RDONLY) < 0)
-        return NULL;
-    
-    int l = fs_file_size(&fd);
-    char* buf = malloc(l + 1);
-    //printf("%d 0x%x\n",l,fd);
-    fs_file_read(&fd, buf, l);
-    printf("%d\n",buf[0]);
-    printf("%d\n",buf[1]);
-    free(buf);
-    fs_file_close(&fd);
-    return;
-	
 }
 
 static void quit_cmd(void) {
