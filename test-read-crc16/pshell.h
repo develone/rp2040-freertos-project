@@ -462,7 +462,7 @@ static void lst0_cmd(void) {
     if (check_mount(true))
         return;
     
-   printf("%d %s\n",argc,argv[1]);
+   printf("%d %s %s\n",argc,argv[1],argv[2]);
   
     
    lfs_file_t fd;
@@ -471,11 +471,17 @@ static void lst0_cmd(void) {
         return NULL;
     
     int l = fs_file_size(&fd);
+    int ii=0;
     char* buf = malloc(l + 1);
     //printf("%d 0x%x\n",l,fd);
     fs_file_read(&fd, buf, l);
-    printf("%d\n",buf[0]);
-    printf("%d\n",buf[1]);
+    for(int rr=0;rr<64;rr++) {
+    	for(int cc=0;cc<65;cc++) {
+	  printf("%d ",buf[ii]);
+	  ii++;
+        }
+    	printf("\n");
+    }
     free(buf);
     fs_file_close(&fd);
     return;
