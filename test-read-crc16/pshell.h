@@ -489,6 +489,7 @@ static void lst0_cmd(void) {
 	rcrc=msg[64];
         
 	msg[64]=0;
+	ccrc=0;
         ccrc=getCRC(msg,64);
         if (rcrc != ccrc) printf("%d %d\n",rcrc,ccrc);
         /*
@@ -509,8 +510,8 @@ static void lst0_cmd(void) {
     printf("0x%x %d\n",&fd,fd);
     if (fs_file_open(&fd, argv[2], LFS_O_WRONLY) < 0)
         printf("error in open\n");        
-	//return NULL;
-    return;
+ 
+
 	
 }
 
@@ -545,6 +546,7 @@ static void lst1_cmd(void) {
 	rcrc=msg[64];
         
 	msg[64]=0;
+	ccrc=0;
         ccrc=getCRC(msg,64);
         if (rcrc != ccrc) printf("%d %d\n",rcrc,ccrc);
         /*
@@ -565,8 +567,7 @@ static void lst1_cmd(void) {
     printf("0x%x %d\n",&fd,fd);
     if (fs_file_open(&fd, argv[2], LFS_O_WRONLY) < 0)
         printf("error in open\n");        
-	//return NULL;
-    return;
+
 	
 }
 
