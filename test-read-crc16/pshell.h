@@ -456,103 +456,104 @@ static void vi_cmd(void) {
     strcpy(result, VT_CLEAR "\n");
 }
 
-int check_kltls_parms(char** from, char** to, int copy) {
-    *from = NULL;
-    *to = NULL;
-    int rc = 1;
-    do {
-        if (argc < 3) {
-            strcpy(result, "need two names");
-            break;
-        }
-        *from = strdup(full_path(argv[1]));
-        if (*from == NULL) {
-            strcpy(result, "no memory");
-            break;
-        }
-        if (copy) {
-            struct lfs_info info;
-            if (fs_stat(*from, &info) < 0) {
-                sprintf(result, "%s not found", *from);
-                break;
-            }
-            if (info.type != LFS_TYPE_REG) {
-                sprintf(result, "%s is a directory", *from);
-                break;
-            }
-        }
-        *to = strdup(full_path(argv[2]));
-        if (*to == NULL) {
-            strcpy(result, "no memory");
-            break;
-        }
-        struct lfs_info info;
-        if (fs_stat(*from, &info) < 0) {
-            sprintf(result, "%s not found", *from);
-            break;
-        }
-        if (fs_stat(*to, &info) >= 0) {
-            sprintf(result, "%s already exists", *to);
-            break;
-        }
-        rc = 0;
-    } while (0);
-    if (rc) {
-        if (*from)
-            free(*from);
-        if (*to)
-            free(*to);
-    }
-    return rc;
-}
-
+ 
 
 static void lst0_cmd(void) {
-    char* from;
-    char* to;
-    char* buf = NULL;
-    if (check_kltls_parms(&from, &to, 0))
-        return;
     if (check_mount(true))
         return;
-    vi(screen_x, screen_y, argc - 1, argv + 1);
-    strcpy(result, VT_CLEAR "\n");
+    
+   printf("%d %s\n",argc,argv[1]);
+  
+    
+   lfs_file_t fd;
+
+   if (fs_file_open(&fd, argv[1], LFS_O_RDONLY) < 0)
+        return NULL;
+    
+    int l = fs_file_size(&fd);
+    char* buf = malloc(l + 1);
+    //printf("%d 0x%x\n",l,fd);
+    fs_file_read(&fd, buf, l);
+    printf("%d\n",buf[0]);
+    printf("%d\n",buf[1]);
+    free(buf);
+    fs_file_close(&fd);
+    return;
+	
 }
 
 static void lst1_cmd(void) {
-    char* from;
-    char* to;
-    char* buf = NULL;
-    if (check_kltls_parms(&from, &to, 0))
-        return;
     if (check_mount(true))
         return;
-    vi(screen_x, screen_y, argc - 1, argv + 1);
-    strcpy(result, VT_CLEAR "\n");
+    
+   printf("%d %s\n",argc,argv[1]);
+  
+    
+   lfs_file_t fd;
+
+   if (fs_file_open(&fd, argv[1], LFS_O_RDONLY) < 0)
+        return NULL;
+    
+    int l = fs_file_size(&fd);
+    char* buf = malloc(l + 1);
+    //printf("%d 0x%x\n",l,fd);
+    fs_file_read(&fd, buf, l);
+    printf("%d\n",buf[0]);
+    printf("%d\n",buf[1]);
+    free(buf);
+    fs_file_close(&fd);
+    return;
+	
+	
 }
 
 static void klt0_cmd(void) {
-    char* from;
-    char* to;
-    char* buf = NULL;
-    if (check_kltls_parms(&from, &to, 0))
-        return;
     if (check_mount(true))
         return;
-    vi(screen_x, screen_y, argc - 1, argv + 1);
-    strcpy(result, VT_CLEAR "\n");
+    
+   printf("%d %s\n",argc,argv[1]);
+  
+    
+   lfs_file_t fd;
+
+   if (fs_file_open(&fd, argv[1], LFS_O_RDONLY) < 0)
+        return NULL;
+    
+    int l = fs_file_size(&fd);
+    char* buf = malloc(l + 1);
+    //printf("%d 0x%x\n",l,fd);
+    fs_file_read(&fd, buf, l);
+    printf("%d\n",buf[0]);
+    printf("%d\n",buf[1]);
+    free(buf);
+    fs_file_close(&fd);
+    return;
+	
+	
 }
 
 static void klt1_cmd(void) {
-    char* from;
-    char* to;
-    char* buf = NULL;
-    if (check_kltls_parms(&from, &to, 0))
-        return;
     if (check_mount(true))
         return;
-    vi(screen_x, screen_y, argc - 1, argv + 1);
-    strcpy(result, VT_CLEAR "\n");
+    
+   printf("%d %s\n",argc,argv[1]);
+  
+    
+   lfs_file_t fd;
+
+   if (fs_file_open(&fd, argv[1], LFS_O_RDONLY) < 0)
+        return NULL;
+    
+    int l = fs_file_size(&fd);
+    char* buf = malloc(l + 1);
+    //printf("%d 0x%x\n",l,fd);
+    fs_file_read(&fd, buf, l);
+    printf("%d\n",buf[0]);
+    printf("%d\n",buf[1]);
+    free(buf);
+    fs_file_close(&fd);
+    return;
+	
 }
 
 static void quit_cmd(void) {

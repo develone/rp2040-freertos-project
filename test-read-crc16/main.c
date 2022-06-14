@@ -9,6 +9,7 @@
 #include "event_groups.h"
 #include "lifting.h"
 #include "crc16.h"
+#include "crc.h"
 #include "head-tail.h"
 #include "klt.h"
 
