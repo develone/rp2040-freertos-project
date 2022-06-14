@@ -461,6 +461,7 @@ static void vi_cmd(void) {
 static void lst0_cmd(void) {
     if (check_mount(true))
         return;
+   buildCRCTable();
     
    printf("%d %s %s\n",argc,argv[1],argv[2]);
   
@@ -472,15 +473,22 @@ static void lst0_cmd(void) {
     
     int l = fs_file_size(&fd);
     int ii=0;
+    unsigned char rcrc,ccrc,msg[64];
     char* buf = malloc(l + 1);
     //printf("%d 0x%x\n",l,fd);
     fs_file_read(&fd, buf, l);
     for(int rr=0;rr<64;rr++) {
     	for(int cc=0;cc<65;cc++) {
+	  msg[cc]=buf[ii];
 	  printf("%d ",buf[ii]);
 	  ii++;
         }
     	printf("\n");
+	rcrc=msg[64];
+        msg[64]=0;
+        ccrc=getCRC(msg,64);
+        printf("%d %d\n",rcrc,ccrc);
+        
     }
     free(buf);
     fs_file_close(&fd);
@@ -491,8 +499,9 @@ static void lst0_cmd(void) {
 static void lst1_cmd(void) {
     if (check_mount(true))
         return;
+   buildCRCTable();
     
-   printf("%d %s\n",argc,argv[1]);
+   printf("%d %s %s\n",argc,argv[1],argv[2]);
   
     
    lfs_file_t fd;
@@ -501,15 +510,27 @@ static void lst1_cmd(void) {
         return NULL;
     
     int l = fs_file_size(&fd);
+    int ii=0;
+    unsigned char rcrc,ccrc,msg[64];
     char* buf = malloc(l + 1);
     //printf("%d 0x%x\n",l,fd);
     fs_file_read(&fd, buf, l);
-    printf("%d\n",buf[0]);
-    printf("%d\n",buf[1]);
+    for(int rr=0;rr<64;rr++) {
+    	for(int cc=0;cc<65;cc++) {
+	  msg[cc]=buf[ii];
+	  printf("%d ",buf[ii]);
+	  ii++;
+        }
+    	printf("\n");
+	rcrc=msg[64];
+        msg[64]=0;
+        ccrc=getCRC(msg,64);
+        printf("%d %d\n",rcrc,ccrc);
+        
+    }
     free(buf);
     fs_file_close(&fd);
     return;
-	
 	
 }
 
