@@ -458,124 +458,84 @@ static void vi_cmd(void) {
 
  
 
-static void lst0_cmd(void) {
+ 
+static void lsklt_cmd(void) {
     if (check_mount(true))
         return;
-   buildCRCTable();
+   
     
-   printf("%d %s %s\n",argc,argv[1],argv[2]);
+   printf("%d %s %s %s\n",argc,argv[1],argv[2],argv[3]);
   
     
    lfs_file_t fd;
     
    if (fs_file_open(&fd, argv[1], LFS_O_RDONLY) < 0)
-        printf("error in open\n");        
-	//return NULL;
-    
-    int l = fs_file_size(&fd);
-    int ii=0,jj=0;
-    unsigned char rcrc,ccrc,msg[64];
-    char* buf = malloc(l + 1);
-    unsigned short int* buf1 = malloc(8192+1);
-    //printf("%d 0x%x\n",l,fd);
-    fs_file_read(&fd, buf, l);
-    for(int rr=0;rr<64;rr++) {
-    	for(int cc=0;cc<65;cc++) {
-	  msg[cc]=buf[ii];
-	  printf("%d ",buf[ii]);
-	  ii++;
-        }
-    	printf("\n");
-	rcrc=msg[64];
-        
-	msg[64]=0;
-	ccrc=0;
-        ccrc=getCRC(msg,64);
-        if (rcrc != ccrc) printf("%d %d\n",rcrc,ccrc);
-        /*
-	for(int k=0;k<64;k++) {
-	   for(int j=0;j<64;j++) {
-	     buf1[jj]=(unsigned short int)msg[j];
-             jj++;
-           }
-        }
-        */
-    }
-    
-     
-    
-    free(buf);
-    printf("0x%x %d\n",&fd,fd);
-    fs_file_close(&fd);
-    printf("0x%x %d\n",&fd,fd);
-    if (fs_file_open(&fd, argv[2], LFS_O_WRONLY) < 0)
         printf("error in open\n");        
  
-
-	
-}
-
-static void lst1_cmd(void) {
-    if (check_mount(true))
-        return;
-   buildCRCTable();
-    
-   printf("%d %s %s\n",argc,argv[1],argv[2]);
-  
-    
-   lfs_file_t fd;
-    
-   if (fs_file_open(&fd, argv[1], LFS_O_RDONLY) < 0)
-        printf("error in open\n");        
-	//return NULL;
     
     int l = fs_file_size(&fd);
-    int ii=0,jj=0;
-    unsigned char rcrc,ccrc,msg[64];
+    int ii=0,jj=0,flag;
+    char *bufptr;
+ 
     char* buf = malloc(l + 1);
-    unsigned short int* buf1 = malloc(8192+1);
-    //printf("%d 0x%x\n",l,fd);
     fs_file_read(&fd, buf, l);
-    for(int rr=0;rr<64;rr++) {
-    	for(int cc=0;cc<65;cc++) {
-	  msg[cc]=buf[ii];
-	  printf("%d ",buf[ii]);
-	  ii++;
+/*
+Read the pgm header
+P5                                                                              
+# Created by GIMP version 2.10.8 PNM plug-in                                    
+48                                                                              
+64 64                                                                           
+255
+*/  
+    for(ii=0;ii<3;ii++) printf("%c",buf[ii]);
+    flag=1;
+    while(flag) {
+        if(buf[ii] != 10) {
+           printf("%c",buf[ii]);
+           ii++;
         }
-    	printf("\n");
-	rcrc=msg[64];
-        
-	msg[64]=0;
-	ccrc=0;
-        ccrc=getCRC(msg,64);
-        if (rcrc != ccrc) printf("%d %d\n",rcrc,ccrc);
-        /*
-	for(int k=0;k<64;k++) {
-	   for(int j=0;j<64;j++) {
-	     buf1[jj]=(unsigned short int)msg[j];
-             jj++;
-           }
-        }
-        */
+        else flag=0; 
     }
-    
-     
-    
-    free(buf);
-    printf("0x%x %d\n",&fd,fd);
-    fs_file_close(&fd);
-    printf("0x%x %d\n",&fd,fd);
+    ii++;
+    //printf("\n%d\n",ii);
+    flag=1;
+    while(flag) {
+        if(buf[ii] != 10) {
+           printf("%c",buf[ii]);
+           ii++;
+        }
+        else flag=0; 
+    }
+    printf("\n");
+    ii++;
+
+   flag=1;
+    while(flag) {
+        if(buf[ii] != 10) {
+           printf("%c",buf[ii]);
+           ii++;
+        }
+        else flag=0; 
+    }
+    printf("\n");
+    ii++;
+    bufptr=&buf[ii];
+    for(jj=0;jj<64;jj++) { 
+      for(ii=0;ii<64;ii++) {
+        printf("%d ",*bufptr);
+        bufptr++;
+      }
+    }
+    printf("\n");
+    //free(buf);
+    //free(&fd);
+    printf("opening a file to write the results\n");
     if (fs_file_open(&fd, argv[2], LFS_O_WRONLY) < 0)
         printf("error in open\n");        
-
-	
+  
 }
 
-static void klt0_cmd(void) {
-}
 
-static void klt1_cmd(void) {
-}
 
 static void quit_cmd(void) {
     // release any resources we were using
@@ -607,10 +567,7 @@ static cmd_t cmd_table[] = {
     {"status", 	status_cmd,		"filesystem status"},
     {"unmount",	unmount_cmd,	"unmount filesystem"},
     {"vi", 		vi_cmd, 		"vi editor"},
-    {"klt0", 		klt0_cmd, 		"KLT a64.bin"},	
-    {"klt1", 		klt1_cmd, 		"KLT bb.bin"},
-    {"lst0", 		lst0_cmd, 		"lifting step a64.bin"},	
-    {"lst1", 		lst1_cmd, 		"lifting step bb.bin"}
+    {"lsklt", 		lsklt_cmd, 		"lifting step 0 klt 1"}
 };
 // clang-format on
 
