@@ -1,5 +1,5 @@
 add_executable(test-read-crc16
-        main.c crc16.h xreceive.h xtransmit.h fs.c fs.h vi.c vi.h pshell.h
+        main.c crc16.h xreceive.h xtransmit.h fs.c fs.h vi.c vi.h comprogs.h
 )
 
 target_link_libraries(test-read-crc16 pico_stdlib xmodem freertos lifting crc crc16 klt littlefs)
