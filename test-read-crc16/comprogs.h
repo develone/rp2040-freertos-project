@@ -39,7 +39,7 @@ int ncols, nrows, i;
 unsigned char tt[128];
 const char src[] = "Hello, world! ";
 const short int a[];
-int nFeatures = 100;
+int nFeatures = 3;
 KLT_TrackingContext tc;
 KLT_FeatureList fl;
 //const unsigned char CRC7_POLY = 0x91;
