@@ -9,6 +9,22 @@ int check_cp_parms(char** from, char** to, int copy);
 static void mv_cmd(void);
 static void cp_cmd(void);
 static void get_cmd(void);
+static void mkdir_cmd (void);
+static const char * search_cmds (int len);
+static void rm_cmd (void);
+static bool stdio_init (int uart_rx_pin);
+static void mount_cmd (void);
+static void unmount_cmd (void);
+static void format_cmd (void);
+static void status_cmd (void);
+static void ls_cmd (void);
+static void cd_cmd (void);
+static void vi_cmd (void);
+static void lsklt_cmd (void);
+static void quit_cmd (void);
+
+
+
 
 #define imgsize 4096
 //#define imgsize 512
@@ -35,11 +51,11 @@ struct PTRs
 } ptrs;
 
 unsigned char *img1, *img2;
-int ncols, nrows, i;
+int ncols, nrows, i, offset;
 unsigned char tt[128];
 const char src[] = "Hello, world! ";
 const short int a[];
-int nFeatures = 3;
+int nFeatures = 5;
 KLT_TrackingContext tc;
 KLT_FeatureList fl;
 //const unsigned char CRC7_POLY = 0x91;

@@ -590,7 +590,8 @@ lsklt_cmd (void)
   ncols = 64;
   nrows = 64;
   printf ("%d %s %s %s\n", argc, argv[1], argv[2], argv[3]);
-
+	ptrs.fwd_inv = &ptrs.fwd;
+	*ptrs.fwd_inv = 1;
 
   lfs_file_t in, out;
 
@@ -602,9 +603,10 @@ lsklt_cmd (void)
   int l = fs_file_size (&in), charcnt = 0, charsent = 0;
   int ii = 0, jj = 0, flag;
   char *bufptr;
-  char outstr[200];
-  char *outstrptr;
+   
+  //char *outstrptr;
   char *buf = malloc (l + 1);
+	char *outstr = malloc (75 + 1);
   fs_file_read (&in, buf, l);
 /*
 Read the pgm header
@@ -700,33 +702,50 @@ P5
   ptrs.inp_buf = ptrs.inpbuf;
   img1 = ptrs.inp_buf;
   img1 = ptrs.inp_buf[4096];
-  //img1 = &inpbuf[0];
-  //img2 = &inpbuf[4096];
+
   //printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
 
-  KLTSelectGoodFeatures (tc, img1, ncols, nrows, fl);
+  if(atoi(argv[3])==1) {
+		printf("klt\n");
+		KLTSelectGoodFeatures (tc, img1, ncols, nrows, fl);
 
-  //printf("\nIn first image:\n");
-  for (i = 0; i < fl->nFeatures; i++)
-    {
-      /*printf ("Feature #%d:  (%f,%f) with value of %d",
-         i, fl->feature[i]->x, fl->feature[i]->y,
-         fl->feature[i]->val); */
+  	//printf("\nIn first image:\n");
+  	for (i = 0; i < fl->nFeatures; i++)
+    	{
+      	printf ("Feature #%d:  (%f,%f) with value of %d\n",
+        	 i, fl->feature[i]->x, fl->feature[i]->y,
+         	fl->feature[i]->val); 
 
-      charsent = sprintf (outstr, "Feature #%d:  (%f,%f) with value of %d",
-			  i, fl->feature[i]->x, fl->feature[i]->y,
-			  fl->feature[i]->val);
+      	/*charsent = sprintf (outstr, "Feature #%d:  (%f,%f) with value of %d",
+			  	i, fl->feature[i]->x, fl->feature[i]->y,
+			  	fl->feature[i]->val);*/
 
-      //*outstr = *outstr + charsent;
-      //charcnt = charcnt + charsent;
-    }
-  //*outstr = *outstr - charcnt;
-  printf ("this is the string %d %s", charcnt, outstr);
+      	//*outstr = *outstr + charsent;
+      	//charcnt = charcnt + charsent;
+    	}
+  	//*outstr = *outstr - charcnt;
+  	printf ("this is the string %d %s", charcnt, outstr);
+	}
+  else
+	{
+		printf("lifting step\n");
+		ptrs.inp_buf = ptrs.inpbuf;
+    printf("%d 0x%x 0x%x 0%x \n",ptrs.w, ptrs.inp_buf, ptrs.out_buf, *ptrs.fwd_inv);
+		lifting (ptrs.w, ptrs.inp_buf, ptrs.out_buf, ptrs.fwd_inv);
+		for(nrows=0;nrows<64;nrows++) {
+			for(ncols=0;ncols<64;ncols++) {
+				printf("%d ",ptrs.inp_buf[offset]);
+				offset++;
+			}
+			printf("\n");
+		}
+	}
   free (buf);
+	free (outstr);
   //free(&fd);
   fs_file_close (&in);
   printf ("%d \n", fs_file_open (&out, argv[2], LFS_O_WRONLY | LFS_O_CREAT));
-  fs_file_write (&out, outstr, charsent);
+  //fs_file_write (&out, outstr, charsent);
   fs_file_close (&out);
 }
 
