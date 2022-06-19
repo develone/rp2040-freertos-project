@@ -585,6 +585,9 @@ lsklt_cmd (void)
 
   ptrs.w = 64;
   ptrs.h = 64;
+	tc = KLTCreateTrackingContext ();
+  //printf("tc 0x%x\n",tc);
+  fl = KLTCreateFeatureList (nFeatures);
   ptrs.out_buf = ptrs.inpbuf + imgsize;
   ptrs.inp_buf = ptrs.inpbuf;
   ncols = 64;
@@ -678,11 +681,14 @@ P5
   //if (fs_file_open(&fd, argv[2], LFS_O_WRONLY) < 0)
   // printf("error in open\n"); 
   printf ("need to copy the data received from host to img1\n");
+  img1 = inpbuf;
+  img2 = &inpbuf[4096];
+
   printf ("img1 = 0x%x img2 = 0x%x\n", img1, img2);
   for (i = 0; i < ncols * nrows; i++)
     {
       img1[i] = ptrs.inp_buf[i];
-      //img2[i+4095] = img1[i]; 
+      //img2[i+4096] = img1[i]; 
       if (i < 5)
 	printf ("%d img1 %d ptrs.buf %d \n", i, img1[i], ptrs.inp_buf[i]);
       if (i > 4090)
@@ -700,13 +706,16 @@ P5
       img1++;
     }
   ptrs.inp_buf = ptrs.inpbuf;
-  img1 = ptrs.inp_buf;
-  img1 = ptrs.inp_buf[4096];
+  img1 = inpbuf;
+  img2 = &inpbuf[4096];
 
   //printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
+	img1 = &inpbuf[0];
+	img2 = &inpbuf[4096];
 
   if(atoi(argv[3])==1) {
 		printf("klt\n");
+
 		KLTSelectGoodFeatures (tc, img1, ncols, nrows, fl);
 
   	//printf("\nIn first image:\n");

@@ -49,13 +49,13 @@ struct PTRs
   char *topofbuf;
   char *endofbuf;
 } ptrs;
-
+unsigned char inpbuf[imgsize * 2];
 unsigned char *img1, *img2;
 int ncols, nrows, i, offset;
 unsigned char tt[128];
 const char src[] = "Hello, world! ";
 const short int a[];
-int nFeatures = 5;
+int nFeatures = 100;
 KLT_TrackingContext tc;
 KLT_FeatureList fl;
 //const unsigned char CRC7_POLY = 0x91;
