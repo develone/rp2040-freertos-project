@@ -1,12 +1,12 @@
-set(PICO_SDK_LIFTING_SOURCE LIFTING-Files)
+add_library(lifting INTERFACE)
+target_include_directories(lifting INTERFACE ${CMAKE_CURRENT_LIST_DIR}/lifting-lib)
+target_sources(lifting INTERFACE
+    ${CMAKE_CURRENT_LIST_DIR}/lifting-lib/lifting.c
+ 
+	${CMAKE_CURRENT_LIST_DIR}/lifting-lib/lifting.h
+ 
+	
 
-add_library(lifting
-    ${PICO_SDK_LIFTING_SOURCE}/lifting.c
-		  
 )
 
-target_include_directories(lifting PUBLIC
-    .
-    ${PICO_SDK_LIFTING_SOURCE}/include
-    ${PICO_SDK_LIFTING_SOURCE}/portable/GCC/ARM_CM0
-)
+
