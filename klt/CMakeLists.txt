@@ -1,18 +1,20 @@
-set(PICO_SDK_KLT_SOURCE KLT-Kernel)
-
-add_library(klt
-    ${PICO_SDK_KLT_SOURCE}/selectGoodFeatures.c
-    ${PICO_SDK_KLT_SOURCE}/pyramid.c
-    ${PICO_SDK_KLT_SOURCE}/convolve.c
-    ${PICO_SDK_KLT_SOURCE}/error.c
-    ${PICO_SDK_KLT_SOURCE}/klt.c
-    ${PICO_SDK_KLT_SOURCE}/klt_util.c
-    ${PICO_SDK_KLT_SOURCE}/portable/MemMang/heap_3.c
-    ${PICO_SDK_KLT_SOURCE}/portable/GCC/ARM_CM0/port.c
+add_library(klt INTERFACE)
+target_include_directories(klt INTERFACE ${CMAKE_CURRENT_LIST_DIR}/klt-lib)
+target_sources(klt INTERFACE
+ 
+    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/selectGoodFeatures.c
+    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/pyramid.c
+    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/pyramid.h
+    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/convolve.c
+    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/convolve.h
+    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/error.c
+    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/error.h
+    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/klt.c
+    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/klt.h
+    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/klt_util.c
+    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/klt_util.h
+ 
 )
 
-target_include_directories(klt PUBLIC
-    .
-    ${PICO_SDK_KLT_SOURCE}/include
-    ${PICO_SDK_KLT_SOURCE}/portable/GCC/ARM_CM0
-)
+
+
