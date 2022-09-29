@@ -585,11 +585,18 @@ lsklt_cmd (void)
 
   ptrs.w = 128;
   ptrs.h = 128;
+  /*short int inpbuf[imgsize * 2]; this was previous defined in comprogs.h
+  128 * 128 imgsize of 16384 65536 bytes
+  */
+  ptrs.inp_buf = malloc(sizeof(short int)*ptrs.w*ptrs.h*2);
+  printf("0x%x 0x%x\n",ptrs.inp_buf,*ptrs.inp_buf);
+  img1 = malloc(sizeof(unsigned char)*ptrs.w*ptrs.h*2);
 	tc = KLTCreateTrackingContext ();
   //printf("tc 0x%x\n",tc);
   fl = KLTCreateFeatureList (nFeatures);
-  ptrs.out_buf = ptrs.inpbuf + imgsize;
-  ptrs.inp_buf = ptrs.inpbuf;
+  ptrs.out_buf = ptrs.inp_buf + imgsize;
+  
+  //ptrs.inp_buf = ptrs.inpbuf;
   ncols = ptrs.w;
   nrows = ptrs.h;
   printf ("%d %s %s %s\n", argc, argv[1], argv[2], argv[3]);
@@ -660,7 +667,7 @@ P5
 	flag = 0;
     }
   printf ("\n");
-  ptrs.inp_buf = ptrs.inpbuf;
+  ptrs.inp_buf = ptrs.inp_buf;
   ii++;
   bufptr = &buf[ii];
   for (jj = 0; jj < ptrs.h; jj++)
@@ -676,7 +683,7 @@ P5
     }
   printf ("\n");
 
-  ptrs.inp_buf = ptrs.inpbuf;
+  ptrs.inp_buf = ptrs.inp_buf - ptrs.w*ptrs.h;
   printf ("opening a file to write the results\n");
   //if (fs_file_open(&fd, argv[2], LFS_O_WRONLY) < 0)
   // printf("error in open\n"); 
@@ -694,28 +701,28 @@ P5
       //if (i > 4090)
 	//printf ("%d img1 %d ptrs.buf %d \n", i, img1[i], ptrs.inp_buf[i]);
     }
-  printf ("need to copy the data from img1 to img2\n");
-  for (i = 0; i < ncols * nrows; i++)
-    {
-      *img2 = *img1;
+  //printf ("need to copy the data from img1 to img2\n");
+  //for (i = 0; i < ncols * nrows; i++)
+   // {
+      //*img2 = *img1;
       //if (i < 5)
 	//printf ("%d img2 %d img1 %d \n", i, *img2, *img1);
       //if (i > 4090)
 	//printf ("%d img2 %d img1 %d \n", i, *img2, *img1);
-      img2++;
-      img1++;
-    }
-  ptrs.inp_buf = ptrs.inpbuf;
+      //img2++;
+      //img1++;
+    //}
+  ptrs.inp_buf = ptrs.inp_buf;
   img1 = inpbuf;
   img2 = &inpbuf[16384];
 
   //printf("img1 = 0x%x img2 = 0x%x\n",img1, img2);
-	img1 = &inpbuf[0];
-	img2 = &inpbuf[16384];
+	//img1 = &inpbuf[0];
+	//img2 = &inpbuf[16384];
 
   if(atoi(argv[3])==1) {
 		printf("klt\n");
-
+		free(ptrs.inp_buf);
 		KLTSelectGoodFeatures (tc, img1, ncols, nrows, fl);
 
   	//printf("\nIn first image:\n");
@@ -734,11 +741,13 @@ P5
     	}
   	//*outstr = *outstr - charcnt;
   	printf ("this is the string %d %s", charcnt, outstr);
+  	free(img1);
 	}
   else
 	{
 		printf("lifting step\n");
-		ptrs.inp_buf = ptrs.inpbuf;
+		ptrs.inp_buf = ptrs.inp_buf;
+		offset=0;
     printf("%d 0x%x 0x%x 0%x \n",ptrs.w, ptrs.inp_buf, ptrs.out_buf, *ptrs.fwd_inv);
 		lifting (ptrs.w, ptrs.inp_buf, ptrs.out_buf, ptrs.fwd_inv);
 		for(nrows=0;nrows<ptrs.h;nrows++) {
@@ -748,6 +757,7 @@ P5
 			}
 			printf("\n");
 		}
+		free(ptrs.inp_buf);
 	}
   free (buf);
 	free (outstr);
@@ -986,7 +996,7 @@ unsigned char message[3] = { 0xd3, 0x01, 0x00 };
 int flag = 0, numofchars, error = 0, syncflag = 1, rdyflag = 1, testsx =
   10, testsx1 = 10, syncdone = 0;
 
-unsigned char inpbuf[imgsize * 2];
+//unsigned char inpbuf[imgsize * 2];
 unsigned char *img1, *img2;
 /***********************needs to be in a header***********************/
 

@@ -35,7 +35,7 @@ struct PTRs
      256 x 256 = 65536
      64 x 64 = 4096
    */
-  short int inpbuf[imgsize * 2];
+  //short int inpbuf[imgsize * 2];
   short int *inp_buf;
   short int *out_buf;
   short int flag;
