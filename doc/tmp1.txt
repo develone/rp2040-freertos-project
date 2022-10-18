@@ -19,6 +19,8 @@ Date:   Mon Nov 1 14:20:54 2021 -0500
 
     SDK 1.3.0 release
 
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program HCSR04/HCSR04.elf verify reset exit"
+
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-littlefs/example0.elf verify reset exit"
 
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-littlefs/example1.elf verify reset exit"

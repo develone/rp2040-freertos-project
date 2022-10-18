@@ -1,0 +1,24 @@
+86,87c86,87
+<     // the instance of the HCSR04 (Echo pin = 4, Trig pin = 7)
+<     HCSR04 my_HCSR04(4, 7);
+---
+>     // the instance of the HCSR04 (Echo pin = 14, Trig pin = 15)
+>     HCSR04 my_HCSR04(14, 15);
+94c94
+<         sleep_ms(1000);
+---
+>         sleep_ms(100);
+96c96
+< }
+---
+> }
+\ No newline at end of file
+13,14c13
+< pico_enable_stdio_usb(HCSR04 1)
+< pico_enable_stdio_uart(HCSR04 0)
+---
+> 
+16c15
+< #example_auto_set_url(HCSR04)
+---
+> example_auto_set_url(HCSR04)
