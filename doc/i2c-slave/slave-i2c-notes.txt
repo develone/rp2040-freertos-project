@@ -1,0 +1,19 @@
+05/31/23
+
+Need to determine what steps will be required to convert from a master to a slave.
+
+Starting with lcd_1602_i2c.c to slave_i2c.c
+
+The script below will use openocd to load slave_i2c.elf on pico 
+
+devel@pi4-60:~/rp2040-freertos-project $ ./exe-slave.sh
+
+devel@pi4-60:~ $ minicom  myusb0
+Welcome to minicom 2.8
+
+OPTIONS: I18n 
+Port /dev/ttyUSB0, 18:10:16
+
+Press CTRL-A Z for help on special keys
+
+starting i2c slave
