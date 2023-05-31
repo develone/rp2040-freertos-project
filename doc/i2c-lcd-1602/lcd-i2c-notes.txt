@@ -1,0 +1,84 @@
+05/31/23
+diymore TXS0108E 8 Channel Logic Level Bi-Directional Converter Module High Speed Full Duplex Shifter 3PCS
+Adding lcd_1602_i2c with uart support to rp2020-freertos-project for quick build test
+
+devel@pi4-60:~ $ git clone git@github.com:develone/rp2040-freertos-project.git -b dev
+
+cd rp2040-freertos-project
+
+devel@pi4-60:~/rp2040-freertos-project $ git submodule update --init
+
+devel@pi4-60:~/rp2040-freertos-project $ mkdir -p i2c/lcd_1602_i2c
+
+devel@pi4-60:~/rp2040-freertos-project $ cp ~/pico-examples/i2c/lcd_1602_i2c/lcd_1602_i2c.c i2c/lcd_1602_i2c
+
+devel@pi4-60:~/rp2040-freertos-project $ cp ~/pico-examples/i2c/lcd_1602_i2c/CMakeLists.txt i2c/lcd_1602_i2c
+
+devel@pi4-60:~/rp2040-freertos-project $ mkdir build
+
+devel@pi4-60:~/rp2040-freertos-project $ cd build/
+
+devel@pi4-60:~/rp2040-freertos-project $ vi ../i2c/lcd_1602_i2c/CMakeLists.txt
+add_subdirectory(lcd_1602_i2c)
+
+devel@pi4-60:~/rp2040-freertos-project $ git add i2c/CMakeLists.txt
+
+devel@pi4-60:~/rp2040-freertos-project $ git diff i2c/lcd_1602_i2c/CMakeLists.txt
+diff --git a/i2c/lcd_1602_i2c/CMakeLists.txt b/i2c/lcd_1602_i2c/CMakeLists.txt
+index c6aad7a..6a44f73 100644
+--- a/i2c/lcd_1602_i2c/CMakeLists.txt
++++ b/i2c/lcd_1602_i2c/CMakeLists.txt
+@@ -9,4 +9,4 @@ target_link_libraries(lcd_1602_i2c pico_stdlib hardware_i2c)
+ pico_add_extra_outputs(lcd_1602_i2c)
+ 
+ # add url via pico_set_program_url
+-example_auto_set_url(lcd_1602_i2c)
++#example_auto_set_url(lcd_1602_i2c)
+
+devel@pi4-60:~/rp2040-freertos-project/build $ cmake -DPICO_BOARD=pico DFREERTOS_KERNEL_PATH:PATH=/home/devel/FreeRTOS-Kernel ..
+
+devel@pi4-60:~/rp2040-freertos-project/build $ cd i2c/lcd_1602_i2c/
+
+devel@pi4-60:~/rp2040-freertos-project/build/i2c/lcd_1602_i2c $ make
+
+devel@pi4-60:~/rp2040-freertos-project/build/i2c/lcd_1602_i2c $ ls -la
+total 672
+drwxr-xr-x 3 devel devel   4096 May 31 05:25 .
+drwxr-xr-x 4 devel devel   4096 May 31 05:11 ..
+drwxr-xr-x 3 devel devel   4096 May 31 05:11 CMakeFiles
+-rw-r--r-- 1 devel devel   1147 May 31 04:53 cmake_install.cmake
+-rwxr-xr-x 1 devel devel  13316 May 31 05:25 lcd_1602_i2c.bin
+-rw-r--r-- 1 devel devel 235108 May 31 05:25 lcd_1602_i2c.dis
+-rwxr-xr-x 1 devel devel  47280 May 31 05:25 lcd_1602_i2c.elf
+-rw-r--r-- 1 devel devel 201373 May 31 05:25 lcd_1602_i2c.elf.map
+-rw-r--r-- 1 devel devel  37512 May 31 05:25 lcd_1602_i2c.hex
+-rw-r--r-- 1 devel devel  27136 May 31 05:25 lcd_1602_i2c.uf2
+-rw-r--r-- 1 devel devel  94059 May 31 04:53 Makefile
+
+devel@pi4-60:~ $ minicom  myusb0
+
+Welcome to minicom 2.8
+
+OPTIONS: I18n 
+Port /dev/ttyUSB0, 18:10:16
+
+Press CTRL-A Z for help on special keys
+
+starting i2c lcd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

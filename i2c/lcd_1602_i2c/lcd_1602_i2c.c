@@ -130,6 +130,8 @@ void lcd_init() {
 }
 
 int main() {
+	stdio_init_all();
+    printf("starting i2c lcd\n");
 #if !defined(i2c_default) || !defined(PICO_DEFAULT_I2C_SDA_PIN) || !defined(PICO_DEFAULT_I2C_SCL_PIN)
     #warning i2c/lcd_1602_i2c example requires a board with I2C pins
 #else
