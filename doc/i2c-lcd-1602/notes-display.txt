@@ -1,0 +1,42 @@
+2nd set of displays ordered 5/31/23
+
+2 Pieces I2C Display Module 0.91 Inch I2C OLED Display Module Blue I2C OLED Screen Driver DC 3.3V - 5V 
+$7.49 
+https://www.amazon.com/Pieces-Display-Module-SSD1306-Screen/dp/B08N6N8L5Q/ref=sr_1_5?crid=XNYEV5OG70TH&keywords=0.91%2BOLED%2BDisplay%2Blcd%2B3.3V%2B5V&qid=1685704336&sprefix=0.91%2Boled%2Bdisplay%2Blcd%2B3.3v%2B5v%2Caps%2C111&sr=8-5&th=1
+
+
+    What you will get: you will get 2 OLED display modules with classic display colors, self illumination with no need of backlight
+    Power-saving display: the I2C OLED display performs better than the traditional LCD display and with lower consumption the IIC 
+    (I2C communications) simplifies connections; Please note that these I2C OLED display module comes without pin headers
+    More details: this I2C LCD display is compatible with Arduino, ESP8266, ESP32, STM32, etc., 3.35V power; Operating 
+    temperature: -40 - 85 degree Celsius; Resolution: 128 x 32
+    Good compatibility: this I2C OLED display module is compatible with Raspberry Pi 4B/ 3B+/ 3B/ 2B/ Zero, compatible with Arduino, 
+    also compatible with ESP8266, ESP32, STM32, etc.
+    Product manual: as shown in the instructions
+
+
+Question:
+Anyone know the i2c device id for this module?
+Answer:
+Mine were 0x3C, received June 2021
+
+
+Question:
+Is the manual available?
+Answer:
+There is no manual. There are four connection points. Refer to generic I2C LCD information.
+By T. K. Lowell on September 21, 2022 
+
+
+Question:
+Does this come with pins?
+Answer:
+Mike came with pins. They need to be soldered in.
+By MikeJ on November 18, 2021 
+
+
+Question:
+Does this come with pins?
+Answer:
+Mike came with pins. They need to be soldered in.
+By MikeJ on November 18, 2021 
