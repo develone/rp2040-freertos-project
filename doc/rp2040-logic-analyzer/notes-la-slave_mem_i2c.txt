@@ -1,4 +1,46 @@
-0'6/21/23
+06/26/23
+Write at 0x00: 'Hello, I2C slave! - 0x00'
+Read  at 0x00: 'Hello'
+Read  at 0x05: ', I2C slave! - 0x00'
+
+Write at 0x20: 'Hello, I2C slave! - 0x20'
+Read  at 0x20: 'Hello'
+Read  at 0x25: ', I2C slave! - 0x20'
+
+Write at 0x40: 'Hello, I2C slave! - 0x40'
+Read  at 0x40: 'Hello'
+Read  at 0x45: ', I2C slave! - 0x40'
+
+Write at 0x60: 'Hello, I2C slave! - 0x60'
+Read  at 0x60: 'Hello'
+Read  at 0x65: ', I2C slave! - 0x60'
+
+Write at 0x80: 'Hello, I2C slave! - 0x80'
+Read  at 0x80: 'Hello'
+Read  at 0x85: ', I2C slave! - 0x80'
+
+Write at 0xA0: 'Hello, I2C slave! - 0xA0'
+Read  at 0xA0: 'Hello'
+Read  at 0xA5: ', I2C slave! - 0xA0'
+
+Write at 0xC0: 'Hello, I2C slave! - 0xC0'
+Read  at 0xC0: 'Hello'
+Read  at 0xC5: ', I2C slave! - 0xC0'
+
+Write at 0xE0: 'Hello, I2C slave! - 0xE0'
+Read  at 0xE0: 'Hello'
+Read  at 0xE5: ', I2C slave! - 0xE0'
+
+Write et number
+t 0xC0: 'Hello, I2C slave! - 0xC0'
+Read  at 0xC0: 'Hello'
+Read  at 0xC5: ', I2C slave! - 0xC0'
+
+Write at 0xE0: 'Hello, I2C slave! - 0xE0'
+Read  at 0xE0: 'Hello'
+Read  at 0xE5: ', I2C slave! - 0xE0'
+
+06/21/23
 
 This is one pico running pico-examples/i2c/slave_mem_i2c/slave_mem_i2c.c and a 
 2nd pico running rp2040-freertos-project/rp2040-logic-analyzer/rp2040-logic-analyzer.c.
