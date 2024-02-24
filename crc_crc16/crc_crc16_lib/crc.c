@@ -1,7 +1,7 @@
 
 #include "crc.h"
 const unsigned char CRC7_POLY = 0x91;
-unsigned char CRCTable[256];
+extern unsigned char CRCTable[256];
  
 unsigned char getCRCForByte(unsigned char val)
 {
