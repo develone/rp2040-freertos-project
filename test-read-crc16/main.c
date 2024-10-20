@@ -573,6 +573,14 @@ vi_cmd (void)
   vi (screen_x, screen_y, argc - 1, argv + 1);
   strcpy (result, VT_CLEAR "\n");
 }
+static void
+test_pnmio_cmd (void)
+{
+  if (check_mount (true))
+    return;
+
+}
+
 
 
 

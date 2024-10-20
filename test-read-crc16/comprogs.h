@@ -22,7 +22,7 @@ static void cd_cmd (void);
 static void vi_cmd (void);
 static void lsklt_cmd (void);
 static void quit_cmd (void);
-
+static void test_pnmio_cmd (void);
 
 
 
