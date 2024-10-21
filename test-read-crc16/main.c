@@ -24,6 +24,8 @@
 #include "fs.h"
 #include "tusb.h"
 #include "vi.h"
+#include "pnmio.h"
+#include "error.h"
 /* vi: set sw=4 ts=4: */
 /* SPDX-License-Identifier: GPL-3.0-or-later */
 
@@ -346,8 +348,8 @@ cp_cmd (void)
     sprintf (result, "file %s copied to %s", from, to);
   free (from);
   free (to);
-}
 
+}
 static void
 get_cmd (void)
 {
@@ -573,17 +575,60 @@ vi_cmd (void)
   vi (screen_x, screen_y, argc - 1, argv + 1);
   strcpy (result, VT_CLEAR "\n");
 }
+
+static void
+j2k_cmd (void)
+{
+  if (check_mount (true))
+    return;
+	//in_fname is passed as argv[1]
+	//out_fname is passed as argv[2]
+	//Compression Ratio
+	//Compress DeCompress
+	printf ("%d in_fname = %s out_fname = %s CR %d C/D = %d \n", argc, argv[1], argv[2], argv[3], argv[4]);
+//fs_file_close (&in);
+}
+
 static void
 test_pnmio_cmd (void)
 {
   if (check_mount (true))
     return;
-
+	printf ("%d %s\n", argc, argv[1]);
+    char ch;
+	int ncols;
+	int *ptrncols;
+	int nrows;
+	int *ptrnrows;
+	int *maxval;
+	char *fname;
+	unsigned char *img;
+	int i,j;
+	short int val; 
+ 	ncols=320;
+	nrows=240;
+	ptrncols = &ncols;
+	ptrnrows = &nrows;
+	printf ("%d %s \n", argc, argv[1]);
+	//fname is passed as argv[1]
+	printf("ptrncols = 0x%x,ptrnrows = 0x%x \n",ptrncols, ptrnrows);
+	lfs_file_t in, out;
+    if (fs_file_open(&in, argv[1], LFS_O_RDONLY) < 0)
+  		printf("error in open\n");        
+ 
+/*	
+	//img = pgmReadFile(fname,NULL,ptrncols, ptrnrows);
+	printf("0x%x,%d 0x%x %d \n",ptrncols,ncols, ptrnrows, nrows);
+	for(j=0;j<nrows;j++) {
+		for (i=0;i<ncols;i++) {
+			val = *img;
+			printf("%d j=  %d i=  %d \n",j,i,val);
+		img++;
+	}
 }
-
-
-
-
+*/
+//fs_file_close (&in);
+}
 
 static void
 lsklt_cmd (void)
@@ -603,7 +648,7 @@ lsklt_cmd (void)
   printf ("%d %s %s %s\n", argc, argv[1], argv[2], argv[3]);
 	ptrs.fwd_inv = &ptrs.fwd;
 	*ptrs.fwd_inv = 1;
-
+  
   lfs_file_t in, out;
 
 
@@ -801,7 +846,9 @@ static cmd_t cmd_table[] = {
   {"status", status_cmd, "filesystem status"},
   {"unmount", unmount_cmd, "unmount filesystem"},
   {"vi", vi_cmd, "vi editor"},
-  {"lsklt", lsklt_cmd, "lifting step 0 klt 1"}
+  {"lsklt", lsklt_cmd, "lifting step 0 klt 1"},
+  {"j2k", j2k_cmd, "In File Out Frile Compression Ratio Compression 0 Decompression 1"},	
+  {"test_pnmio", test_pnmio_cmd, "test_pnmio"} 
 };
 
 // clang-format on
