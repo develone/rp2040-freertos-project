@@ -13,8 +13,8 @@ target_sources(klt INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/klt-lib/klt.h
     ${CMAKE_CURRENT_LIST_DIR}/klt-lib/klt_util.c
     ${CMAKE_CURRENT_LIST_DIR}/klt-lib/klt_util.h
-    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/pnmio.c
-    ${CMAKE_CURRENT_LIST_DIR}/klt-lib/pnmio.h
+    #${CMAKE_CURRENT_LIST_DIR}/klt-lib/pnmio.c
+    #${CMAKE_CURRENT_LIST_DIR}/klt-lib/pnmio.h
     
  
 )
