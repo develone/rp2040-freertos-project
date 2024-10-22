@@ -585,7 +585,7 @@ j2k_cmd (void)
 	//out_fname is passed as argv[2]
 	//Compression Ratio
 	//Compress DeCompress
-	printf ("%d in_fname = %s out_fname = %s CR %d C/D = %d \n", argc, argv[1], argv[2], argv[3], argv[4]);
+	printf ("%d in_fname = %s out_fname = %s CR %d C/D = %d \n", argc, argv[1], argv[2], atoi(argv[3]), atoi(argv[4]));
 //fs_file_close (&in);
 }
 
